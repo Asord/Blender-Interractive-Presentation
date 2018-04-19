@@ -1,4 +1,4 @@
-current_project = "car.blend"
+current_project = "projet.blend"
 
 from os import system
-system("..\\blender\\blender.exe -b ..\\projects\\" + current_project)
+system("..\\blender\\blender.exe ..\\projects\\" + current_project)
