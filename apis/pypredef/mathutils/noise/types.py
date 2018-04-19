@@ -1,0 +1,11 @@
+BLENDER = int
+CELLNOISE = int
+NEWPERLIN = int
+STDPERLIN = int
+VORONOI_CRACKLE = int
+VORONOI_F1 = int
+VORONOI_F2 = int
+VORONOI_F2F1 = int
+VORONOI_F3 = int
+VORONOI_F4 = int
+
