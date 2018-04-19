@@ -14,9 +14,6 @@ class Animation(object, metaclass=ABCMeta):
     def Stop(self):
         pass
 
+    @abstractmethod
     def Serialize(self):
         pass
-
-    @abstractmethod
-    def __Animate(self):
-        pass # TODO: déterminer l'utilisé avec Start

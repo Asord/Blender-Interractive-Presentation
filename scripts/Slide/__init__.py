@@ -7,9 +7,7 @@ class Slide(object):
         self._preview = ""
         self._object = ""
         self._animation = None
-
-    def Create(self):
-        pass # TODO: compléter
+        self._baseX = 0
 
     def Delete(self):
         pass # TODO: compléter
@@ -18,9 +16,6 @@ class Slide(object):
         if self._animation is not None:
             self._animation.Start()
 
-    """ Edition """
-    def EditObject(self, **kwargs):
-        pass
 
     """ Getters / Setters """
     def GetPreview(self):
@@ -36,6 +31,8 @@ class Slide(object):
     def SetObject(self, obj):
         self._object = obj
 
+    def EditObject(self, **kwargs):
+        pass # TODO: compléter
 
     def GetAnimation(self):
         return self._animation
@@ -46,3 +43,10 @@ class Slide(object):
 
     def GetID(self):
         return self._id
+
+
+    def Serialize(self):
+        pass # TODO: compléter
+
+    def Show(self):
+        pass # TODO: compléter
