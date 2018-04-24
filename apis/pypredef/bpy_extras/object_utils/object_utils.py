@@ -15,7 +15,7 @@ def BoolProperty(*argv):
 
 Returns a new boolean property definition.
 
-:arg name: Name used in the user interface.
+:arg name: Name used in the user Interface.
 :type name: string
 :arg description: Text used for the tooltip and api documentation.
 :type description: string
@@ -39,7 +39,7 @@ def BoolVectorProperty(*argv):
 
 Returns a new vector boolean property definition.
 
-:arg name: Name used in the user interface.
+:arg name: Name used in the user Interface.
 :type name: string
 :arg description: Text used for the tooltip and api documentation.
 :type description: string
@@ -67,7 +67,7 @@ def FloatVectorProperty(*argv):
 
 Returns a new vector float property definition.
 
-:arg name: Name used in the user interface.
+:arg name: Name used in the user Interface.
 :type name: string
 :arg description: Text used for the tooltip and api documentation.
 :type description: string

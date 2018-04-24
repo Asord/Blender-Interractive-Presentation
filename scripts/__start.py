@@ -1,4 +1,4 @@
-current_project = "projet.blend"
+current_project = "save.blend"
 
 from os import system
-system("..\\blender\\blender.exe ..\\projects\\" + current_project)
+system("..\\blender\\blender.exe ..\\save\\{}".format(current_project))

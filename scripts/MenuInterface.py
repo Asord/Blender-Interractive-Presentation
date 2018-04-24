@@ -1,51 +1,47 @@
-import bpy
+from Interface import *
 
-class MenuSlides(bpy.types.Panel):
+class AddSlide(Execution):
 
-    bl_category = "Presentation"
+    bl_idname = "execution.add_slide"
+    bl_label = "Add Slide"
+
+    def invoke(self, context, event):
+        """ TODO: Code pour ajouter les slides """
+        return {'RUNNING_MODAL'}
+
+
+class MenuSlides(MenuInterface):
+
     bl_label = "Slides"
-    bl_space_type = 'VIEW_3D'
-    bl_region_type = 'TOOLS'
 
     def draw(self, context):
-        layout = self.layout
 
-        row = layout.row()
-        row.label(text = "Slides")
+        self.row.label(text = "Slides")
 
-        split = layout.split()
-        col = split.column()
+        self.layout.operator_context = 'INVOKE_DEFAULT'
+        self.col.operator(AddSlide.bl_idname, text = "Add a slide")
+        self.col.operator("mesh.primitive_cube_add", text = "Remove a slide")
 
-        col.operator("mesh.primitive_cube_add", text = "Add a slide")
-        col.operator("mesh.primitive_cube_add", text = "Remove a slide")
+class MenuAnimation(MenuInterface):
 
-class MenuAnimation(bpy.types.Panel):
-
-    bl_category = "Presentation"
     bl_label = "Animation"
-    bl_space_type = 'VIEW_3D'
-    bl_region_type = 'TOOLS'
 
     def draw(self, context):
-        layout = self.layout
 
-        row = layout.row()
-        row.label(text = "Add slides")
+        self.row.label(text = "Add slides")
 
-        split = layout.split()
-        col = split.column()
+        self.col.operator("mesh.primitive_cube_add", text = "Add a slide")
+        self.col.operator("mesh.primitive_cube_add", text = "Remove a slide")
 
-        col.operator("mesh.primitive_cube_add", text = "Add a slide")
-        col.operator("mesh.primitive_cube_add", text = "Remove a slide")
-
-        row = layout.row()
-        row.label(text = "Remove a slide")
+        self.row.label(text = "Remove a slide")
 
 
 def register():
+    bpy.utils.register_class(AddSlide)
     bpy.utils.register_class(MenuAnimation)
     bpy.utils.register_class(MenuSlides)
 def unregister():
+    bpy.utils.unregister_class(AddSlide)
     bpy.utils.unregister_class(MenuAnimation)
     bpy.utils.unregister_class(MenuSlides)
 

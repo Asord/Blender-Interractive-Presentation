@@ -3,7 +3,7 @@ def BoolProperty(*argv):
 
 Returns a new boolean property definition.
 
-:arg name: Name used in the user interface.
+:arg name: Name used in the user Interface.
 :type name: string
 :arg description: Text used for the tooltip and api documentation.
 :type description: string
@@ -52,7 +52,7 @@ Returns a new enumerator property definition.
       Python must keep a reference to the strings returned or Blender will misbehave
       or even crash.
 :type items: sequence of string tuples or a function
-:arg name: Name used in the user interface.
+:arg name: Name used in the user Interface.
 :type name: string
 :arg description: Text used for the tooltip and api documentation.
 :type description: string
@@ -101,7 +101,7 @@ def StringProperty(*argv):
 
 Returns a new string property definition.
 
-:arg name: Name used in the user interface.
+:arg name: Name used in the user Interface.
 :type name: string
 :arg description: Text used for the tooltip and api documentation.
 :type description: string

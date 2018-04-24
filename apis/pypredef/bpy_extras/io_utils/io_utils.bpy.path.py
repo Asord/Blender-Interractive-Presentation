@@ -25,7 +25,7 @@ All characters besides A-Z/a-z, 0-9 are replaced with "_"
 or the *replace* argument if defined.'''
 
 def display_name(*argv):
-	'''Creates a display string from name to be used menus and the user interface.
+	'''Creates a display string from name to be used menus and the user Interface.
 Capitalize the first letter in all lowercase names,
 mixed case names are kept as is. Intended for use with
 filenames and module names.'''

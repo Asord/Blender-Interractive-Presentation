@@ -113,7 +113,7 @@ tempdir = None
 
 
 background = None
-'''Boolean, True when blender is running without a user interface (started with -b)
+'''Boolean, True when blender is running without a user Interface (started with -b)
    
 '''
 
