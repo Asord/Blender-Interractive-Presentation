@@ -21,6 +21,7 @@ class MenuSlides(MenuInterface):
         self.layout.operator_context = 'INVOKE_DEFAULT'
         self.col.operator(AddSlide.bl_idname, text = "Add a slide")
         self.col.operator("mesh.primitive_cube_add", text = "Remove a slide")
+        self.col.prop(context.scene.customp, "size")
 
 class MenuAnimation(MenuInterface):
 
@@ -36,14 +37,21 @@ class MenuAnimation(MenuInterface):
         self.row.label(text = "Remove a slide")
 
 
+classes = (
+    addon_Properties,
+    AddSlide,
+    MenuAnimation,
+    MenuSlides
+)
+
 def register():
-    bpy.utils.register_class(AddSlide)
-    bpy.utils.register_class(MenuAnimation)
-    bpy.utils.register_class(MenuSlides)
+    for cl in classes:
+        bpy.utils.register_class(cl)
+    bpy.types.Scene.customp = bpy.props.PointerProperty(type=addon_Properties)
+
 def unregister():
-    bpy.utils.unregister_class(AddSlide)
-    bpy.utils.unregister_class(MenuAnimation)
-    bpy.utils.unregister_class(MenuSlides)
+    for cl in classes:
+        bpy.utils.unregister_class(cl)
 
 
 if __name__ == "__main__":

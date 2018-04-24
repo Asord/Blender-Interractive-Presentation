@@ -22,3 +22,12 @@ class Execution(bpy.types.Operator):
     @classmethod
     def poll(cls, context):
         return context.object is not None
+
+
+class addon_Properties(bpy.types.PropertyGroup):
+
+    size = bpy.props.IntProperty(
+            name = "size",
+            description = "size of the object to add",
+            default = 1, max=10, min=0
+    )
