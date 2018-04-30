@@ -1,5 +1,5 @@
 from . import Operators
-from bpy import types
+from bpy import types, ops
 
 # Abstract menu skeleton
 class Menu(types.Panel):
@@ -17,6 +17,10 @@ class Menu(types.Panel):
 
         self.row = self.layout.row()
         self.col = self.split.column()
+
+class MenuGeneral(Menu):
+    def draw(self, context):
+        self.col.operator(Operators.OperatorCameraView.bl_idname, text="Camera View")
 
 
 class MenuSlides(Menu):

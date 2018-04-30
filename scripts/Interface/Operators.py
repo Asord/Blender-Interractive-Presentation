@@ -1,4 +1,4 @@
-from bpy import types
+from bpy import types, ops
 
 # Abstract operator skeleton
 class Operator(types.Operator):
@@ -10,9 +10,17 @@ class Operator(types.Operator):
 
 class OperatorAddSlide(Operator):
 
-    bl_idname = "execution.add_slide"
+    bl_idname = "operator.add_slide"
     bl_label = "Add Slide"
 
     def invoke(self, context, event):
         """ TODO: Code pour ajouter les slides """
+        return {'RUNNING_MODAL'}
+
+class OperatorCameraView(Operator):
+    bl_idname = "operator.camera_view"
+    bl_label = "Camera view"
+
+    def invoke(self, context, event):
+        ops.view3d.viewnumpad(type='CAMERA')
         return {'RUNNING_MODAL'}

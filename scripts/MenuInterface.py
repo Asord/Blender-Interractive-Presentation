@@ -1,11 +1,14 @@
 from Interface import *
-from bpy import utils, types, props
+from bpy import utils
 
 
 classes = (
     PropNumberSlide,
-    OperatorAddSlide,
 
+    OperatorAddSlide,
+    OperatorCameraView,
+
+    MenuGeneral,
     MenuSlides,
     MenuAnimation,
 )
@@ -14,7 +17,7 @@ def register():
     for cl in classes:
         utils.register_class(cl)
 
-    types.Scene.prop_nb_slides = props.PointerProperty(type=PropNumberSlide)
+    registerProps()
 
 def unregister():
     for cl in classes:
