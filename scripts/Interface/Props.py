@@ -1,4 +1,5 @@
 from bpy import types, props, context
+from Managers.XMLParser import XMLNodes
 
 #abstract property skeleton
 class Property(types.PropertyGroup):
@@ -8,8 +9,8 @@ class Property(types.PropertyGroup):
 class PropNumberSlide(Property):
 
     size = props.IntProperty(
-            name = "size",
-            description = "size of the object to add",
+            name = XMLNodes[2]["SlideSize"],
+            description = XMLNodes[3]["SlideSizeDesc"],
             default = 1, max=10, min=0
     )
 
