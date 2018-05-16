@@ -1,4 +1,5 @@
 from bpy import types
+from Slides import GestionSlides
 
 # Abstract operator skeleton
 class Operator(types.Operator):
@@ -14,5 +15,17 @@ class OperatorAddSlide(Operator):
     bl_label = "Add Slide"
 
     def invoke(self, context, event):
-        """ TODO: Code pour ajouter les slides """
+        gestSlide = GestionSlides()
+        gestSlide.addSlide()
+        return {'RUNNING_MODAL'}
+
+
+class OperatorRemoveSlide(Operator):
+
+    bl_idname = "execution.remove_slide"
+    bl_label = "Remove Slide"
+
+    def invoke(self, context, event):
+        gestSlide = GestionSlides()
+        gestSlide.removeSlide()
         return {'RUNNING_MODAL'}
