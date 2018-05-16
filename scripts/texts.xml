@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextData version="TD 1">
+    <en-US>
+        <!-- Main Menu -->
+        <label  type="Category">Presentation</label>
+        <label  type="MainMenu">Main Menu</label>
+        <button type="Camera">Switch to Camera</button>
+        <desc type="CameraDesc">Sitch to the slide camera view</desc>
+
+        <!-- Slide Menu -->
+        <label  type="Slide">Slides</label>
+        <button type="AddSlide">Add a Slide</button>
+        <desc   type="AddSlideDesc">Add a new slide after the current one</desc>
+        <button type="RemoveSlide">Remove a Slide</button>
+        <desc   type="RemoveSlideDesc">Remove the current slide</desc>
+        <prop   type="SlideSize">size</prop>
+        <desc   type="SlideSizeDesc">Number of the slide to edit</desc>
+
+        <!-- Animation Menu -->
+        <label type="Animation">Animation</label>
+        <label type="AddAnim">Add Animation</label>
+        <desc type="AddAnimDesc">Add an animation to ??? with ??? beacause IDK lol</desc>
+    </en-US>
+</TextData>
