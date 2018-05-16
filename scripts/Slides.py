@@ -20,7 +20,8 @@ class Slides(object):
             if self.listObjects[i] == obj:
                 del self.listObjects[i]
 
-    def updateObjects
+    def updateObjects(self):
+        pass
 
     def _getid(self):
         return self.gestionSlide.listSlides.index(self)
@@ -53,7 +54,9 @@ class GestionSlides(object):
             self.listSlides = []
 
         def addSlide(self):
-            self.listSlides.insert(Slides(self, self.activeSlide), self.activeSlide)
+            # TODO: prendre code de Valentin après réparation
+            #self.listSlides.insert(Slides(self, self.activeSlide), self.activeSlide)
+            self.listSlides.append(Slides(self, self.activeSlide))
             self.setActiveSlide(self.nbSlides)
             self.addNbSlide()
 

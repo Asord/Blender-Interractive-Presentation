@@ -43,8 +43,8 @@ def unregister():
     for cl in classes:
         try:
             utils.unregister_class(cl)
-        except RuntimeError as e:
-            print(e)
+        except RuntimeError:
+            pass
 
 if __name__ == "__main__":
     unregister()

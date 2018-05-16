@@ -8,7 +8,7 @@ class Property(types.PropertyGroup):
 
 
 class PropNumberSlide(Property):
-      gestSlide = GestionSlides()
+    gestSlide = GestionSlides()
     nbSlide = 0
 
     def updateProp(self, context):

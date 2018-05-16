@@ -13,7 +13,7 @@
         <desc   type="AddSlideDesc">Add a new slide after the current one</desc>
         <button type="RemoveSlide">Remove a Slide</button>
         <desc   type="RemoveSlideDesc">Remove the current slide</desc>
-        <prop   type="SlideSize">size</prop>
+        <prop   type="SlideSize">N° slide</prop>
         <desc   type="SlideSizeDesc">Number of the slide to edit</desc>
 
         <!-- Animation Menu -->
