@@ -1,11 +1,12 @@
 from . import Operators
-from bpy import types
+from bpy import types, ops
+from Managers.XMLParser import XMLNodes
 
 # Abstract menu skeleton
 class Menu(types.Panel):
 
-    bl_category = "Presentation"
-    bl_space_type = 'VIEW_3D'
+    bl_category    = XMLNodes[1]["Category"]
+    bl_space_type  = 'VIEW_3D'
     bl_region_type = 'TOOLS'
 
     bl_label = "" # override variable
@@ -18,26 +19,34 @@ class Menu(types.Panel):
         self.row = self.layout.row()
         self.col = self.split.column()
 
+class MenuMain(Menu):
 
-class MenuSlides(Menu):
+    bl_label = XMLNodes[1]["MainMenu"]
 
-    bl_label = "Slides"
+    def draw(self, context):
+        self.col.operator(Operators.OperatorCameraView.bl_idname, text=XMLNodes[0]["Camera"])
+
+
+class MenuSlide(Menu):
+
+    bl_label = XMLNodes[1]["Slide"]
 
     def draw(self, context):
 
-        """self.row.label(text = "Slide")"""
-
         self.col.prop(context.scene.prop_nb_slides, "Active_Slide")
-
-        self.col.operator(Operators.OperatorAddSlide.bl_idname, text ="Add a slide")
-        self.col.operator(Operators.OperatorRemoveSlide.bl_idname, text = "Remove a slide")
+        
+        self.col.operator(Operators.OperatorAddSlide.bl_idname,    text=XMLNodes[0]["AddSlide"])
+        self.col.operator(Operators.OperatorRemoveSlide.bl_idname, text=XMLNodes[0]["RemoveSlide"])
+        
 
 
 class MenuAnimation(Menu):
 
-    bl_label = "Animation"
+    bl_label = XMLNodes[1]["Animation"]
 
     def draw(self, context):
+      
+        self.col.operator(Operators.OperatorAddAnim.bl_idname, text=XMLNodes[1]["AddAnim"])
+        #self.col.operator("mesh.primitive_cube_add", text = "Remove a slide")
 
-        self.col.operator("mesh.primitive_cube_add", text = "Add a slide")
-        self.col.operator("mesh.primitive_cube_add", text = "Remove a slide")
+        #self.row.label(text = "Remove a slide")

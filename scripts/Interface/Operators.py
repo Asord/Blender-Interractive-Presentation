@@ -1,5 +1,6 @@
-from bpy import types
+from bpy import types, ops
 from Slides import GestionSlides
+from Managers.XMLParser import XMLNodes
 
 # Abstract operator skeleton
 class Operator(types.Operator):
@@ -8,24 +9,41 @@ class Operator(types.Operator):
     def poll(cls, context):
         return context.object is not None
 
-
 class OperatorAddSlide(Operator):
 
-    bl_idname = "execution.add_slide"
-    bl_label = "Add Slide"
+    bl_idname = "operator.add_slide"
+    bl_label = XMLNodes[1]["AddSlide"]
+    bl_description = XMLNodes[3]["AddSlideDesc"]
 
     def invoke(self, context, event):
         gestSlide = GestionSlides()
         gestSlide.addSlide()
         return {'RUNNING_MODAL'}
 
-
 class OperatorRemoveSlide(Operator):
 
-    bl_idname = "execution.remove_slide"
-    bl_label = "Remove Slide"
+    bl_idname = "operator.remove_slide"
+    bl_label = XMLNodes[1]["RemoveSlide"]
+    bl_description = XMLNodes[3]["RemoveSlideDesc"]
 
     def invoke(self, context, event):
         gestSlide = GestionSlides()
         gestSlide.removeSlide()
         return {'RUNNING_MODAL'}
+
+class OperatorCameraView(Operator):
+    bl_idname = "operator.camera_view"
+    bl_label = XMLNodes[1]["Camera"]
+    bl_description = XMLNodes[3]["CameraDesc"]
+
+    def invoke(self, context, event):
+        ops.view3d.viewnumpad(type='CAMERA')
+        return {'RUNNING_MODAL'}
+
+class OperatorAddAnim(Operator):
+    bl_idname = "operator.add_animation"
+    bl_label = XMLNodes[1]["AddAnim"]
+    bl_description = XMLNodes[3]["AddAnimDesc"]
+
+    def invoke(self, context, event):
+        ops.view3d.viewnumpad(type='CAMERA')
