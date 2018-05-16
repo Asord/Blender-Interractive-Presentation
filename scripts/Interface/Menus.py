@@ -33,17 +33,19 @@ class MenuSlide(Menu):
 
     def draw(self, context):
 
+        self.col.prop(context.scene.prop_nb_slides, "Active_Slide")
+        
         self.col.operator(Operators.OperatorAddSlide.bl_idname,    text=XMLNodes[0]["AddSlide"])
         self.col.operator(Operators.OperatorRemoveSlide.bl_idname, text=XMLNodes[0]["RemoveSlide"])
+        
 
-        self.col.prop(context.scene.prop_nb_slides, "size")
 
 class MenuAnimation(Menu):
 
     bl_label = XMLNodes[1]["Animation"]
 
     def draw(self, context):
-
+      
         self.col.operator(Operators.OperatorAddAnim.bl_idname, text=XMLNodes[1]["AddAnim"])
         #self.col.operator("mesh.primitive_cube_add", text = "Remove a slide")
 

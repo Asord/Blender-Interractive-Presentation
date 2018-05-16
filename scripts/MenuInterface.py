@@ -8,14 +8,15 @@ XMLNodes.append(NodeArray(XMLData, lang, "prop"))
 XMLNodes.append(NodeArray(XMLData, lang, "desc"))
 
 from Interface import *
-from bpy import utils
+import Slides
+from bpy import utils, types, props
 
 
 classes = (
     PropNumberSlide,
 
-    OperatorAddSlide,
     OperatorCameraView,
+    OperatorAddSlide,
     OperatorRemoveSlide,
     OperatorAddAnim,
 
@@ -26,8 +27,16 @@ classes = (
 
 def register():
     for cl in classes:
-        utils.register_class(cl)
+        try:
+            utils.register_class(cl)
+        except ValueError:
+            utils.unregister_class(cl)
+            utils.register_class(cl)
 
+    types.Scene.prop_nb_slides = props.PointerProperty(type=PropNumberSlide)
+    
+    Slides.GestionSlides()
+    
     registerProps()
 
 def unregister():
@@ -36,7 +45,6 @@ def unregister():
             utils.unregister_class(cl)
         except RuntimeError as e:
             print(e)
-
 
 if __name__ == "__main__":
     unregister()

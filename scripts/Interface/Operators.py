@@ -1,4 +1,5 @@
 from bpy import types, ops
+from Slides import GestionSlides
 from Managers.XMLParser import XMLNodes
 
 # Abstract operator skeleton
@@ -15,7 +16,8 @@ class OperatorAddSlide(Operator):
     bl_description = XMLNodes[3]["AddSlideDesc"]
 
     def invoke(self, context, event):
-        """ TODO: Code pour ajouter les slides """
+        gestSlide = GestionSlides()
+        gestSlide.addSlide()
         return {'RUNNING_MODAL'}
 
 class OperatorRemoveSlide(Operator):
@@ -25,7 +27,8 @@ class OperatorRemoveSlide(Operator):
     bl_description = XMLNodes[3]["RemoveSlideDesc"]
 
     def invoke(self, context, event):
-        """ TODO: Code pour ajouter les slides """
+        gestSlide = GestionSlides()
+        gestSlide.removeSlide()
         return {'RUNNING_MODAL'}
 
 class OperatorCameraView(Operator):
@@ -44,4 +47,3 @@ class OperatorAddAnim(Operator):
 
     def invoke(self, context, event):
         ops.view3d.viewnumpad(type='CAMERA')
-        return {'RUNNING_MODAL'}
