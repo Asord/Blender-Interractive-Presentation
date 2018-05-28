@@ -64,3 +64,11 @@ class MenuAnimation(Menu):
         #self.col.operator("mesh.primitive_cube_add", text = "Remove a slide")
 
         #self.row.label(text = "Remove a slide")
+
+class MenuObjet(Menu):
+
+    bl_label = "Objects"
+
+    def draw(self, context):
+
+        self.col.operator(Operators)

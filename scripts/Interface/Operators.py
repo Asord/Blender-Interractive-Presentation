@@ -76,3 +76,11 @@ class OperatorAddAnim(Operator):
 
     def invoke(self, context, event):
         ops.view3d.viewnumpad(type='CAMERA')
+
+class OperatorLinkObject(Operator):
+    bl_idname = "operator.link_object"
+    bl_label = "Link object"
+    bl_description = """TODO"""
+
+    def invoke(self, context, event):
+        
