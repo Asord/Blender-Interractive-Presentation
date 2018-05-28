@@ -44,17 +44,17 @@ class Slides(object):
             bpy.context.scene.camera = self.gestionSlide.listSlides[self._getid()+1].camera
 
 
-class GestionSlides(object):
+class SlidesManager(object):
 
     class __GestionSlides(object):
 
         def __init__(self):
+
             self.nbSlides = 0
             self.activeSlide = 0
             self.listSlides = []
 
         def addSlide(self):
-            # TODO: prendre code de Valentin après réparation
             #self.listSlides.insert(Slides(self, self.activeSlide), self.activeSlide)
             self.listSlides.append(Slides(self, self.activeSlide))
             self.setActiveSlide(self.nbSlides)
@@ -85,24 +85,12 @@ class GestionSlides(object):
     instance = None
 
     def __new__(cls):
-        if GestionSlides.instance is None:
-            GestionSlides.instance = GestionSlides.__GestionSlides()
-        return GestionSlides.instance
+        if SlidesManager.instance is None:
+            SlidesManager.instance = SlidesManager.__GestionSlides()
+        return SlidesManager.instance
 
     def __getattr__(self, item):
         return getattr(self.instance, item)
 
     def __setattr__(self, key, value):
         return setattr(self.instance, key, value)
-
-
-
-
-
-
-
-
-
-
-
-
