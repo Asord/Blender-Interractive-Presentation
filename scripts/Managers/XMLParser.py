@@ -75,3 +75,9 @@ if __name__ == "__main__":
 
     print(buttons["Camera"])
     print(labels["slides"])"""
+
+def debug(name, *args):
+    print("debug {}: ".format(name))
+    for arg in args:
+        print(str(arg))
+    print("end of debug")
