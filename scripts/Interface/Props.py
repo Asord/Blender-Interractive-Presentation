@@ -19,7 +19,9 @@ class PropNumberSlide(Property):
         :arg context: context where the prop exists
         """
         self.nbSlide = self.gestSlide.getNbSlides()
-        
+
+        if self.Active_Slide == 0:
+            self.Active_Slide = 1
         if self.Active_Slide > self.nbSlide:
             self.Active_Slide = self.Active_Slide - 1
             
