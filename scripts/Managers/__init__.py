@@ -1,1 +1,2 @@
-from Managers.XMLParser import *
+from .XMLParser import XMLParser
+from .SlidesManager import SlidesManager

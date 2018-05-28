@@ -1,77 +1,129 @@
 from xml.etree.ElementTree import parse as _xmlParse
 
-XMLNodes = []
+XMLData = None
 
-class _XMLParser:
-    def __init__(self, filePath):
-        # Store the XML file path
-        self._filePath = filePath
-        # Boolean that store the validation boolean
-        self.isValideFormat = False
+class XMLError(Exception):
+    def __init__(self, message):
+        super(XMLError, self).__init__("XML Validation Error: " + message)
 
-        # Store the root of the XML datas
-        self._root = _xmlParse(self._filePath).getroot()
+class XMLParser(object):
+    """constructor: XMLParser(filepath=None, sub_node=None, types_list=None)
 
-        # Call validate function
-        self._validate()
+    :param args: filepath, sub_node, types_list
+    :arg filepath: the path of the XML file
+    :type filepath: str
+    :arg sub_node: the first sub node of the file (usually the language node
+    :type sub_node: str
+    :arg types_list: list of all differents types of strigs contained in the XML
+    :type types_list: list[str]
 
-    """ Function called on the end of __init__ to validate input datas """
-    def _validate(self):
-        if self._root.tag == 'TextData':
-            if self._root.attrib["version"] == "TD 1":
-                self.isValideFormat = True
+    :raise TypeError: if first singloton instance dosn't contains the three arguments
+    """
 
-    """ Get the node given in argument (string) """
-    def getNode(self, node):
-        return self._root.find(node)
+    instance = None
 
+    def __new__(cls, *args):
 
-""" Store the nodes informations """
-class NodeArray:
-    def __init__(self, parent, node, sub=None):
-        # Parent node data
-        self._parent = parent
-        # Current node data
-        self._node = parent.getNode(node)
-        # Array of subelements of the node
-        self._array = self._node.findall(sub)
+        if XMLParser.instance is None:
+            if None in args:
+                raise TypeError("Singloton initialization need to have 3 arguments")
 
-    """ Operator [] override (let us use the node["sub element"] form) """
+            XMLParser.instance = XMLParser.__XMLParser(*args)
+
+        return XMLParser.instance
+
+    def __getattr__(self, item):
+        return getattr(self.instance, item)
+
+    def __setattr__(self, key, value):
+        return setattr(self.instance, key, value)
+
     def __getitem__(self, item):
-        for elem in self._array:
-            if elem.get("type") == item:
-                return elem.text
-        return "-?-Unknown-?-"
+        return self.instance[item]
 
-    """ Getters """
-    def GetParent(self):
-        return self._parent
+    class __XMLParser(object):
+        def __init__(self, filepath, sub_node, types_list):
 
-    def GetArray(self):
-        return self._array
+            self.__unknownText = "-?-UNKNOWN-?-"
 
-    def GetNode(self):
-        return self._node
+            self._root = _xmlParse(filepath).getroot()
+
+            self._subNode = self._root.find(sub_node)
+            self._nodesTypesList = types_list
+
+            self._nodesArray = {}
+            # self._indexRegistery = []
+
+            self._validate()
+            self._populate()
+
+        def _validate(self):
+            """
+            Validate the XML File (called automatically on constructor)
+
+            :raise TypeError if the XML file don't match the exiged format
+            """
+            if self._root.tag != "TextData" or self._root.attrib["version"] != "TDv1":
+                raise XMLError("Unknown file format (don't contain the right flags)")
+
+        def _populate(self):
+            """
+            Populate the class datas with the XML datas
+            """
+            for node in self._nodesTypesList:
+                self._nodesArray[node] = {data.get("type"):data.text for data in self._subNode.findall(node)}
+                # self._indexRegistery.append(node)
+
+        """
+        ### deprecated ###
+        def __getElementByID(self, item):
+            if len(self._indexRegistery) > item:
+                return self._nodesArray[self._indexRegistery[item]]
+            return self.__unknownText
+        """
+
+        def __getElementByString(self, string):
+            """
+            Private method that return strign element by his address (format: type@element)
+            :param string: contain the address of the element (format: "type@element")
+            :type string: str
+            :return: string of the element on the XML or the self.__unknownText string
+            """
+            category,var = string.split('@')
+            if category in self._nodesArray:
+                if var in self._nodesArray[category]:
+                    return self._nodesArray[category][var]
+            return self.__unknownText
 
 
-""" Init the XML datas with the given file (filepath) """
-def InitXMLParser(filePath):
-    # Create a instance of the _XMLParser
-    XMLData = _XMLParser(filePath)
+        def __getitem__(self, item):
+            if type(item) is str:
+                if '@' in item:
+                    return self.__getElementByString(item)
+                else:
+                    if item in self._nodesArray:
+                        return self._nodesArray[item]
 
-    # Check if the XMLParser if valid else raise a TypeError
-    if XMLData.isValideFormat:
-        return XMLData
+            return self.__unknownText
+
+def init_XMLParser(*args):
+    """init_XMLParser(filepath=None, sub_node=None, types_list=None)
+
+    :param args: filepath, sub_node, types_list
+
+    :arg filepath: the path of the XML file
+    :type filepath: str
+    :arg sub_node: the first sub node of the file (usually the language node
+    :type sub_node: str
+    :arg types_list: list of all differents types of strigs contained in the XML
+    :type types_list: list[str]
+    :return XMLParser
+
+    note: the singloton instance is also saved on the XMLData global variable
+    """
+    global XMLData
+    if XMLData is not None:
+        print("Error: XMLParser is already initialized...")
     else:
-        raise TypeError("XML Validation failed: unknown type")
-
-"""
-if __name__ == "__main__":
-    # Exemple code 
-    XMLData = InitXMLParser("..\\texts.xml")
-
-    buttons = NodeArray(XMLData, "menu", "button")
-    labels  = NodeArray(XMLData, "menu", "label")
-
-    print(buttons["Camera"])
-    print(labels["slides"])"""
+        XMLData = XMLParser(*args)
+        return XMLData

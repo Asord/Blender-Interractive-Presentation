@@ -1,6 +1,7 @@
-from bpy import types, props, context
-from Slides import GestionSlides
-from Managers.XMLParser import XMLNodes
+from bpy import types, props
+from Managers.SlidesManager import SlidesManager
+
+from Managers.XMLParser import XMLData
 
 #abstract property skeleton
 class Property(types.PropertyGroup):
@@ -8,11 +9,15 @@ class Property(types.PropertyGroup):
 
 
 class PropNumberSlide(Property):
-    gestSlide = GestionSlides()
+    gestSlide = SlidesManager()
     nbSlide = 0
 
     def updateProp(self, context):
-        """S'exécute quand la valeur change"""
+        """
+        S'exécute quand la valeur change
+
+        :arg context: context where the prop exists
+        """
         self.nbSlide = self.gestSlide.getNbSlides()
         
         if self.Active_Slide > self.nbSlide:
@@ -21,9 +26,10 @@ class PropNumberSlide(Property):
         self.gestSlide.setActiveSlide(self.Active_Slide)
 
     Active_Slide = props.IntProperty(
-            name = XMLNodes[2]["SlideSize"],
-            description = XMLNodes[3]["SlideSizeDesc"],
+            name = XMLData["prop@SlideSize"],
+            description = XMLData["desc@SlideSizeDesc"],
             default = 0, max = 10, min=0, update = updateProp
     )
+
 def registerProps():
     types.Scene.prop_nb_slides = props.PointerProperty(type=PropNumberSlide)

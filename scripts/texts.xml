@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TextData version="TD 1">
+<TextData version="TDv1">
     <en-US>
         <!-- Main Menu -->
         <label  type="Category">Presentation</label>
@@ -19,6 +19,6 @@
         <!-- Animation Menu -->
         <label type="Animation">Animation</label>
         <label type="AddAnim">Add Animation</label>
-        <desc type="AddAnimDesc">Add an animation to ??? with ??? beacause IDK lol</desc>
+        <desc type="AddAnimDesc">Add an animation to the object</desc>
     </en-US>
 </TextData>
