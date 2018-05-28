@@ -1,4 +1,5 @@
 from xml.etree.ElementTree import parse as _xmlParse
+from BPL import Singloton
 
 XMLData = None
 
@@ -6,7 +7,7 @@ class XMLError(Exception):
     def __init__(self, message):
         super(XMLError, self).__init__("XML Validation Error: " + message)
 
-class XMLParser(object):
+class XMLParser(Singloton):
     """constructor: XMLParser(filepath=None, sub_node=None, types_list=None)
 
     :param args: filepath, sub_node, types_list
@@ -19,27 +20,6 @@ class XMLParser(object):
 
     :raise TypeError: if first singloton instance dosn't contains the three arguments
     """
-
-    instance = None
-
-    def __new__(cls, *args):
-
-        if XMLParser.instance is None:
-            if None in args:
-                raise TypeError("Singloton initialization need to have 3 arguments")
-
-            XMLParser.instance = XMLParser.__XMLParser(*args)
-
-        return XMLParser.instance
-
-    def __getattr__(self, item):
-        return getattr(self.instance, item)
-
-    def __setattr__(self, key, value):
-        return setattr(self.instance, key, value)
-
-    def __getitem__(self, item):
-        return self.instance[item]
 
     class __XMLParser(object):
         def __init__(self, filepath, sub_node, types_list):
@@ -105,6 +85,11 @@ class XMLParser(object):
                         return self._nodesArray[item]
 
             return self.__unknownText
+
+    def __getitem__(self, item):
+        return self.instance[item]
+
+    _ClassName = __XMLParser
 
 def init_XMLParser(*args):
     """init_XMLParser(filepath=None, sub_node=None, types_list=None)
