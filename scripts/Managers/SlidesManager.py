@@ -7,9 +7,11 @@ class Slides(object):
 
     def __init__(self, gestionSlide, slidePos):
         self.gestionSlide = gestionSlide
-        """bpy.ops.object.camera_add(location = (slidePos*20,5,0), rotation = (90,0,0))
+        """
+        bpy.ops.object.camera_add(location = (slidePos*20,5,0), rotation = (90,0,0))
         bpy.context.active_object.name = 'cam'
-        self.camera = bpy.data.objects["cam"]"""
+        self.camera = bpy.data.objects["cam"]
+        """
         self.cameraPos = [slidePos*20,5,0]
         self.transitionDone = False
         self.actionDone = False
@@ -47,9 +49,9 @@ class Slides(object):
         del self
 
 
-class GestionSlides(object):
+class SlidesManager(object):
 
-    class __GestionSlides(object):
+    class __SlidesManager(object):
 
         def __init__(self):
 
@@ -60,7 +62,8 @@ class GestionSlides(object):
             self.isCameraView = False
 
         def addSlide(self):
-            """if self.nbSlides == 0 or self.nbSlides == 1:
+            """
+            if self.nbSlides == 0 or self.nbSlides == 1:
                 self.listSlides.append(Slides(self, self.nbSlides))
             else:
                 if self.posActiveSlide + 1 == self.nbSlides:
@@ -70,7 +73,8 @@ class GestionSlides(object):
                     for i in range(self.posActiveSlide + 2, self.nbSlides + 1):
                         self.listSlides[i].camera.location.x += 20
                         for j in range(0, len(self.listSlides[i].listObjects) - 1):
-                            self.listSlides[i].listObjects[j].location.x += 20"""
+                            self.listSlides[i].listObjects[j].location.x += 20
+            """
 
             if self.nbSlides == 0:
                 self.listSlides.append(Slides(self,0))
