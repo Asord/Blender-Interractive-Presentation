@@ -1,9 +1,9 @@
-'''This module defines properties to extend Blender's internal data. The result of these functions is used to assign properties to classes registered with Blender and can't be used directly.
+"""This module defines properties to extend Blender's internal data. The result of these functions is used to assign properties to classes registered with Blender and can't be used directly.
 
-.. note:: All parameters to these functions must be passed as keywords.'''
+.. note:: All parameters to these functions must be passed as keywords."""
 
-def BoolProperty(*argv):
-	'''.. function:: BoolProperty(name="", description="", default=False, options={'ANIMATABLE'}, subtype='NONE', update=None, get=None, set=None)
+def BoolProperty(*argv, **kwargs):
+	""".. function:: BoolProperty(name="", description="", default=False, options={'ANIMATABLE'}, subtype='NONE', update=None, get=None, set=None)
 
 Returns a new boolean property definition.
 
@@ -15,7 +15,7 @@ Returns a new boolean property definition.
 :type options: set
 :arg subtype: Enumerator in ['PIXEL', 'UNSIGNED', 'PERCENTAGE', 'FACTOR', 'ANGLE', 'TIME', 'DISTANCE', 'NONE'].
 :type subtype: string
-:arg update: Function to be called when this value is modified,
+:arg update: Function to be called	 when this value is modified,
    This function must take 2 values (self, context) and return None.
    *Warning* there are no safety checks to avoid infinite recursion.
 :type update: function
@@ -24,10 +24,10 @@ Returns a new boolean property definition.
 :type get: function
 :arg set: Function to be called when this value is 'written',
    This function must take 2 values (self, value) and return None.
-:type set: function'''
+:type set: function"""
 
-def BoolVectorProperty(*argv):
-	'''.. function:: BoolVectorProperty(name="", description="", default=(False, False, False), options={'ANIMATABLE'}, subtype='NONE', size=3, update=None, get=None, set=None)
+def BoolVectorProperty(*argv, **kwargs):
+	""".. function:: BoolVectorProperty(name="", description="", default=(False, False, False), options={'ANIMATABLE'}, subtype='NONE', size=3, update=None, get=None, set=None)
 
 Returns a new vector boolean property definition.
 
@@ -52,10 +52,10 @@ Returns a new vector boolean property definition.
 :type get: function
 :arg set: Function to be called when this value is 'written',
    This function must take 2 values (self, value) and return None.
-:type set: function'''
+:type set: function"""
 
-def CollectionProperty(*argv):
-	'''.. function:: CollectionProperty(type=None, name="", description="", options={'ANIMATABLE'})
+def CollectionProperty(*argv, **kwargs):
+	""".. function:: CollectionProperty(type=None, name="", description="", options={'ANIMATABLE'})
 
 Returns a new collection property definition.
 
@@ -66,10 +66,10 @@ Returns a new collection property definition.
 :arg description: Text used for the tooltip and api documentation.
 :type description: string
 :arg options: Enumerator in ['HIDDEN', 'SKIP_SAVE', 'ANIMATABLE', 'LIBRARY_EDITABLE', 'PROPORTIONAL','TEXTEDIT_UPDATE'].
-:type options: set'''
+:type options: set"""
 
-def EnumProperty(*argv):
-	'''.. function:: EnumProperty(items, name="", description="", default=None, options={'ANIMATABLE'}, update=None, get=None, set=None)
+def EnumProperty(*argv, **kwargs):
+	""".. function:: EnumProperty(items, name="", description="", default=None, options={'ANIMATABLE'}, update=None, get=None, set=None)
 
 Returns a new enumerator property definition.
 
@@ -118,10 +118,10 @@ Returns a new enumerator property definition.
 :type get: function
 :arg set: Function to be called when this value is 'written',
    This function must take 2 values (self, value) and return None.
-:type set: function'''
+:type set: function"""
 
-def FloatProperty(*argv):
-	'''.. function:: FloatProperty(name="", description="", default=0.0, min=sys.float_info.min, max=sys.float_info.max, soft_min=sys.float_info.min, soft_max=sys.float_info.max, step=3, precision=2, options={'ANIMATABLE'}, subtype='NONE', unit='NONE', update=None, get=None, set=None)
+def FloatProperty(*argv, **kwargs):
+	""".. function:: FloatProperty(name="", description="", default=0.0, min=sys.float_info.min, max=sys.float_info.max, soft_min=sys.float_info.min, soft_max=sys.float_info.max, step=3, precision=2, options={'ANIMATABLE'}, subtype='NONE', unit='NONE', update=None, get=None, set=None)
 
 Returns a new float property definition.
 
@@ -156,10 +156,10 @@ Returns a new float property definition.
 :type get: function
 :arg set: Function to be called when this value is 'written',
    This function must take 2 values (self, value) and return None.
-:type set: function'''
+:type set: function"""
 
-def FloatVectorProperty(*argv):
-	'''.. function:: FloatVectorProperty(name="", description="", default=(0.0, 0.0, 0.0), min=sys.float_info.min, max=sys.float_info.max, soft_min=sys.float_info.min, soft_max=sys.float_info.max, step=3, precision=2, options={'ANIMATABLE'}, subtype='NONE', unit='NONE', size=3, update=None, get=None, set=None)
+def FloatVectorProperty(*argv, **kwargs):
+	""".. function:: FloatVectorProperty(name="", description="", default=(0.0, 0.0, 0.0), min=sys.float_info.min, max=sys.float_info.max, soft_min=sys.float_info.min, soft_max=sys.float_info.max, step=3, precision=2, options={'ANIMATABLE'}, subtype='NONE', unit='NONE', size=3, update=None, get=None, set=None)
 
 Returns a new vector float property definition.
 
@@ -198,10 +198,10 @@ Returns a new vector float property definition.
 :type get: function
 :arg set: Function to be called when this value is 'written',
    This function must take 2 values (self, value) and return None.
-:type set: function'''
+:type set: function"""
 
-def IntProperty(*argv):
-	'''.. function:: IntProperty(name="", description="", default=0, min=-2**31, max=2**31-1, soft_min=-2**31, soft_max=2**31-1, step=1, options={'ANIMATABLE'}, subtype='NONE', update=None, get=None, set=None)
+def IntProperty(*argv, **kwargs):
+	""".. function:: IntProperty(name="", description="", default=0, min=-2**31, max=2**31-1, soft_min=-2**31, soft_max=2**31-1, step=1, options={'ANIMATABLE'}, subtype='NONE', update=None, get=None, set=None)
 
 Returns a new int property definition.
 
@@ -232,10 +232,10 @@ Returns a new int property definition.
 :type get: function
 :arg set: Function to be called when this value is 'written',
    This function must take 2 values (self, value) and return None.
-:type set: function'''
+:type set: function"""
 
-def IntVectorProperty(*argv):
-	'''.. function:: IntVectorProperty(name="", description="", default=(0, 0, 0), min=-2**31, max=2**31-1, soft_min=-2**31, soft_max=2**31-1, step=1, options={'ANIMATABLE'}, subtype='NONE', size=3, update=None, get=None, set=None)
+def IntVectorProperty(*argv, **kwargs):
+	""".. function:: IntVectorProperty(name="", description="", default=(0, 0, 0), min=-2**31, max=2**31-1, soft_min=-2**31, soft_max=2**31-1, step=1, options={'ANIMATABLE'}, subtype='NONE', size=3, update=None, get=None, set=None)
 
 Returns a new vector int property definition.
 
@@ -270,10 +270,10 @@ Returns a new vector int property definition.
 :type get: function
 :arg set: Function to be called when this value is 'written',
    This function must take 2 values (self, value) and return None.
-:type set: function'''
+:type set: function"""
 
-def PointerProperty(*argv):
-	'''.. function:: PointerProperty(type=None, name="", description="", options={'ANIMATABLE'}, update=None)
+def PointerProperty(*argv, **kwargs):
+	""".. function:: PointerProperty(type=None, name="", description="", options={'ANIMATABLE'}, update=None)
 
 Returns a new pointer property definition.
 
@@ -288,10 +288,10 @@ Returns a new pointer property definition.
 :arg update: Function to be called when this value is modified,
    This function must take 2 values (self, context) and return None.
    *Warning* there are no safety checks to avoid infinite recursion.
-:type update: function'''
+:type update: function"""
 
-def RemoveProperty(*argv):
-	'''.. function:: RemoveProperty(cls, attr=)
+def RemoveProperty(*argv, **kwargs):
+	""".. function:: RemoveProperty(cls, attr=)
 
    Removes a dynamically defined property.
 
@@ -301,10 +301,10 @@ def RemoveProperty(*argv):
    :type attr: string
 
 .. note:: Typically this function doesn't need to be accessed directly.
-   Instead use ``del cls.attr``'''
+   Instead use ``del cls.attr``"""
 
-def StringProperty(*argv):
-	'''.. function:: StringProperty(name="", description="", default="", maxlen=0, options={'ANIMATABLE'}, subtype='NONE', update=None, get=None, set=None)
+def StringProperty(*argv, **kwargs):
+	""".. function:: StringProperty(name="", description="", default="", maxlen=0, options={'ANIMATABLE'}, subtype='NONE', update=None, get=None, set=None)
 
 Returns a new string property definition.
 
@@ -329,6 +329,6 @@ Returns a new string property definition.
 :type get: function
 :arg set: Function to be called when this value is 'written',
    This function must take 2 values (self, value) and return None.
-:type set: function'''
+:type set: function"""
 
 
