@@ -37,7 +37,19 @@ class OperatorCameraView(Operator):
     bl_description = XMLNodes[3]["CameraDesc"]
 
     def invoke(self, context, event):
-        ops.view3d.viewnumpad(type='CAMERA')
+        if GestionSlides().nbSlides > 0:
+            ops.view3d.viewnumpad(type='CAMERA')
+            ops.object.select_all(action='DESELECT')
+            GestionSlides().camera.select = True
+            context.scene.objects.active = GestionSlides().camera
+            ops.view3d.snap_cursor_to_active()
+            context.space_data.cursor_location[1] = 30
+
+            if GestionSlides().isCameraView:
+                GestionSlides().isCameraView = False
+            else:
+                GestionSlides().isCameraView = True
+                
         return {'RUNNING_MODAL'}
 
 class OperatorAddAnim(Operator):
