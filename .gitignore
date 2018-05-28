@@ -2,3 +2,5 @@
 blender/
 *.pyc
 *.pyd
+/save/*.blend
+/save/*.blend1
