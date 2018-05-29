@@ -19,6 +19,11 @@
         <!-- Animation Menu -->
         <label type="Animation">Animation</label>
         <label type="AddAnim">Add Animation</label>
-        <desc type="AddAnimDesc">Add an animation to the object</desc>
+        <desc  type="AddAnimDesc">Add an animation to the object</desc>
+
+        <!-- Popups -->
+        <label type="deleteSlideName">Warning</label>
+        <desc  type="deleteSlideDesc">Continue deleting slide will destroy objects</desc>
+        <popup type="DeleteSlideMessage">One or more objects are linked to the slide#Destroying slide will destroy the linked objects#Press 'OK' to delete anyway.</popup>
     </en-US>
 </TextData>

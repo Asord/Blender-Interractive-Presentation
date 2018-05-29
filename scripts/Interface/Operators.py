@@ -18,6 +18,7 @@ class Operator(types.Operator):
     bl_idname = ""
     bl_label = ""
     bl_description = ""
+
     @classmethod
     def poll(cls, context):
         """
@@ -57,7 +58,11 @@ class OperatorRemoveSlide(Operator):
 
     def invoke(self, context, event):
         gestSlide = SlidesManager()
-        gestSlide.removeSlide()
+        listSize = len(gestSlide.listSlides[gestSlide.posActiveSlide].listObjects)
+        if listSize == 0:
+            gestSlide.removeSlide()
+        else:
+            ops.operator.popupdelete('INVOKE_DEFAULT')
         return {'RUNNING_MODAL'}
 
 class OperatorCameraView(Operator):
@@ -76,3 +81,23 @@ class OperatorAddAnim(Operator):
 
     def invoke(self, context, event):
         ops.view3d.viewnumpad(type='CAMERA')
+
+class PopupDeleteSlide(Operator):
+    bl_idname = "operator.popupdelete"
+    bl_label = XMLData["label@deleteSlideName"]
+    bl_description = XMLData["desc@deleteSlideDesc"]
+
+    def execute(self, context):
+        gestSlide = SlidesManager()
+        gestSlide.removeSlide()
+        return {'INTERFACE'}
+
+    def cancel(self, context):
+        pass
+
+    def invoke(self, context, event):
+        return context.window_manager.invoke_props_dialog(self, width=250)
+
+    def draw(self, context):
+        for line in XMLData["popup@DeleteSlideMessage"].split('#'):
+            self.layout.label(line)
