@@ -1,5 +1,6 @@
-from bpy import types, ops
+from bpy import types, ops, data
 from Managers.SlidesManager import SlidesManager
+from BPL import Debug
 
 from Managers.XMLParser import XMLData
 
@@ -79,8 +80,13 @@ class OperatorAddAnim(Operator):
 
 class OperatorLinkObject(Operator):
     bl_idname = "operator.link_object"
-    bl_label = "Link object"
-    bl_description = """TODO"""
+    bl_label = XMLData["label@LinkObject"]
+    bl_description = XMLData["desc@LinkObjectDesc"]
 
     def invoke(self, context, event):
-        
+        gestSlide = SlidesManager()
+        if gestSlide.nbSlides > 0:
+            text = "Object_Slide-{}".format(gestSlide.posActiveSlide + 1)
+            context.active_object.name = text
+            gestSlide.listSlides[gestSlide.posActiveSlide].addObject(data.objects[text])
+        return {'RUNNING_MODAL'}
