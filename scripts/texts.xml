@@ -20,5 +20,11 @@
         <label type="Animation">Animation</label>
         <label type="AddAnim">Add Animation</label>
         <desc type="AddAnimDesc">Add an animation to the object</desc>
+
+        <!-- Objects Menu -->
+        <label type="Objects">Objects</label>
+        <label type="LinkObject">Link Object</label>
+        <desc type="LinkObjectDesc">Link an object to the active slide</desc>
+
     </en-US>
 </TextData>
