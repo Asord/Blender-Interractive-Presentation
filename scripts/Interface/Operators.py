@@ -81,6 +81,7 @@ class OperatorAddAnim(Operator):
     bl_description = XMLData["desc@AddAnimDesc"]
 
     def invoke(self, context, event):
+        return {'RUNNING_MODAL'}
 
 class OperatorLinkObject(Operator):
     bl_idname = "operator.link_object"
@@ -107,7 +108,6 @@ class PopupDeleteSlide(Operator):
 
     def cancel(self, context):
         pass
-
 
     def invoke(self, context, event):
         return context.window_manager.invoke_props_dialog(self, width=250)
