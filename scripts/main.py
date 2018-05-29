@@ -1,9 +1,9 @@
-from bpy import utils
+
 
 from Managers.XMLParser import init_XMLParser
 
 init_XMLParser("texts.xml", "en-US", ["button", "label", "prop", "desc"])
-
+from bpy import utils
 from Interface import *
 from Managers.SlidesManager import SlidesManager
 
@@ -14,10 +14,12 @@ classes = (
     OperatorAddSlide,
     OperatorRemoveSlide,
     OperatorAddAnim,
+    OperatorLinkObject,
 
     MenuMain,
     MenuSlide,
     MenuAnimation,
+    MenuObjet,
 )
 
 def register():
