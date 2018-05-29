@@ -67,8 +67,8 @@ class MenuAnimation(Menu):
 
 class MenuObjet(Menu):
 
-    bl_label = "Objects"
+    bl_label = XMLData["label@Objects"]
 
     def draw(self, context):
 
-        self.col.operator(Operators)
+        self.col.operator(Operators.OperatorLinkObject.bl_idname, text =XMLData["label@LinkObject"])
