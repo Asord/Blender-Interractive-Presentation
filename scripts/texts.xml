@@ -25,5 +25,11 @@
         <label type="deleteSlideName">Warning</label>
         <desc  type="deleteSlideDesc">Continue deleting slide will destroy objects</desc>
         <popup type="DeleteSlideMessage">One or more objects are linked to the slide#Destroying slide will destroy the linked objects#Press 'OK' to delete anyway.</popup>
+
+        <!-- Objects Menu -->
+        <label type="Objects">Objects</label>
+        <label type="LinkObject">Link Object</label>
+        <desc type="LinkObjectDesc">Link an object to the active slide</desc>
+
     </en-US>
 </TextData>

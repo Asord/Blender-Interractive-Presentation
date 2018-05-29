@@ -97,6 +97,8 @@ class SlidesManager(Singloton):
                         self.listSlides[i].cameraPos[0] += 20
                         for j in range(0, len(self.listSlides[i].listObjects) - 1):
                             self.listSlides[i].listObjects[j].location.x += 20
+                            print('AAAAAAAAAAAAAAAA')
+                            self.listSlides[i].listObjects[j].name = "Object_Slide-{}".format(self.posActiveSlide + 2)
 
             context.scene.prop_nb_slides['Active_Slide'] = self.posActiveSlide + 2
             self.posActiveSlide += 1
@@ -138,10 +140,12 @@ class SlidesManager(Singloton):
                     self.listSlides[i].cameraPos[0] -= 20
                     for j in range(0, len(self.listSlides[i].listObjects)):
                         self.listSlides[i].listObjects[j].location.x -= 20
+                        self.listSlides[i].listObjects[j].name = "Object_Slide-{}".format(self.posActiveSlide + 1)
 
                 del self.listSlides[self.posActiveSlide]
 
-                context.scene.prop_nb_slides['Active_Slide'] = self.posActiveSlide
+                if self.posActiveSlide != 0:
+                    context.scene.prop_nb_slides['Active_Slide'] = self.posActiveSlide
                 self.camera.location = self.listSlides[self.posActiveSlide - 1].cameraPos
                 ops.object.select_all(action='DESELECT')
                 self.camera.select = True
@@ -149,7 +153,8 @@ class SlidesManager(Singloton):
                 if self.isCameraView:
                     context.space_data.cursor_location[0] -= 20
 
-            self.posActiveSlide -= 1
+                if self.posActiveSlide !=0:
+                    self.posActiveSlide -= 1
 
             self.subNbSlide()
 

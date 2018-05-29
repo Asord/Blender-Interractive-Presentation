@@ -1,5 +1,6 @@
-from bpy import types, ops
+from bpy import types, ops, data
 from Managers.SlidesManager import SlidesManager
+from BPL import Debug
 
 from Managers.XMLParser import XMLData
 
@@ -80,7 +81,19 @@ class OperatorAddAnim(Operator):
     bl_description = XMLData["desc@AddAnimDesc"]
 
     def invoke(self, context, event):
-        ops.view3d.viewnumpad(type='CAMERA')
+
+class OperatorLinkObject(Operator):
+    bl_idname = "operator.link_object"
+    bl_label = XMLData["label@LinkObject"]
+    bl_description = XMLData["desc@LinkObjectDesc"]
+
+    def invoke(self, context, event):
+        gestSlide = SlidesManager()
+        if gestSlide.nbSlides > 0:
+            text = "Object_Slide-{}".format(gestSlide.posActiveSlide + 1)
+            context.active_object.name = text
+            gestSlide.listSlides[gestSlide.posActiveSlide].addObject(data.objects[text])
+        return {'RUNNING_MODAL'}
 
 class PopupDeleteSlide(Operator):
     bl_idname = "operator.popupdelete"
@@ -94,6 +107,7 @@ class PopupDeleteSlide(Operator):
 
     def cancel(self, context):
         pass
+
 
     def invoke(self, context, event):
         return context.window_manager.invoke_props_dialog(self, width=250)
