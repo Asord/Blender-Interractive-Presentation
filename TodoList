@@ -1,0 +1,4 @@
+TODO list:
+SlidesManager:
+    Class SlidesManager:
+        private function to select camera only (remplacing 2 lines method)
