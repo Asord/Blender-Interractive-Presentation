@@ -1,6 +1,5 @@
 from bpy import types, ops, data
 from Managers.SlidesManager import SlidesManager
-from BPL import Debug
 
 from Managers.XMLParser import XMLData
 
