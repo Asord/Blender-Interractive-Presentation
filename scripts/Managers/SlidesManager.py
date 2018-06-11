@@ -1,31 +1,36 @@
 from bpy import context, ops, data
-from BPL import Singloton
+from BPL import Singloton, Debug
+from Managers import AnimationManager
+
 
 
 class Slides(object):
 
     def __init__(self, gestionSlide, slidePos):
         self.gestionSlide = gestionSlide
-        """
-        bpy.ops.object.camera_add(location = (slidePos*20,5,0), rotation = (90,0,0))
-        bpy.context.active_object.name = 'cam'
-        self.camera = bpy.data.objects["cam"]
-        """
         self.cameraPos = [slidePos*20,5,0]
-        self.transitionDone = False
-        self.actionDone = False
+        self.transitionDone = True
+        self.actionDone = True
         self.listObjects = []
+        self.listAnimation = []
+        self.pos = 0
 
     def addObject(self, obj):
         self.listObjects.append(obj)
+        self.listAnimation.append(None)
 
     def removeObject(self, obj):
-        for i in range(0, len(self.listObjects) - 1):
-            if self.listObjects[i] == obj:
-                del self.listObjects[i]
+        self.listObjects.remove(obj)
 
-    def _getid(self):
-        return self.gestionSlide.listSlides.index(self)
+    def addAnimation(self, anim):
+        i = 0
+        for obj in self.listObjects:
+            if obj == context.active_object:
+                self.listAnimation[i] = anim
+                func = "AnimationManager.{}()".format(self.listAnimation[i])
+                exec(func)
+            i += 1
+
 
     def startTransition(self):
 
@@ -40,11 +45,19 @@ class Slides(object):
         self.actionDone = True
 
     def next(self):
-        if self.transitionDone and self.actionDone:
-            self.gestionSlide.setActiveSlide(self._getid()+1)
-            context.scene.camera = self.gestionSlide.listSlides[self._getid()+1].camera
+        if len(self.listObjects) != 0:
+            self.startTransition()
+        elif self.pos == len(self.listObjects) - 1:
+            if self.transitionDone and self.actionDone:
+                print('NEXT')
+        #else:
+
 
     def __del__(self):
+        ops.object.select_all(action='DESELECT')
+        for obj in self.listObjects:
+            obj.select = True
+            ops.object.delete()
         del self
 
 
@@ -61,25 +74,22 @@ class SlidesManager(Singloton):
             self.isCameraView = False
 
         def addSlide(self):
-            """
-            if self.nbSlides == 0 or self.nbSlides == 1:
-                self.listSlides.append(Slides(self, self.nbSlides))
-            else:
-                if self.posActiveSlide + 1 == self.nbSlides:
-                    self.listSlides.append(Slides(self, self.nbSlides))
-                else:
-                    self.listSlides.insert(self.posActiveSlide + 1, Slides(self, self.posActiveSlide + 1))
-                    for i in range(self.posActiveSlide + 2, self.nbSlides + 1):
-                        self.listSlides[i].camera.location.x += 20
-                        for j in range(0, len(self.listSlides[i].listObjects) - 1):
-                            self.listSlides[i].listObjects[j].location.x += 20
-            """
-
             if self.nbSlides == 0:
                 self.listSlides.append(Slides(self,0))
                 ops.object.camera_add(location=self.listSlides[0].cameraPos, rotation= (1.5708, 0, 0)) #Angle euler
                 context.active_object.name = 'cam'
                 self.camera = data.objects["cam"]
+
+                sensors = context.object.game.sensors
+                controllers = context.object.game.controllers
+                ops.logic.sensor_add(type='ALWAYS')
+                sensor = sensors[-1]
+                sensor.use_pulse_true_level = True
+                ops.logic.controller_add(type='PYTHON')
+                controller = controllers[-1]
+                controller.mode = 'SCRIPT'
+                controller.text = data.texts["run.py"]
+                sensor.link(controller)
 
             else:
                 if self.posActiveSlide + 1 == self.nbSlides:
@@ -95,10 +105,9 @@ class SlidesManager(Singloton):
                     self.camera.location = self.listSlides[self.posActiveSlide + 2].cameraPos
                     for i in range(self.posActiveSlide + 2, self.nbSlides + 1):
                         self.listSlides[i].cameraPos[0] += 20
-                        for j in range(0, len(self.listSlides[i].listObjects) - 1):
-                            self.listSlides[i].listObjects[j].location.x += 20
-                            print('AAAAAAAAAAAAAAAA')
-                            self.listSlides[i].listObjects[j].name = "Object_Slide-{}".format(self.posActiveSlide + 2)
+                        for obj in self.listSlides[i].listObjects:
+                            obj.location.x += 20
+                            obj.name = "Object_Slide-{}".format(self.posActiveSlide + 2)
 
             context.scene.prop_nb_slides['Active_Slide'] = self.posActiveSlide + 2
             self.posActiveSlide += 1
@@ -134,13 +143,14 @@ class SlidesManager(Singloton):
                 ops.object.delete()
                 del self.listSlides[0]
                 context.scene.prop_nb_slides['Active_Slide'] = 0
+                self.posActiveSlide = -1
 
             else:
                 for i in range(self.posActiveSlide + 1, len(self.listSlides)):
                     self.listSlides[i].cameraPos[0] -= 20
-                    for j in range(0, len(self.listSlides[i].listObjects)):
-                        self.listSlides[i].listObjects[j].location.x -= 20
-                        self.listSlides[i].listObjects[j].name = "Object_Slide-{}".format(self.posActiveSlide + 1)
+                    for obj in self.listSlides[i].listObjects:
+                        obj.location.x -= 20
+                        obj.name = "Object_Slide-{}".format(self.posActiveSlide + 1)
 
                 del self.listSlides[self.posActiveSlide]
 
@@ -159,4 +169,3 @@ class SlidesManager(Singloton):
             self.subNbSlide()
 
     _ClassName = __SlidesManager
-
