@@ -81,6 +81,8 @@ class OperatorAddAnim(Operator):
     bl_description = XMLData["desc@AddAnimDesc"]
 
     def invoke(self, context, event):
+        gestSlide = SlidesManager()
+        gestSlide.listSlides[gestSlide.posActiveSlide].addAnimation('flash')
         return {'RUNNING_MODAL'}
 
 class OperatorLinkObject(Operator):
@@ -93,7 +95,7 @@ class OperatorLinkObject(Operator):
         if gestSlide.nbSlides > 0:
             text = "Object_Slide-{}".format(gestSlide.posActiveSlide + 1)
             context.active_object.name = text
-            gestSlide.listSlides[gestSlide.posActiveSlide].addObject(data.objects[text])
+            gestSlide.listSlides[gestSlide.posActiveSlide].addObject(data.objects[context.active_object.name])
         return {'RUNNING_MODAL'}
 
 class PopupDeleteSlide(Operator):
