@@ -2,58 +2,69 @@ from Managers.XMLParser import init_XMLParser
 
 init_XMLParser("texts.xml", "en-US", ["button", "label", "prop", "desc", "popup"])
 
-from bpy import utils
+from bpy import utils, ops, context
 from Interface import *
 from Managers.SlidesManager import SlidesManager
 
-class main:
-    classes = (
-        PropNumberSlide,
+classes = (
+    PropNumberSlide,
+    PropCustomMotion,
 
-        OperatorCameraView,
-        OperatorAddSlide,
-        OperatorRemoveSlide,
-        OperatorAddAnim,
-        OperatorLinkObject,
+    OperatorCameraView,
+    OperatorAddSlide,
+    OperatorRemoveSlide,
+    OperatorFlash,
+    OperatorMotion,
+    OperatorDefStartMotion,
+    OperatorDefEndMotion,
+    OperatorValidateMotion,
+    OperatorCancelMotion,
+    OperatorRemoveAnimation,
+    OperatorUnlinkObject,
+    OperatorLinkObject,
 
-        PopupDeleteSlide,
+    #NextSlideView,
 
-        MenuMain,
-        MenuSlide,
-        MenuAnimation,
-        MenuObjet,
-    )
+    PopupDeleteSlide,
 
-    @staticmethod
-    def register():
-        """
-        Register all Blender related classes contained inside the 'classes' container
-        Also register all props from registerProps() contained inside Interface.Props file
-        Create the first instance of SlidesManager singloton
-        """
-        for cl in main.classes:
+    MenuMain,
+    MenuSlide,
+    MenuAnimation,
+    MenuObjet,
+)
 
-            try:
-                utils.register_class(cl)
-            except ValueError:
-                utils.unregister_class(cl)
-                utils.register_class(cl)
+def register():
+    """
+    Register all Blender related classes contained inside the 'classes' container
+    Also register all props from registerProps() contained inside Interface.Props file
+    Create the first instance of SlidesManager singloton
+    """
+    for cl in classes:
 
-        registerProps()
+        try:
+            utils.register_class(cl)
+        except ValueError:
+            utils.unregister_class(cl)
+            utils.register_class(cl)
 
-        SlidesManager()
+    registerProps()
 
-    @staticmethod
-    def unregister():
-        """
-        Unregister all Blender related classes contained inside the 'classes' container
-        """
-        for cl in main.classes:
-            try:
-                utils.unregister_class(cl)
-            except RuntimeError:
-                pass
+    context.scene.prop_custom_motion['is_Enable'] = False
+
+    SlidesManager()
+
+    #ops.operator.next_slide_view("INVOKE_DEFAULT")
+
+def unregister():
+    """
+    Unregister all Blender related classes contained inside the 'classes' container
+    """
+    for cl in classes:
+        try:
+            utils.unregister_class(cl)
+        except RuntimeError:
+            pass
 
 if __name__ == "__main__":
-    main.unregister()
-    main.register()
+    unregister()
+    register()
