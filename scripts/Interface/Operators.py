@@ -74,14 +74,91 @@ class OperatorCameraView(Operator):
         ops.view3d.viewnumpad(type='CAMERA')
         return {'RUNNING_MODAL'}
 
-class OperatorAddAnim(Operator):
-    bl_idname = "operator.add_animation"
-    bl_label = XMLData["label@AddAnim"]
-    bl_description = XMLData["desc@AddAnimDesc"]
+class OperatorFlash(Operator):
+    bl_idname = "operator.add_flash"
+    bl_label = XMLData["button@Flash"]
+    bl_description = XMLData["desc@AddFlashDesc"]
 
     def invoke(self, context, event):
         gestSlide = SlidesManager()
         gestSlide.listSlides[gestSlide.posActiveSlide].addAnimation('flash')
+        return {'RUNNING_MODAL'}
+
+class OperatorMotion(Operator):
+    bl_idname = "operator.add_motion"
+    bl_label = XMLData["button@Motion"]
+    bl_description = XMLData["desc@MotionDesc"]
+
+    def invoke(self, context, event):
+
+        context.scene.prop_custom_motion['is_Enable'] = True
+
+        return {'RUNNING_MODAL'}
+
+class OperatorDefStartMotion(Operator):
+    bl_idname = "operator.def_start"
+    bl_label = XMLData["button@DefStartMotion"]
+    bl_description = XMLData["desc@DefStartMotionDesc"]
+
+    def invoke(self, context, event):
+        gestSlide = SlidesManager()
+        gestSlide.listSlides[gestSlide.posActiveSlide].addAnimation('startMotion')
+
+        return {'RUNNING_MODAL'}
+
+class OperatorDefEndMotion(Operator):
+    bl_idname = "operator.def_end"
+    bl_label = XMLData["button@DefEndtMotion"]
+    bl_description = XMLData["desc@DefEndMotionDesc"]
+
+    def invoke(self, context, event):
+        gestSlide = SlidesManager()
+        gestSlide.listSlides[gestSlide.posActiveSlide].addAnimation('endMotion')
+
+        return {'RUNNING_MODAL'}
+
+class OperatorValidateMotion(Operator):
+    bl_idname = "operator.validate_motion"
+    bl_label = XMLData["button@ValidateMotion"]
+    bl_description = XMLData["desc@ValidateMotionDesc"]
+
+    def invoke(self, context, event):
+        gestSlide = SlidesManager()
+        gestSlide.listSlides[gestSlide.posActiveSlide].addAnimation('motion')
+
+        context.scene.prop_custom_motion['is_Enable'] = False
+
+        return {'RUNNING_MODAL'}
+
+class OperatorCancelMotion(Operator):
+    bl_idname = "operator.cancel_motion"
+    bl_label = XMLData["button@CancelMotion"]
+    bl_description = XMLData["desc@CancelMotionDesc"]
+
+    def invoke(self, context, event):
+        gestSlide = SlidesManager()
+        gestSlide.listSlides[gestSlide.posActiveSlide].addAnimation('cancelMotion')
+
+        context.scene.prop_custom_motion['is_Enable'] = False
+
+        return {'RUNNING_MODAL'}
+
+class OperatorRemoveAnimation(Operator):
+    bl_idname = "operator.remove_animation"
+    bl_label = XMLData["button@RemoveAnimation"]
+    bl_description = XMLData["desc@RemoveAnimationDesc"]
+
+    def invoke(self, context, event):
+        gestSlide = SlidesManager()
+        controllers = context.object.game.controllers
+        if controllers:
+            print('Etape 1')
+            if controllers[0].actuators[0].name == "flash":
+                print('Etape 2')
+                gestSlide.listSlides[gestSlide.posActiveSlide].removeAnimation('delFlash')
+            elif controllers[0].actuators[0].name == "motion":
+                gestSlide.listSlides[gestSlide.posActiveSlide].removeAnimation('delMotion')
+
         return {'RUNNING_MODAL'}
 
 class OperatorLinkObject(Operator):
@@ -92,9 +169,18 @@ class OperatorLinkObject(Operator):
     def invoke(self, context, event):
         gestSlide = SlidesManager()
         if gestSlide.nbSlides > 0:
-            text = "Object_Slide-{}".format(gestSlide.posActiveSlide + 1)
-            context.active_object.name = text
-            gestSlide.listSlides[gestSlide.posActiveSlide].addObject(data.objects[context.active_object.name])
+            gestSlide.listSlides[gestSlide.posActiveSlide].addObject(context.active_object)
+        return {'RUNNING_MODAL'}
+
+class OperatorUnlinkObject(Operator):
+    bl_idname = "operator.unlink_object"
+    bl_label = XMLData["label@UnlinkObject"]
+    bl_description = XMLData["desc@UnlinkObjectDesc"]
+
+    def invoke(self, context, event):
+        gestSlide = SlidesManager()
+        if context.active_object.name[0:5] == "Slide":
+            gestSlide.listSlides[gestSlide.posActiveSlide].removeObject(context.active_object)
         return {'RUNNING_MODAL'}
 
 class PopupDeleteSlide(Operator):
@@ -116,3 +202,22 @@ class PopupDeleteSlide(Operator):
     def draw(self, context):
         for line in XMLData["popup@DeleteSlideMessage"].split('#'):
             self.layout.label(line)
+
+"""class NextSlideView(Operator):
+    bl_idname = "operator.next_slide_view"
+    bl_label = "NextSlideView"
+    bl_description = ""
+
+    def invoke(self, context, event):
+        context.window_manager.modal_handler_add(self)
+        return {'RUNNING_MODAL'}
+
+    def modal(self, context, event):
+        if event.type == "RIGHT_ARROW":
+            gestSlide = SlidesManager()
+            gestSlide.SlidesManager.listSlides[gestSlide.posActiveSlide].next
+        return {'PASS_THROUGH'}
+
+    def execute(self, context):
+        print("EXECUTE")
+        pass"""
