@@ -33,5 +33,11 @@ class PropNumberSlide(Property):
             default = 0, max = 10, min=0, update = updateProp
     )
 
+class PropCustomMotion(Property):
+
+    is_Enable = props.BoolProperty(
+    )
+
 def registerProps():
     types.Scene.prop_nb_slides = props.PointerProperty(type=PropNumberSlide)
+    types.Scene.prop_custom_motion = props.PointerProperty(type=PropCustomMotion)
