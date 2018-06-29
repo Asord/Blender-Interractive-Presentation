@@ -18,8 +18,20 @@
 
         <!-- Animation Menu -->
         <label type="Animation">Animation</label>
-        <label type="AddAnim">Add Animation</label>
-        <desc  type="AddAnimDesc">Add an animation to the object</desc>
+        <button type="Flash">Flash</button>
+        <desc  type="AddFlashDesc">Add a flash animation to the object</desc>
+        <button type="Motion">Motion</button>
+        <desc  type="MotionDesc">Add a motion animation to the object</desc>
+        <button type="DefStartMotion">Define start location</button>
+        <desc   type="DefStartMotionDesc">Define the location of the object at the start of the animation</desc>
+        <button type="DefEndMotion">Define end location</button>
+        <desc   type="DefEndMotionDesc">Define the location of the object at the end of the animation</desc>
+        <button type="ValidateMotion">Validate animation</button>
+        <desc   type="ValidateMotionDesc">Validate the locations of the start and the end of the motion animation</desc>
+        <button type="CancelMotion">Cancel animation</button>
+        <desc   type="CancelMotionDesc">Cancel the motion and return to the choice of the animations</desc>
+        <button type="RemoveAnimation">Remove animation</button>
+        <desc   type="RemoveAnimationDesc">Remove the animation of the object and rename it</desc>
 
         <!-- Popups -->
         <label type="deleteSlideName">Warning</label>
@@ -30,6 +42,8 @@
         <label type="Objects">Objects</label>
         <label type="LinkObject">Link Object</label>
         <desc type="LinkObjectDesc">Link an object to the active slide</desc>
+        <label type="UnlinkObject">Unlink Object</label>
+        <desc type="UnlinkObjectDesc">Unlink an object to the active slide</desc>
 
     </en-US>
 </TextData>
