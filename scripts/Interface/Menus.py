@@ -51,7 +51,6 @@ class MenuSlide(Menu):
         
         self.col.operator(Operators.OperatorAddSlide.bl_idname,    text=XMLData["button@AddSlide"])
         self.col.operator(Operators.OperatorRemoveSlide.bl_idname, text=XMLData["button@RemoveSlide"])
-        
 
 
 class MenuAnimation(Menu):
@@ -59,11 +58,18 @@ class MenuAnimation(Menu):
     bl_label = XMLData["label@Animation"]
 
     def draw(self, context):
-      
-        self.col.operator(Operators.OperatorAddAnim.bl_idname, text=XMLData["label@AddAnim"])
-        #self.col.operator("mesh.primitive_cube_add", text = "Remove a slide")
 
-        #self.row.label(text = "Remove a slide")
+        if not context.scene.prop_custom_motion['is_Enable']:
+            self.col.operator(Operators.OperatorFlash.bl_idname, text=XMLData["button@Flash"])
+            self.col.operator(Operators.OperatorMotion.bl_idname, text=XMLData["button@Motion"])
+            self.col.operator(Operators.OperatorRemoveAnimation.bl_idname, text=XMLData["button@RemoveAnimation"])
+
+        if context.scene.prop_custom_motion['is_Enable']:
+            self.col.operator(Operators.OperatorDefStartMotion.bl_idname, text=XMLData["button@DefStartMotion"])
+            self.col.operator(Operators.OperatorDefEndMotion.bl_idname, text=XMLData["button@DefEndMotion"])
+            self.col.operator(Operators.OperatorValidateMotion.bl_idname, text=XMLData["button@ValidateMotion"])
+            self.col.operator(Operators.OperatorCancelMotion.bl_idname, text=XMLData["button@CancelMotion"])
+
 
 class MenuObjet(Menu):
 
@@ -72,3 +78,4 @@ class MenuObjet(Menu):
     def draw(self, context):
 
         self.col.operator(Operators.OperatorLinkObject.bl_idname, text =XMLData["label@LinkObject"])
+        self.col.operator(Operators.OperatorUnlinkObject.bl_idname, text =XMLData["label@UnlinkObject"])
