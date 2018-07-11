@@ -5,16 +5,22 @@ from Managers.XMLParser import XMLData
 
 #abstract property skeleton
 class Property(types.PropertyGroup):
+    """
+    Property class: base structure of properties
+    """
     pass
 
 
 class PropNumberSlide(Property):
+    """
+    PropNumberSlide: switch slides
+    """
     gestSlide = SlidesManager()
     nbSlide = 0
 
     def updateProp(self, context):
         """
-        S'exécute quand la valeur change
+        On prop value change
 
         :arg context: context where the prop exists
         """
@@ -34,10 +40,15 @@ class PropNumberSlide(Property):
     )
 
 class PropCustomMotion(Property):
-
+    """
+    PropCustomMotion: keep track of custom motion properties
+    """
     is_Enable = props.BoolProperty(
     )
 
 def registerProps():
+    """
+    register all existing props
+    """
     types.Scene.prop_nb_slides = props.PointerProperty(type=PropNumberSlide)
     types.Scene.prop_custom_motion = props.PointerProperty(type=PropCustomMotion)

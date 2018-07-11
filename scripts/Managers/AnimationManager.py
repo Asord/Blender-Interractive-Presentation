@@ -1,6 +1,19 @@
 from bpy import context, ops, data
 
 class AnimationManager(object):
+    """
+    static class that define all basic animations
+
+    To use it: call animation(animation name, [more args])
+
+    contains:
+    flash()
+    delFlash()
+
+    motion(start_point, end_point)
+    delMotion()
+    """
+
     @staticmethod
     def animation(item, *args):
         if item is "flash":

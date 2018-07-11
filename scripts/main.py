@@ -1,8 +1,9 @@
-from Managers.XMLParser import init_XMLParser
+from Managers.XMLParser import init_XMLParser, XMLParser
 
-init_XMLParser("texts.xml", "en-US", ["button", "label", "prop", "desc", "popup"])
+# TODO: test ASAP if it works with singleton writing
+XMLParser("texts.xml", "en-US", ["button", "label", "prop", "desc", "popup"])
 
-from bpy import utils, ops, context
+from bpy import utils, context
 from Interface import *
 from Managers.SlidesManager import SlidesManager
 
@@ -23,14 +24,12 @@ classes = (
     OperatorUnlinkObject,
     OperatorLinkObject,
 
-    #NextSlideView,
-
     PopupDeleteSlide,
 
     MenuMain,
     MenuSlide,
     MenuAnimation,
-    MenuObjet,
+    MenuObjet
 )
 
 def register():
@@ -39,6 +38,7 @@ def register():
     Also register all props from registerProps() contained inside Interface.Props file
     Create the first instance of SlidesManager singloton
     """
+
     for cl in classes:
 
         try:
@@ -52,8 +52,6 @@ def register():
     context.scene.prop_custom_motion['is_Enable'] = False
 
     SlidesManager()
-
-    #ops.operator.next_slide_view("INVOKE_DEFAULT")
 
 def unregister():
     """

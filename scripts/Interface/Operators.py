@@ -31,6 +31,8 @@ class Operator(types.Operator):
 
     def invoke(self, context, event):
         """
+        Method related to Blender fonctionnality (called when the button is pressed)
+
         :param context: the context which contain the operator
         :type context: blender.context
         :param event: the event who activate the operator
@@ -40,7 +42,6 @@ class Operator(types.Operator):
         pass
 
 class OperatorAddSlide(Operator):
-
     bl_idname = "operator.add_slide"
     bl_label = XMLData["button@AddSlide"]
     bl_description = XMLData["desc@AddSlideDesc"]
@@ -202,22 +203,3 @@ class PopupDeleteSlide(Operator):
     def draw(self, context):
         for line in XMLData["popup@DeleteSlideMessage"].split('#'):
             self.layout.label(line)
-
-"""class NextSlideView(Operator):
-    bl_idname = "operator.next_slide_view"
-    bl_label = "NextSlideView"
-    bl_description = ""
-
-    def invoke(self, context, event):
-        context.window_manager.modal_handler_add(self)
-        return {'RUNNING_MODAL'}
-
-    def modal(self, context, event):
-        if event.type == "RIGHT_ARROW":
-            gestSlide = SlidesManager()
-            gestSlide.SlidesManager.listSlides[gestSlide.posActiveSlide].next
-        return {'PASS_THROUGH'}
-
-    def execute(self, context):
-        print("EXECUTE")
-        pass"""
