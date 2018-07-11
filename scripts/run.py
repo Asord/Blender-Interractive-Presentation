@@ -27,6 +27,8 @@ class runManager:
         self.listSlides = []
         self.camera = None
         self.pos = 0
+        self.startSort()
+        self.sortObjects()
 
 
     def startSort(self):
