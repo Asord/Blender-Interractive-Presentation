@@ -1,7 +1,7 @@
-from Managers.XMLParser import init_XMLParser, XMLParser
+from Managers.XMLParser import init_XMLParser
 
 # TODO: test ASAP if it works with singleton writing
-XMLParser("texts.xml", "en-US", ["button", "label", "prop", "desc", "popup"])
+init_XMLParser("texts.xml", "en-US", ["button", "label", "prop", "desc", "popup"])
 
 from bpy import utils, context
 from Interface import *
