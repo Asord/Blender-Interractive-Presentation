@@ -20,10 +20,14 @@ class AnimationManager(object):
             AnimationManager.flash()
         if item is "motion":
             AnimationManager.motion(*args)
+        if item is "action":
+            AnimationManager.action(*args)
         if item is "delFlash":
             AnimationManager.delFlash()
         if item is "delMotion":
             AnimationManager.delMotion()
+        if item is "delAction":
+            AnimationManager.delAction()
 
     @staticmethod
     def flash():
@@ -142,4 +146,31 @@ class AnimationManager(object):
         ops.logic.actuator_remove(actuator = "constraint1", object = context.object.name)
         ops.logic.actuator_remove(actuator = "constraint2", object = context.object.name)
         ops.logic.actuator_remove(actuator = "constraint3", object = context.object.name)
+
+    @staticmethod
+    def action(actionName, endFrame):
+        sensors = context.object.game.sensors
+        controllers = context.object.game.controllers
+        actuators = context.object.game.actuators
+
+        sensor = sensors[-1]
+
+        ops.logic.controller_add(type='PYTHON')
+        controller = controllers[-1]
+        controller.name = "python"
+        controller.mode = 'MODULE'
+        controller.module = "run.anim"
+
+        ops.logic.actuator_add(type='ACTION')
+        actuator1 = actuators[0]
+        actuator1.name = "action"
+        actuator1.action = actionName
+        actuator1.frame_end = endFrame
+
+        controller.link(sensor, actuator1)
+
+    @staticmethod
+    def delAction():
+        ops.logic.controller_remove(controller="python", object=context.active_object.name)
+        ops.logic.actuator_remove(actuator="action", object=context.active_object.name)
 
