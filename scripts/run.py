@@ -210,3 +210,7 @@ def anim():
         cont.activate(act2)
         cont.activate(act3)
         cont.activate(act4)
+
+    if cont.actuators[0].name == "action":
+        act1 = cont.actuators[0]
+        cont.activate(act1)
