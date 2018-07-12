@@ -1,6 +1,8 @@
 .idea/
 blender/
+build/
+save/
+source/
+
 *.pyc
 *.pyd
-/save/*.blend
-/save/*.blend1
