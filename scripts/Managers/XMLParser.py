@@ -1,5 +1,6 @@
 from xml.etree.ElementTree import parse as _xmlParse
 from Models.Singloton import singleton
+from os.path import dirname, join
 
 XMLData = None
 
@@ -113,3 +114,8 @@ def init_XMLParser(*args):
     else:
         XMLData = XMLParser(*args)
         return XMLData
+
+def path(file):
+    """ Wrapper to prevent Sphinx and other script to change the working directory """
+    _curdir = dirname(__file__)
+    return join(_curdir + "\\..", file)
