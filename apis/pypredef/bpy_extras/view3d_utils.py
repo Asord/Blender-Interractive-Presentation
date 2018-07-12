@@ -1,5 +1,5 @@
 def location_3d_to_region_2d(*argv):
-	'''Return the *region* relative 2d location of a 3d position.
+	"""Return the *region* relative 2d location of a 3d position.
 
 :arg region: region of the 3D viewport, typically bpy.context.region.
 :type region: :class:`bpy.types.Region`
@@ -10,10 +10,10 @@ def location_3d_to_region_2d(*argv):
 :arg default: Return this value if ``coord``
    is behind the origin of a perspective view.
 :return: 2d location
-:rtype: :class:`mathutils.Vector` or ``default`` argument.'''
+:rtype: :class:`mathutils.Vector` or ``default`` argument."""
 
 def region_2d_to_location_3d(*argv):
-	'''Return a 3d location from the region relative 2d coords, aligned with
+	"""Return a 3d location from the region relative 2d coords, aligned with
 *depth_location*.
 
 :arg region: region of the 3D viewport, typically bpy.context.region.
@@ -27,10 +27,10 @@ def region_2d_to_location_3d(*argv):
    there is no defined depth with a 2d region input.
 :type depth_location: 3d vector
 :return: normalized 3d vector.
-:rtype: :class:`mathutils.Vector`'''
+:rtype: :class:`mathutils.Vector`"""
 
 def region_2d_to_origin_3d(*argv):
-	'''Return the 3d view origin from the region relative 2d coords.
+	"""Return the 3d view origin from the region relative 2d coords.
 
 .. note::
 
@@ -53,10 +53,10 @@ def region_2d_to_origin_3d(*argv):
    (negative value will move the offset away from the view_location)
 :type clamp: float or None
 :return: The origin of the viewpoint in 3d space.
-:rtype: :class:`mathutils.Vector`'''
+:rtype: :class:`mathutils.Vector`"""
 
 def region_2d_to_vector_3d(*argv):
-	'''Return a direction vector from the viewport at the specific 2d region
+	"""Return a direction vector from the viewport at the specific 2d region
 coordinate.
 
 :arg region: region of the 3D viewport, typically bpy.context.region.
@@ -67,6 +67,6 @@ coordinate.
    (event.mouse_region_x, event.mouse_region_y) for example.
 :type coord: 2d vector
 :return: normalized 3d vector.
-:rtype: :class:`mathutils.Vector`'''
+:rtype: :class:`mathutils.Vector`"""
 
 

@@ -1,9 +1,9 @@
-'''Utility modules associated with the bpy module.'''
+"""Utility modules associated with the bpy module."""
 
-import anim_utils
-import image_utils
-import io_utils
-import mesh_utils
-import object_utils
-import view3d_utils
+from .anim_utils import anim_utils
+image_utils = object()
+from .io_utils import io_utils
+mesh_utils = object()
+from .object_utils import object_utils
+view3d_utils = object()
 

@@ -1,10 +1,11 @@
-'''This module contains submodules for the Blender Game Engine.'''
+"""
+This module contains submodules for the Blender Game Engine.
+"""
 
-import app
-import constraints
-import events
-import logic
-import render
-import texture
-import types
-
+from .app import *
+from .constraints import *
+from .events import *
+from .logic import *
+from .render import *
+from .texture import *
+from .types import *

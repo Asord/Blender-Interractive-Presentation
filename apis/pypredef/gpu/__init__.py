@@ -1,4 +1,4 @@
-'''This module provides access to the GLSL shader and Offscreen rendering functionalities.'''
+"""This module provides access to the GLSL shader and Offscreen rendering functionalities."""
 
 CD_MCOL = int
 CD_MTFACE = int
@@ -76,12 +76,11 @@ GPU_DYNAMIC_TEX_SPECFAC = int
 GPU_DYNAMIC_TEX_SPECINTENS = int
 GPU_DYNAMIC_ZENITH_COLOR = int
 def export_shader(*argv):
-	'''export_shader(scene, material)
+	"""export_shader(scene, material)
 
 Returns the GLSL shader that produces the visual effect of material in scene.
 
 :return: Dictionary defining the shader, uniforms and attributes.
-:rtype: Dict'''
+:rtype: Dict"""
 
-import offscreen
-
+from .offscreen import *

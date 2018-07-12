@@ -1,8 +1,8 @@
-'''This module contains utility functions specific to blender but
-not associated with blenders internal data.'''
+"""This module contains utility functions specific to blender but
+not associated with blenders internal data."""
 
 def blend_paths(*argv):
-	'''.. function:: blend_paths(absolute=False, packed=False, local=False)
+	""".. function:: blend_paths(absolute=False, packed=False, local=False)
 
 Returns a list of paths to external files referenced by the loaded .blend file.
 
@@ -13,33 +13,33 @@ Returns a list of paths to external files referenced by the loaded .blend file.
 :arg local: When true skip linked library paths.
 :type local: boolean
 :return: path list.
-:rtype: list of strings'''
+:rtype: list of strings"""
 
 def escape_identifier(*argv):
-	'''.. function:: escape_identifier(string)
+	""".. function:: escape_identifier(string)
 
 Simple string escaping function used for animation paths.
 
 :arg string: text
 :type string: string
 :return: The escaped string.
-:rtype: string'''
+:rtype: string"""
 
 def keyconfig_set(*argv):
 	pass
 
 def load_scripts(*argv):
-	'''Load scripts and run each modules register function.
+	"""Load scripts and run each modules register function.
 
 :arg reload_scripts: Causes all scripts to have their unregister method
    called before loading.
 :type reload_scripts: bool
 :arg refresh_scripts: only load scripts which are not already loaded
    as modules.
-:type refresh_scripts: bool'''
+:type refresh_scripts: bool"""
 
 def make_rna_paths(*argv):
-	'''Create RNA "paths" from given names.
+	"""Create RNA "paths" from given names.
 
 :arg struct_name: Name of a RNA struct (like e.g. "Scene").
 :type struct_name: string
@@ -50,13 +50,13 @@ def make_rna_paths(*argv):
 :return: A triple of three "RNA paths"
    (most_complete_path, "struct.prop", "struct.prop:'enum'").
    If no enum_name is given, the third element will always be void.
-:rtype: tuple of strings'''
+:rtype: tuple of strings"""
 
 def manual_map(*argv):
 	pass
 
 def modules_from_path(*argv):
-	'''Load all modules in a path and return them as a list.
+	"""Load all modules in a path and return them as a list.
 
 :arg path: this path is scanned for scripts and packages.
 :type path: string
@@ -64,25 +64,25 @@ def modules_from_path(*argv):
    names will be ignored.
 :type loaded_modules: set
 :return: all loaded modules.
-:rtype: list'''
+:rtype: list"""
 
 def preset_find(*argv):
 	pass
 
 def preset_paths(*argv):
-	'''Returns a list of paths for a specific preset.
+	"""Returns a list of paths for a specific preset.
 
 :arg subdir: preset subdirectory (must not be an absolute path).
 :type subdir: string
 :return: script paths.
-:rtype: list'''
+:rtype: list"""
 
 import previews
 def refresh_script_paths(*argv):
-	'''Run this after creating new script paths to update sys.path'''
+	"""Run this after creating new script paths to update sys.path"""
 
 def register_class(*argv):
-	'''.. method:: register_class(cls)
+	""".. method:: register_class(cls)
 
 Register a subclass of a blender type in (:class:`bpy.types.Panel`,
 :class:`bpy.types.UIList`, :class:`bpy.types.Menu`, :class:`bpy.types.Header`,
@@ -95,7 +95,7 @@ before registration.
 .. note::
 
    :exc:`ValueError` exception is raised if the class is not a
-   subclass of a registerable blender class.'''
+   subclass of a registerable blender class."""
 
 def register_manual_map(*argv):
 	pass
@@ -104,7 +104,7 @@ def register_module(*argv):
 	pass
 
 def resource_path(*argv):
-	'''.. function:: resource_path(type, major=bpy.app.version[0], minor=bpy.app.version[1])
+	""".. function:: resource_path(type, major=bpy.app.version[0], minor=bpy.app.version[1])
 
 Return the base path for storing system files.
 
@@ -115,16 +115,16 @@ Return the base path for storing system files.
 :arg minor: minor version, defaults to current.
 :type minor: string
 :return: the resource path (not necessarily existing).
-:rtype: string'''
+:rtype: string"""
 
 def script_path_pref(*argv):
-	'''returns the user preference or None'''
+	"""returns the user preference or None"""
 
 def script_path_user(*argv):
-	'''returns the env var and falls back to home dir or None'''
+	"""returns the env var and falls back to home dir or None"""
 
 def script_paths(*argv):
-	'''Returns a list of valid script paths.
+	"""Returns a list of valid script paths.
 
 :arg subdir: Optional subdir.
 :type subdir: string
@@ -134,10 +134,10 @@ def script_paths(*argv):
    blender uses.
 :type check_all: bool
 :return: script paths.
-:rtype: list'''
+:rtype: list"""
 
 def smpte_from_frame(*argv):
-	'''Returns an SMPTE formatted string from the *frame*:
+	"""Returns an SMPTE formatted string from the *frame*:
 ``HH:MM:SS:FF``.
 
 If *fps* and *fps_base* are not given the current scene is used.
@@ -145,10 +145,10 @@ If *fps* and *fps_base* are not given the current scene is used.
 :arg frame: frame number.
 :type frame: int or float.
 :return: the frame string.
-:rtype: string'''
+:rtype: string"""
 
 def smpte_from_seconds(*argv):
-	'''Returns an SMPTE formatted string from the *time*:
+	"""Returns an SMPTE formatted string from the *time*:
 ``HH:MM:SS:FF``.
 
 If the *fps* is not given the current scene is used.
@@ -156,20 +156,20 @@ If the *fps* is not given the current scene is used.
 :arg time: time in seconds.
 :type time: int, float or ``datetime.timedelta``.
 :return: the frame string.
-:rtype: string'''
+:rtype: string"""
 
 def time_from_frame(*argv):
-	'''Returns the time from a frame number .
+	"""Returns the time from a frame number .
 
 If *fps* and *fps_base* are not given the current scene is used.
 
 :arg frame: number.
 :type frame: int or float.
 :return: the time in seconds.
-:rtype: datetime.timedelta'''
+:rtype: datetime.timedelta"""
 
 def time_to_frame(*argv):
-	'''Returns a float frame number from a time given in seconds or
+	"""Returns a float frame number from a time given in seconds or
 as a datetime.timedelta object.
 
 If *fps* and *fps_base* are not given the current scene is used.
@@ -177,16 +177,16 @@ If *fps* and *fps_base* are not given the current scene is used.
 :arg time: time in seconds.
 :type time: number or a ``datetime.timedelta`` object
 :return: the frame.
-:rtype: float'''
+:rtype: float"""
 
 import units
 def unregister_class(*argv):
-	'''.. method:: unregister_class(cls)
+	""".. method:: unregister_class(cls)
 
 Unload the python class from blender.
 
 If the class has an *unregister* class method it will be called
-before unregistering.'''
+before unregistering."""
 
 def unregister_manual_map(*argv):
 	pass
@@ -195,7 +195,7 @@ def unregister_module(*argv):
 	pass
 
 def user_resource(*argv):
-	'''Return a user resource path (normally from the users home directory).
+	"""Return a user resource path (normally from the users home directory).
 
 :arg type: Resource type in ['DATAFILES', 'CONFIG', 'SCRIPTS', 'AUTOSAVE'].
 :type type: string
@@ -205,6 +205,6 @@ def user_resource(*argv):
    it if its not existing.
 :type create: boolean
 :return: a path.
-:rtype: string'''
+:rtype: string"""
 
 

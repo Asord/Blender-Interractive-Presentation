@@ -1,4 +1,6 @@
-'''This module provides access to the game engine data types.'''
+"""This module provides access to the game engine data types."""
+
+getset_descriptor = None
 
 class BL_ActionActuator:
 	action = getset_descriptor
@@ -22,10 +24,10 @@ class BL_ActionActuator:
 	priority = getset_descriptor
 	propName = getset_descriptor
 	def setChannel(*argv):
-		'''setChannel(channel, matrix)
+		"""setChannel(channel, matrix)
 - channel   : A string specifying the name of the bone channel.
 - matrix    : A 4x4 matrix specifying the overriding transformation
-              as an offset from the bone's rest position.'''
+              as an offset from the bone's rest position."""
 
 	useContinue = getset_descriptor
 
@@ -116,8 +118,8 @@ class BL_ArmatureConstraint:
 class BL_ArmatureObject:
 	actuators = getset_descriptor
 	def addDebugProperty(*argv):
-		'''addDebugProperty(name, visible=1)
-Added or remove a debug property to the debug list.'''
+		"""addDebugProperty(name, visible=1)
+Added or remove a debug property to the debug list."""
 
 	def alignAxisToVect(*argv):
 		pass
@@ -161,7 +163,7 @@ Added or remove a debug property to the debug list.'''
 		pass
 
 	def draw(*argv):
-		'''Draw Debug Armature'''
+		"""Draw Debug Armature"""
 
 	def enableRigidBody(*argv):
 		pass
@@ -173,12 +175,12 @@ Added or remove a debug property to the debug list.'''
 		pass
 
 	def getActionFrame(*argv):
-		'''getActionFrame(layer=0)
-Gets the current frame of the action playing in the supplied layer'''
+		"""getActionFrame(layer=0)
+Gets the current frame of the action playing in the supplied layer"""
 
 	def getActionName(*argv):
-		'''getActionName(layer=0)
-Gets the name of the current action playing in the supplied layer'''
+		"""getActionName(layer=0)
+Gets the name of the current action playing in the supplied layer"""
 
 	def getAngularVelocity(*argv):
 		pass
@@ -187,7 +189,7 @@ Gets the name of the current action playing in the supplied layer'''
 		pass
 
 	def getDistanceTo(*argv):
-		'''getDistanceTo(other): get distance to another point/KX_GameObject'''
+		"""getDistanceTo(other): get distance to another point/KX_GameObject"""
 
 	def getLinearVelocity(*argv):
 		pass
@@ -202,8 +204,8 @@ Gets the name of the current action playing in the supplied layer'''
 		pass
 
 	def getVectTo(*argv):
-		'''getVectTo(other): get vector and the distance to another point/KX_GameObject
-Returns a 3-tuple with (distance,worldVector,localVector)'''
+		"""getVectTo(other): get vector and the distance to another point/KX_GameObject
+Returns a 3-tuple with (distance,worldVector,localVector)"""
 
 	def getVelocity(*argv):
 		pass
@@ -212,8 +214,8 @@ Returns a 3-tuple with (distance,worldVector,localVector)'''
 	groupObject = getset_descriptor
 	invalid = getset_descriptor
 	def isPlayingAction(*argv):
-		'''isPlayingAction(layer=0)
-Checks to see if there is an action playing in the given layer'''
+		"""isPlayingAction(layer=0)
+Checks to see if there is an action playing in the given layer"""
 
 	isSuspendDynamics = getset_descriptor
 	life = getset_descriptor
@@ -236,12 +238,12 @@ Checks to see if there is an action playing in the given layer'''
 	orientation = getset_descriptor
 	parent = getset_descriptor
 	def playAction(*argv):
-		'''playAction(name, start_frame, end_frame, layer=0, priority=0 blendin=0, play_mode=ACT_MODE_PLAY, layer_weight=0.0, ipo_flags=0, speed=1.0)
-Plays an action'''
+		"""playAction(name, start_frame, end_frame, layer=0, priority=0 blendin=0, play_mode=ACT_MODE_PLAY, layer_weight=0.0, ipo_flags=0, speed=1.0)
+Plays an action"""
 
 	position = getset_descriptor
 	def rayCast(*argv):
-		'''rayCast(to,from,dist,prop,face,xray,poly,mask): cast a ray and return 3-tuple (object,hit,normal) or 4-tuple (object,hit,normal,polygon) or 4-tuple (object,hit,normal,polygon,hituv) of contact point with object within dist that matches prop.
+		"""rayCast(to,from,dist,prop,face,xray,poly,mask): cast a ray and return 3-tuple (object,hit,normal) or 4-tuple (object,hit,normal,polygon) or 4-tuple (object,hit,normal,polygon,hituv) of contact point with object within dist that matches prop.
  If no hit, return (None,None,None) or (None,None,None,None) or (None,None,None,None,None).
  to   = 3-tuple or object reference for destination of ray (if object, use center of object)
  from = 3-tuple or object reference for origin of ray (if object, use center of object)
@@ -261,13 +263,13 @@ Note: The object on which you call this method matters: the ray will ignore it.
         prop off, xray off: return closest hit or no hit if there is no object on the full extend of the ray
         prop off, xray on : idem
         prop on,  xray off: return closest hit if it matches prop, no hit otherwise
-        prop on,  xray on : return closest hit matching prop or no hit if there is no object matching prop on the full extend of the ray'''
+        prop on,  xray on : return closest hit matching prop or no hit if there is no object matching prop on the full extend of the ray"""
 
 	def rayCastTo(*argv):
-		'''rayCastTo(other,dist,prop): look towards another point/KX_GameObject and return first object hit within dist that matches prop
+		"""rayCastTo(other,dist,prop): look towards another point/KX_GameObject and return first object hit within dist that matches prop
 prop = property name that object must have; can be omitted => detect any object
 dist = max distance to look (can be negative => look behind); 0 or omitted => detect up to other
-other = 3-tuple or object reference'''
+other = 3-tuple or object reference"""
 
 	def reinstancePhysicsMesh(*argv):
 		pass
@@ -290,13 +292,13 @@ other = 3-tuple or object reference'''
 	scaling = getset_descriptor
 	scene = getset_descriptor
 	def sendMessage(*argv):
-		'''sendMessage(subject, [body, to])
-sends a message in same manner as a message actuatorsubject = Subject of the message (string)body = Message body (string)to = Name of object to send the message to'''
+		"""sendMessage(subject, [body, to])
+sends a message in same manner as a message actuatorsubject = Subject of the message (string)body = Message body (string)to = Name of object to send the message to"""
 
 	sensors = getset_descriptor
 	def setActionFrame(*argv):
-		'''setActionFrame(frame, layer=0)
-Set the current frame of the action playing in the supplied layer'''
+		"""setActionFrame(frame, layer=0)
+Set the current frame of the action playing in the supplied layer"""
 
 	def setAngularVelocity(*argv):
 		pass
@@ -321,8 +323,8 @@ Set the current frame of the action playing in the supplied layer'''
 
 	state = getset_descriptor
 	def stopAction(*argv):
-		'''stopAction(layer=0)
-Stop playing the action on the given layer'''
+		"""stopAction(layer=0)
+Stop playing the action on the given layer"""
 
 	def suspendDynamics(*argv):
 		pass
@@ -332,10 +334,10 @@ Stop playing the action on the given layer'''
 
 	timeOffset = getset_descriptor
 	def update(*argv):
-		'''update()
+		"""update()
 Make sure that the armature will be updated on next graphic frame.
 This is automatically done if a KX_ArmatureActuator with mode run is active
-or if an action is playing. This function is useful in other cases.'''
+or if an action is playing. This function is useful in other cases."""
 
 	visible = getset_descriptor
 	worldAngularVelocity = getset_descriptor
@@ -348,76 +350,76 @@ or if an action is playing. This function is useful in other cases.'''
 class BL_Shader:
 	bindCallbacks = getset_descriptor
 	def delSource(*argv):
-		'''delSource( )'''
+		"""delSource( )"""
 
 	enabled = getset_descriptor
 	def getFragmentProg(*argv):
-		'''getFragmentProg( )'''
+		"""getFragmentProg( )"""
 
 	def getVertexProg(*argv):
-		'''getVertexProg( )'''
+		"""getVertexProg( )"""
 
 	invalid = getset_descriptor
 	def isValid(*argv):
-		'''isValid()'''
+		"""isValid()"""
 
 	objectCallbacks = getset_descriptor
 	def setAttrib(*argv):
-		'''setAttrib(enum)'''
+		"""setAttrib(enum)"""
 
 	def setSampler(*argv):
-		'''setSampler(name, index)'''
+		"""setSampler(name, index)"""
 
 	def setSource(*argv):
-		'''setSource(vertexProgram, fragmentProgram, apply)'''
+		"""setSource(vertexProgram, fragmentProgram, apply)"""
 
 	def setSourceList(*argv):
-		'''setSourceList(sources, apply)'''
+		"""setSourceList(sources, apply)"""
 
 	def setUniform1f(*argv):
-		'''setUniform1f(name, fx)'''
+		"""setUniform1f(name, fx)"""
 
 	def setUniform1i(*argv):
-		'''setUniform1i(name, ix)'''
+		"""setUniform1i(name, ix)"""
 
 	def setUniform2f(*argv):
-		'''setUniform2f(name, fx, fy)'''
+		"""setUniform2f(name, fx, fy)"""
 
 	def setUniform2i(*argv):
-		'''setUniform2i(name, ix, iy)'''
+		"""setUniform2i(name, ix, iy)"""
 
 	def setUniform3f(*argv):
-		'''setUniform3f(name, fx,fy,fz) '''
+		"""setUniform3f(name, fx,fy,fz) """
 
 	def setUniform3i(*argv):
-		'''setUniform3i(name, ix,iy,iz) '''
+		"""setUniform3i(name, ix,iy,iz) """
 
 	def setUniform4f(*argv):
-		'''setUniform4f(name, fx,fy,fz, fw) '''
+		"""setUniform4f(name, fx,fy,fz, fw) """
 
 	def setUniform4i(*argv):
-		'''setUniform4i(name, ix,iy,iz, iw) '''
+		"""setUniform4i(name, ix,iy,iz, iw) """
 
 	def setUniformDef(*argv):
-		'''setUniformDef(name, enum)'''
+		"""setUniformDef(name, enum)"""
 
 	def setUniformEyef(*argv):
-		'''setUniformEyef(name)'''
+		"""setUniformEyef(name)"""
 
 	def setUniformMatrix3(*argv):
-		'''setUniformMatrix3(uniform_name, list[3x3], transpose(row-major=true, col-major=false)'''
+		"""setUniformMatrix3(uniform_name, list[3x3], transpose(row-major=true, col-major=false)"""
 
 	def setUniformMatrix4(*argv):
-		'''setUniformMatrix4(uniform_name, mat-4x4, transpose(row-major=true, col-major=false)'''
+		"""setUniformMatrix4(uniform_name, mat-4x4, transpose(row-major=true, col-major=false)"""
 
 	def setUniformfv(*argv):
-		'''setUniformfv(float (list2 or list3 or list4))'''
+		"""setUniformfv(float (list2 or list3 or list4))"""
 
 	def setUniformiv(*argv):
-		'''setUniformiv(uniform_name, (list2 or list3 or list4))'''
+		"""setUniformiv(uniform_name, (list2 or list3 or list4))"""
 
 	def validate(*argv):
-		'''validate()'''
+		"""validate()"""
 
 
 class BL_Texture:
@@ -476,91 +478,91 @@ class CValue:
 class KX_2DFilter:
 	bindCallbacks = getset_descriptor
 	def delSource(*argv):
-		'''delSource( )'''
+		"""delSource( )"""
 
 	enabled = getset_descriptor
 	def getFragmentProg(*argv):
-		'''getFragmentProg( )'''
+		"""getFragmentProg( )"""
 
 	def getVertexProg(*argv):
-		'''getVertexProg( )'''
+		"""getVertexProg( )"""
 
 	invalid = getset_descriptor
 	def isValid(*argv):
-		'''isValid()'''
+		"""isValid()"""
 
 	objectCallbacks = getset_descriptor
 	def setAttrib(*argv):
-		'''setAttrib(enum)'''
+		"""setAttrib(enum)"""
 
 	def setSampler(*argv):
-		'''setSampler(name, index)'''
+		"""setSampler(name, index)"""
 
 	def setSource(*argv):
-		'''setSource(vertexProgram, fragmentProgram, apply)'''
+		"""setSource(vertexProgram, fragmentProgram, apply)"""
 
 	def setSourceList(*argv):
-		'''setSourceList(sources, apply)'''
+		"""setSourceList(sources, apply)"""
 
 	def setTexture(*argv):
-		'''setTexture(index, bindCode, samplerName)'''
+		"""setTexture(index, bindCode, samplerName)"""
 
 	def setUniform1f(*argv):
-		'''setUniform1f(name, fx)'''
+		"""setUniform1f(name, fx)"""
 
 	def setUniform1i(*argv):
-		'''setUniform1i(name, ix)'''
+		"""setUniform1i(name, ix)"""
 
 	def setUniform2f(*argv):
-		'''setUniform2f(name, fx, fy)'''
+		"""setUniform2f(name, fx, fy)"""
 
 	def setUniform2i(*argv):
-		'''setUniform2i(name, ix, iy)'''
+		"""setUniform2i(name, ix, iy)"""
 
 	def setUniform3f(*argv):
-		'''setUniform3f(name, fx,fy,fz) '''
+		"""setUniform3f(name, fx,fy,fz) """
 
 	def setUniform3i(*argv):
-		'''setUniform3i(name, ix,iy,iz) '''
+		"""setUniform3i(name, ix,iy,iz) """
 
 	def setUniform4f(*argv):
-		'''setUniform4f(name, fx,fy,fz, fw) '''
+		"""setUniform4f(name, fx,fy,fz, fw) """
 
 	def setUniform4i(*argv):
-		'''setUniform4i(name, ix,iy,iz, iw) '''
+		"""setUniform4i(name, ix,iy,iz, iw) """
 
 	def setUniformDef(*argv):
-		'''setUniformDef(name, enum)'''
+		"""setUniformDef(name, enum)"""
 
 	def setUniformEyef(*argv):
-		'''setUniformEyef(name)'''
+		"""setUniformEyef(name)"""
 
 	def setUniformMatrix3(*argv):
-		'''setUniformMatrix3(uniform_name, list[3x3], transpose(row-major=true, col-major=false)'''
+		"""setUniformMatrix3(uniform_name, list[3x3], transpose(row-major=true, col-major=false)"""
 
 	def setUniformMatrix4(*argv):
-		'''setUniformMatrix4(uniform_name, mat-4x4, transpose(row-major=true, col-major=false)'''
+		"""setUniformMatrix4(uniform_name, mat-4x4, transpose(row-major=true, col-major=false)"""
 
 	def setUniformfv(*argv):
-		'''setUniformfv(float (list2 or list3 or list4))'''
+		"""setUniformfv(float (list2 or list3 or list4))"""
 
 	def setUniformiv(*argv):
-		'''setUniformiv(uniform_name, (list2 or list3 or list4))'''
+		"""setUniformiv(uniform_name, (list2 or list3 or list4))"""
 
 	def validate(*argv):
-		'''validate()'''
+		"""validate()"""
 
 
 class KX_2DFilterManager:
 	def addFilter(*argv):
-		'''addFilter(index, type, fragmentProgram)'''
+		"""addFilter(index, type, fragmentProgram)"""
 
 	def getFilter(*argv):
-		'''getFilter(index)'''
+		"""getFilter(index)"""
 
 	invalid = getset_descriptor
 	def removeFilter(*argv):
-		'''removeFilter(index)'''
+		"""removeFilter(index)"""
 
 
 class KX_ArmatureSensor:
@@ -576,9 +578,9 @@ class KX_ArmatureSensor:
 	pos_ticks = getset_descriptor
 	positive = getset_descriptor
 	def reset(*argv):
-		'''reset()
+		"""reset()
 Reset sensor internal state, effect depends on the type of sensor and settings.
-The sensor is put in its initial state as if it was just activated.'''
+The sensor is put in its initial state as if it was just activated."""
 
 	skippedTicks = getset_descriptor
 	status = getset_descriptor
@@ -597,16 +599,16 @@ class KX_BlenderMaterial:
 	diffuseIntensity = getset_descriptor
 	emit = getset_descriptor
 	def getShader(*argv):
-		'''getShader()'''
+		"""getShader()"""
 
 	def getTextureBindcode(*argv):
-		'''getTextureBindcode(texslot)'''
+		"""getTextureBindcode(texslot)"""
 
 	hardness = getset_descriptor
 	invalid = getset_descriptor
 	name = getset_descriptor
 	def setBlending(*argv):
-		'''setBlending(bge.logic.src, bge.logic.dest)'''
+		"""setBlending(bge.logic.src, bge.logic.dest)"""
 
 	shader = getset_descriptor
 	specularAlpha = getset_descriptor
@@ -628,8 +630,8 @@ class KX_Camera:
 	OUTSIDE = getset_descriptor
 	actuators = getset_descriptor
 	def addDebugProperty(*argv):
-		'''addDebugProperty(name, visible=1)
-Added or remove a debug property to the debug list.'''
+		"""addDebugProperty(name, visible=1)
+Added or remove a debug property to the debug list."""
 
 	def alignAxisToVect(*argv):
 		pass
@@ -655,7 +657,7 @@ Added or remove a debug property to the debug list.'''
 
 	attrDict = getset_descriptor
 	def boxInsideFrustum(*argv):
-		'''boxInsideFrustum(box) -> Integer
+		"""boxInsideFrustum(box) -> Integer
 returns INSIDE, OUTSIDE or INTERSECT if the given box is
 inside/outside/intersects this camera's viewing frustum.
 
@@ -681,7 +683,7 @@ if (cam.boxInsideFrustum(box) != cam.OUTSIDE):
         # Box is inside/intersects frustum !
         # Do something useful !
 else:
-        # Box is outside the frustum !'''
+        # Box is outside the frustum !"""
 
 	camera_to_world = getset_descriptor
 	children = getset_descriptor
@@ -713,12 +715,12 @@ else:
 		pass
 
 	def getActionFrame(*argv):
-		'''getActionFrame(layer=0)
-Gets the current frame of the action playing in the supplied layer'''
+		"""getActionFrame(layer=0)
+Gets the current frame of the action playing in the supplied layer"""
 
 	def getActionName(*argv):
-		'''getActionName(layer=0)
-Gets the name of the current action playing in the supplied layer'''
+		"""getActionName(layer=0)
+Gets the name of the current action playing in the supplied layer"""
 
 	def getAngularVelocity(*argv):
 		pass
@@ -727,13 +729,13 @@ Gets the name of the current action playing in the supplied layer'''
 		pass
 
 	def getCameraToWorld(*argv):
-		'''getCameraToWorld() -> Matrix4x4
+		"""getCameraToWorld() -> Matrix4x4
 returns the camera to world transformation matrix, as a list of four lists of four values.
 
-ie: [[1.0, 0.0, 0.0, 0.0], [0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 1.0, 0.0], [0.0, 0.0, 0.0, 1.0]])'''
+ie: [[1.0, 0.0, 0.0, 0.0], [0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 1.0, 0.0], [0.0, 0.0, 0.0, 1.0]])"""
 
 	def getDistanceTo(*argv):
-		'''getDistanceTo(other): get distance to another point/KX_GameObject'''
+		"""getDistanceTo(other): get distance to another point/KX_GameObject"""
 
 	def getLinearVelocity(*argv):
 		pass
@@ -748,33 +750,33 @@ ie: [[1.0, 0.0, 0.0, 0.0], [0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 1.0, 0.0], [0.0, 0.0
 		pass
 
 	def getScreenPosition(*argv):
-		'''getScreenPosition()'''
+		"""getScreenPosition()"""
 
 	def getScreenRay(*argv):
-		'''getScreenRay()'''
+		"""getScreenRay()"""
 
 	def getScreenVect(*argv):
-		'''getScreenVect()'''
+		"""getScreenVect()"""
 
 	def getVectTo(*argv):
-		'''getVectTo(other): get vector and the distance to another point/KX_GameObject
-Returns a 3-tuple with (distance,worldVector,localVector)'''
+		"""getVectTo(other): get vector and the distance to another point/KX_GameObject
+Returns a 3-tuple with (distance,worldVector,localVector)"""
 
 	def getVelocity(*argv):
 		pass
 
 	def getWorldToCamera(*argv):
-		'''getWorldToCamera() -> Matrix4x4
+		"""getWorldToCamera() -> Matrix4x4
 returns the world to camera transformation matrix, as a list of four lists of four values.
 
-ie: [[1.0, 0.0, 0.0, 0.0], [0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 1.0, 0.0], [0.0, 0.0, 0.0, 1.0]])'''
+ie: [[1.0, 0.0, 0.0, 0.0], [0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 1.0, 0.0], [0.0, 0.0, 0.0, 1.0]])"""
 
 	groupMembers = getset_descriptor
 	groupObject = getset_descriptor
 	invalid = getset_descriptor
 	def isPlayingAction(*argv):
-		'''isPlayingAction(layer=0)
-Checks to see if there is an action playing in the given layer'''
+		"""isPlayingAction(layer=0)
+Checks to see if there is an action playing in the given layer"""
 
 	isSuspendDynamics = getset_descriptor
 	lens = getset_descriptor
@@ -803,11 +805,11 @@ Checks to see if there is an action playing in the given layer'''
 	parent = getset_descriptor
 	perspective = getset_descriptor
 	def playAction(*argv):
-		'''playAction(name, start_frame, end_frame, layer=0, priority=0 blendin=0, play_mode=ACT_MODE_PLAY, layer_weight=0.0, ipo_flags=0, speed=1.0)
-Plays an action'''
+		"""playAction(name, start_frame, end_frame, layer=0, priority=0 blendin=0, play_mode=ACT_MODE_PLAY, layer_weight=0.0, ipo_flags=0, speed=1.0)
+Plays an action"""
 
 	def pointInsideFrustum(*argv):
-		'''pointInsideFrustum(point) -> Bool
+		"""pointInsideFrustum(point) -> Bool
 returns 1 if the given point is inside this camera's viewing frustum.
 
 point = The point to test (in world coordinates.)
@@ -822,12 +824,12 @@ cam = co.GetOwner()
         # Point is inside frustum !
         # Do something useful !
 else:
-        # Box is outside the frustum !'''
+        # Box is outside the frustum !"""
 
 	position = getset_descriptor
 	projection_matrix = getset_descriptor
 	def rayCast(*argv):
-		'''rayCast(to,from,dist,prop,face,xray,poly,mask): cast a ray and return 3-tuple (object,hit,normal) or 4-tuple (object,hit,normal,polygon) or 4-tuple (object,hit,normal,polygon,hituv) of contact point with object within dist that matches prop.
+		"""rayCast(to,from,dist,prop,face,xray,poly,mask): cast a ray and return 3-tuple (object,hit,normal) or 4-tuple (object,hit,normal,polygon) or 4-tuple (object,hit,normal,polygon,hituv) of contact point with object within dist that matches prop.
  If no hit, return (None,None,None) or (None,None,None,None) or (None,None,None,None,None).
  to   = 3-tuple or object reference for destination of ray (if object, use center of object)
  from = 3-tuple or object reference for origin of ray (if object, use center of object)
@@ -847,13 +849,13 @@ Note: The object on which you call this method matters: the ray will ignore it.
         prop off, xray off: return closest hit or no hit if there is no object on the full extend of the ray
         prop off, xray on : idem
         prop on,  xray off: return closest hit if it matches prop, no hit otherwise
-        prop on,  xray on : return closest hit matching prop or no hit if there is no object matching prop on the full extend of the ray'''
+        prop on,  xray on : return closest hit matching prop or no hit if there is no object matching prop on the full extend of the ray"""
 
 	def rayCastTo(*argv):
-		'''rayCastTo(other,dist,prop): look towards another point/KX_GameObject and return first object hit within dist that matches prop
+		"""rayCastTo(other,dist,prop): look towards another point/KX_GameObject and return first object hit within dist that matches prop
 prop = property name that object must have; can be omitted => detect any object
 dist = max distance to look (can be negative => look behind); 0 or omitted => detect up to other
-other = 3-tuple or object reference'''
+other = 3-tuple or object reference"""
 
 	def reinstancePhysicsMesh(*argv):
 		pass
@@ -876,13 +878,13 @@ other = 3-tuple or object reference'''
 	scaling = getset_descriptor
 	scene = getset_descriptor
 	def sendMessage(*argv):
-		'''sendMessage(subject, [body, to])
-sends a message in same manner as a message actuatorsubject = Subject of the message (string)body = Message body (string)to = Name of object to send the message to'''
+		"""sendMessage(subject, [body, to])
+sends a message in same manner as a message actuatorsubject = Subject of the message (string)body = Message body (string)to = Name of object to send the message to"""
 
 	sensors = getset_descriptor
 	def setActionFrame(*argv):
-		'''setActionFrame(frame, layer=0)
-Set the current frame of the action playing in the supplied layer'''
+		"""setActionFrame(frame, layer=0)
+Set the current frame of the action playing in the supplied layer"""
 
 	def setAngularVelocity(*argv):
 		pass
@@ -900,15 +902,15 @@ Set the current frame of the action playing in the supplied layer'''
 		pass
 
 	def setOnTop(*argv):
-		'''setOnTop()
-Sets this camera's viewport on top'''
+		"""setOnTop()
+Sets this camera's viewport on top"""
 
 	def setParent(*argv):
 		pass
 
 	def setViewport(*argv):
-		'''setViewport(left, bottom, right, top)
-Sets this camera's viewport'''
+		"""setViewport(left, bottom, right, top)
+Sets this camera's viewport"""
 
 	def setVisible(*argv):
 		pass
@@ -916,7 +918,7 @@ Sets this camera's viewport'''
 	shift_x = getset_descriptor
 	shift_y = getset_descriptor
 	def sphereInsideFrustum(*argv):
-		'''sphereInsideFrustum(center, radius) -> Integer
+		"""sphereInsideFrustum(center, radius) -> Integer
 returns INSIDE, OUTSIDE or INTERSECT if the given sphere is
 inside/outside/intersects this camera's viewing frustum.
 
@@ -934,12 +936,12 @@ if (cam.sphereInsideFrustum([1.0, 1.0, 1.0], 4) != cam.OUTSIDE):
         # Sphere is inside frustum !
         # Do something useful !
 else:
-        # Sphere is outside frustum'''
+        # Sphere is outside frustum"""
 
 	state = getset_descriptor
 	def stopAction(*argv):
-		'''stopAction(layer=0)
-Stop playing the action on the given layer'''
+		"""stopAction(layer=0)
+Stop playing the action on the given layer"""
 
 	def suspendDynamics(*argv):
 		pass
@@ -974,8 +976,8 @@ class KX_CharacterWrapper:
 	gravity = getset_descriptor
 	invalid = getset_descriptor
 	def jump(*argv):
-		'''jump()
-makes the character jump.'''
+		"""jump()
+makes the character jump."""
 
 	jumpCount = getset_descriptor
 	maxJumps = getset_descriptor
@@ -1009,9 +1011,9 @@ class KX_CollisionSensor:
 	positive = getset_descriptor
 	propName = getset_descriptor
 	def reset(*argv):
-		'''reset()
+		"""reset()
 Reset sensor internal state, effect depends on the type of sensor and settings.
-The sensor is put in its initial state as if it was just activated.'''
+The sensor is put in its initial state as if it was just activated."""
 
 	skippedTicks = getset_descriptor
 	status = getset_descriptor
@@ -1062,15 +1064,15 @@ class KX_CubeMap:
 	invalid = getset_descriptor
 	name = getset_descriptor
 	def update(*argv):
-		'''update(): Set the cube map to be updated next frame.'''
+		"""update(): Set the cube map to be updated next frame."""
 
 	viewpointObject = getset_descriptor
 
 class KX_FontObject:
 	actuators = getset_descriptor
 	def addDebugProperty(*argv):
-		'''addDebugProperty(name, visible=1)
-Added or remove a debug property to the debug list.'''
+		"""addDebugProperty(name, visible=1)
+Added or remove a debug property to the debug list."""
 
 	def alignAxisToVect(*argv):
 		pass
@@ -1122,12 +1124,12 @@ Added or remove a debug property to the debug list.'''
 		pass
 
 	def getActionFrame(*argv):
-		'''getActionFrame(layer=0)
-Gets the current frame of the action playing in the supplied layer'''
+		"""getActionFrame(layer=0)
+Gets the current frame of the action playing in the supplied layer"""
 
 	def getActionName(*argv):
-		'''getActionName(layer=0)
-Gets the name of the current action playing in the supplied layer'''
+		"""getActionName(layer=0)
+Gets the name of the current action playing in the supplied layer"""
 
 	def getAngularVelocity(*argv):
 		pass
@@ -1136,7 +1138,7 @@ Gets the name of the current action playing in the supplied layer'''
 		pass
 
 	def getDistanceTo(*argv):
-		'''getDistanceTo(other): get distance to another point/KX_GameObject'''
+		"""getDistanceTo(other): get distance to another point/KX_GameObject"""
 
 	def getLinearVelocity(*argv):
 		pass
@@ -1151,8 +1153,8 @@ Gets the name of the current action playing in the supplied layer'''
 		pass
 
 	def getVectTo(*argv):
-		'''getVectTo(other): get vector and the distance to another point/KX_GameObject
-Returns a 3-tuple with (distance,worldVector,localVector)'''
+		"""getVectTo(other): get vector and the distance to another point/KX_GameObject
+Returns a 3-tuple with (distance,worldVector,localVector)"""
 
 	def getVelocity(*argv):
 		pass
@@ -1161,8 +1163,8 @@ Returns a 3-tuple with (distance,worldVector,localVector)'''
 	groupObject = getset_descriptor
 	invalid = getset_descriptor
 	def isPlayingAction(*argv):
-		'''isPlayingAction(layer=0)
-Checks to see if there is an action playing in the given layer'''
+		"""isPlayingAction(layer=0)
+Checks to see if there is an action playing in the given layer"""
 
 	isSuspendDynamics = getset_descriptor
 	life = getset_descriptor
@@ -1185,12 +1187,12 @@ Checks to see if there is an action playing in the given layer'''
 	orientation = getset_descriptor
 	parent = getset_descriptor
 	def playAction(*argv):
-		'''playAction(name, start_frame, end_frame, layer=0, priority=0 blendin=0, play_mode=ACT_MODE_PLAY, layer_weight=0.0, ipo_flags=0, speed=1.0)
-Plays an action'''
+		"""playAction(name, start_frame, end_frame, layer=0, priority=0 blendin=0, play_mode=ACT_MODE_PLAY, layer_weight=0.0, ipo_flags=0, speed=1.0)
+Plays an action"""
 
 	position = getset_descriptor
 	def rayCast(*argv):
-		'''rayCast(to,from,dist,prop,face,xray,poly,mask): cast a ray and return 3-tuple (object,hit,normal) or 4-tuple (object,hit,normal,polygon) or 4-tuple (object,hit,normal,polygon,hituv) of contact point with object within dist that matches prop.
+		"""rayCast(to,from,dist,prop,face,xray,poly,mask): cast a ray and return 3-tuple (object,hit,normal) or 4-tuple (object,hit,normal,polygon) or 4-tuple (object,hit,normal,polygon,hituv) of contact point with object within dist that matches prop.
  If no hit, return (None,None,None) or (None,None,None,None) or (None,None,None,None,None).
  to   = 3-tuple or object reference for destination of ray (if object, use center of object)
  from = 3-tuple or object reference for origin of ray (if object, use center of object)
@@ -1210,13 +1212,13 @@ Note: The object on which you call this method matters: the ray will ignore it.
         prop off, xray off: return closest hit or no hit if there is no object on the full extend of the ray
         prop off, xray on : idem
         prop on,  xray off: return closest hit if it matches prop, no hit otherwise
-        prop on,  xray on : return closest hit matching prop or no hit if there is no object matching prop on the full extend of the ray'''
+        prop on,  xray on : return closest hit matching prop or no hit if there is no object matching prop on the full extend of the ray"""
 
 	def rayCastTo(*argv):
-		'''rayCastTo(other,dist,prop): look towards another point/KX_GameObject and return first object hit within dist that matches prop
+		"""rayCastTo(other,dist,prop): look towards another point/KX_GameObject and return first object hit within dist that matches prop
 prop = property name that object must have; can be omitted => detect any object
 dist = max distance to look (can be negative => look behind); 0 or omitted => detect up to other
-other = 3-tuple or object reference'''
+other = 3-tuple or object reference"""
 
 	def reinstancePhysicsMesh(*argv):
 		pass
@@ -1240,13 +1242,13 @@ other = 3-tuple or object reference'''
 	scaling = getset_descriptor
 	scene = getset_descriptor
 	def sendMessage(*argv):
-		'''sendMessage(subject, [body, to])
-sends a message in same manner as a message actuatorsubject = Subject of the message (string)body = Message body (string)to = Name of object to send the message to'''
+		"""sendMessage(subject, [body, to])
+sends a message in same manner as a message actuatorsubject = Subject of the message (string)body = Message body (string)to = Name of object to send the message to"""
 
 	sensors = getset_descriptor
 	def setActionFrame(*argv):
-		'''setActionFrame(frame, layer=0)
-Set the current frame of the action playing in the supplied layer'''
+		"""setActionFrame(frame, layer=0)
+Set the current frame of the action playing in the supplied layer"""
 
 	def setAngularVelocity(*argv):
 		pass
@@ -1272,8 +1274,8 @@ Set the current frame of the action playing in the supplied layer'''
 	size = getset_descriptor
 	state = getset_descriptor
 	def stopAction(*argv):
-		'''stopAction(layer=0)
-Stop playing the action on the given layer'''
+		"""stopAction(layer=0)
+Stop playing the action on the given layer"""
 
 	def suspendDynamics(*argv):
 		pass
@@ -1302,8 +1304,8 @@ class KX_GameActuator:
 class KX_GameObject:
 	actuators = getset_descriptor
 	def addDebugProperty(*argv):
-		'''addDebugProperty(name, visible=1)
-Added or remove a debug property to the debug list.'''
+		"""addDebugProperty(name, visible=1)
+Added or remove a debug property to the debug list."""
 
 	def alignAxisToVect(*argv):
 		pass
@@ -1354,12 +1356,12 @@ Added or remove a debug property to the debug list.'''
 		pass
 
 	def getActionFrame(*argv):
-		'''getActionFrame(layer=0)
-Gets the current frame of the action playing in the supplied layer'''
+		"""getActionFrame(layer=0)
+Gets the current frame of the action playing in the supplied layer"""
 
 	def getActionName(*argv):
-		'''getActionName(layer=0)
-Gets the name of the current action playing in the supplied layer'''
+		"""getActionName(layer=0)
+Gets the name of the current action playing in the supplied layer"""
 
 	def getAngularVelocity(*argv):
 		pass
@@ -1368,7 +1370,7 @@ Gets the name of the current action playing in the supplied layer'''
 		pass
 
 	def getDistanceTo(*argv):
-		'''getDistanceTo(other): get distance to another point/KX_GameObject'''
+		"""getDistanceTo(other): get distance to another point/KX_GameObject"""
 
 	def getLinearVelocity(*argv):
 		pass
@@ -1383,8 +1385,8 @@ Gets the name of the current action playing in the supplied layer'''
 		pass
 
 	def getVectTo(*argv):
-		'''getVectTo(other): get vector and the distance to another point/KX_GameObject
-Returns a 3-tuple with (distance,worldVector,localVector)'''
+		"""getVectTo(other): get vector and the distance to another point/KX_GameObject
+Returns a 3-tuple with (distance,worldVector,localVector)"""
 
 	def getVelocity(*argv):
 		pass
@@ -1393,8 +1395,8 @@ Returns a 3-tuple with (distance,worldVector,localVector)'''
 	groupObject = getset_descriptor
 	invalid = getset_descriptor
 	def isPlayingAction(*argv):
-		'''isPlayingAction(layer=0)
-Checks to see if there is an action playing in the given layer'''
+		"""isPlayingAction(layer=0)
+Checks to see if there is an action playing in the given layer"""
 
 	isSuspendDynamics = getset_descriptor
 	life = getset_descriptor
@@ -1417,12 +1419,12 @@ Checks to see if there is an action playing in the given layer'''
 	orientation = getset_descriptor
 	parent = getset_descriptor
 	def playAction(*argv):
-		'''playAction(name, start_frame, end_frame, layer=0, priority=0 blendin=0, play_mode=ACT_MODE_PLAY, layer_weight=0.0, ipo_flags=0, speed=1.0)
-Plays an action'''
+		"""playAction(name, start_frame, end_frame, layer=0, priority=0 blendin=0, play_mode=ACT_MODE_PLAY, layer_weight=0.0, ipo_flags=0, speed=1.0)
+Plays an action"""
 
 	position = getset_descriptor
 	def rayCast(*argv):
-		'''rayCast(to,from,dist,prop,face,xray,poly,mask): cast a ray and return 3-tuple (object,hit,normal) or 4-tuple (object,hit,normal,polygon) or 4-tuple (object,hit,normal,polygon,hituv) of contact point with object within dist that matches prop.
+		"""rayCast(to,from,dist,prop,face,xray,poly,mask): cast a ray and return 3-tuple (object,hit,normal) or 4-tuple (object,hit,normal,polygon) or 4-tuple (object,hit,normal,polygon,hituv) of contact point with object within dist that matches prop.
  If no hit, return (None,None,None) or (None,None,None,None) or (None,None,None,None,None).
  to   = 3-tuple or object reference for destination of ray (if object, use center of object)
  from = 3-tuple or object reference for origin of ray (if object, use center of object)
@@ -1442,13 +1444,13 @@ Note: The object on which you call this method matters: the ray will ignore it.
         prop off, xray off: return closest hit or no hit if there is no object on the full extend of the ray
         prop off, xray on : idem
         prop on,  xray off: return closest hit if it matches prop, no hit otherwise
-        prop on,  xray on : return closest hit matching prop or no hit if there is no object matching prop on the full extend of the ray'''
+        prop on,  xray on : return closest hit matching prop or no hit if there is no object matching prop on the full extend of the ray"""
 
 	def rayCastTo(*argv):
-		'''rayCastTo(other,dist,prop): look towards another point/KX_GameObject and return first object hit within dist that matches prop
+		"""rayCastTo(other,dist,prop): look towards another point/KX_GameObject and return first object hit within dist that matches prop
 prop = property name that object must have; can be omitted => detect any object
 dist = max distance to look (can be negative => look behind); 0 or omitted => detect up to other
-other = 3-tuple or object reference'''
+other = 3-tuple or object reference"""
 
 	def reinstancePhysicsMesh(*argv):
 		pass
@@ -1471,13 +1473,13 @@ other = 3-tuple or object reference'''
 	scaling = getset_descriptor
 	scene = getset_descriptor
 	def sendMessage(*argv):
-		'''sendMessage(subject, [body, to])
-sends a message in same manner as a message actuatorsubject = Subject of the message (string)body = Message body (string)to = Name of object to send the message to'''
+		"""sendMessage(subject, [body, to])
+sends a message in same manner as a message actuatorsubject = Subject of the message (string)body = Message body (string)to = Name of object to send the message to"""
 
 	sensors = getset_descriptor
 	def setActionFrame(*argv):
-		'''setActionFrame(frame, layer=0)
-Set the current frame of the action playing in the supplied layer'''
+		"""setActionFrame(frame, layer=0)
+Set the current frame of the action playing in the supplied layer"""
 
 	def setAngularVelocity(*argv):
 		pass
@@ -1502,8 +1504,8 @@ Set the current frame of the action playing in the supplied layer'''
 
 	state = getset_descriptor
 	def stopAction(*argv):
-		'''stopAction(layer=0)
-Stop playing the action on the given layer'''
+		"""stopAction(layer=0)
+Stop playing the action on the given layer"""
 
 	def suspendDynamics(*argv):
 		pass
@@ -1535,8 +1537,8 @@ class KX_LightObject:
 	SUN = getset_descriptor
 	actuators = getset_descriptor
 	def addDebugProperty(*argv):
-		'''addDebugProperty(name, visible=1)
-Added or remove a debug property to the debug list.'''
+		"""addDebugProperty(name, visible=1)
+Added or remove a debug property to the debug list."""
 
 	def alignAxisToVect(*argv):
 		pass
@@ -1589,12 +1591,12 @@ Added or remove a debug property to the debug list.'''
 		pass
 
 	def getActionFrame(*argv):
-		'''getActionFrame(layer=0)
-Gets the current frame of the action playing in the supplied layer'''
+		"""getActionFrame(layer=0)
+Gets the current frame of the action playing in the supplied layer"""
 
 	def getActionName(*argv):
-		'''getActionName(layer=0)
-Gets the name of the current action playing in the supplied layer'''
+		"""getActionName(layer=0)
+Gets the name of the current action playing in the supplied layer"""
 
 	def getAngularVelocity(*argv):
 		pass
@@ -1603,7 +1605,7 @@ Gets the name of the current action playing in the supplied layer'''
 		pass
 
 	def getDistanceTo(*argv):
-		'''getDistanceTo(other): get distance to another point/KX_GameObject'''
+		"""getDistanceTo(other): get distance to another point/KX_GameObject"""
 
 	def getLinearVelocity(*argv):
 		pass
@@ -1618,8 +1620,8 @@ Gets the name of the current action playing in the supplied layer'''
 		pass
 
 	def getVectTo(*argv):
-		'''getVectTo(other): get vector and the distance to another point/KX_GameObject
-Returns a 3-tuple with (distance,worldVector,localVector)'''
+		"""getVectTo(other): get vector and the distance to another point/KX_GameObject
+Returns a 3-tuple with (distance,worldVector,localVector)"""
 
 	def getVelocity(*argv):
 		pass
@@ -1628,8 +1630,8 @@ Returns a 3-tuple with (distance,worldVector,localVector)'''
 	groupObject = getset_descriptor
 	invalid = getset_descriptor
 	def isPlayingAction(*argv):
-		'''isPlayingAction(layer=0)
-Checks to see if there is an action playing in the given layer'''
+		"""isPlayingAction(layer=0)
+Checks to see if there is an action playing in the given layer"""
 
 	isSuspendDynamics = getset_descriptor
 	layer = getset_descriptor
@@ -1654,13 +1656,13 @@ Checks to see if there is an action playing in the given layer'''
 	orientation = getset_descriptor
 	parent = getset_descriptor
 	def playAction(*argv):
-		'''playAction(name, start_frame, end_frame, layer=0, priority=0 blendin=0, play_mode=ACT_MODE_PLAY, layer_weight=0.0, ipo_flags=0, speed=1.0)
-Plays an action'''
+		"""playAction(name, start_frame, end_frame, layer=0, priority=0 blendin=0, play_mode=ACT_MODE_PLAY, layer_weight=0.0, ipo_flags=0, speed=1.0)
+Plays an action"""
 
 	position = getset_descriptor
 	quad_attenuation = getset_descriptor
 	def rayCast(*argv):
-		'''rayCast(to,from,dist,prop,face,xray,poly,mask): cast a ray and return 3-tuple (object,hit,normal) or 4-tuple (object,hit,normal,polygon) or 4-tuple (object,hit,normal,polygon,hituv) of contact point with object within dist that matches prop.
+		"""rayCast(to,from,dist,prop,face,xray,poly,mask): cast a ray and return 3-tuple (object,hit,normal) or 4-tuple (object,hit,normal,polygon) or 4-tuple (object,hit,normal,polygon,hituv) of contact point with object within dist that matches prop.
  If no hit, return (None,None,None) or (None,None,None,None) or (None,None,None,None,None).
  to   = 3-tuple or object reference for destination of ray (if object, use center of object)
  from = 3-tuple or object reference for origin of ray (if object, use center of object)
@@ -1680,13 +1682,13 @@ Note: The object on which you call this method matters: the ray will ignore it.
         prop off, xray off: return closest hit or no hit if there is no object on the full extend of the ray
         prop off, xray on : idem
         prop on,  xray off: return closest hit if it matches prop, no hit otherwise
-        prop on,  xray on : return closest hit matching prop or no hit if there is no object matching prop on the full extend of the ray'''
+        prop on,  xray on : return closest hit matching prop or no hit if there is no object matching prop on the full extend of the ray"""
 
 	def rayCastTo(*argv):
-		'''rayCastTo(other,dist,prop): look towards another point/KX_GameObject and return first object hit within dist that matches prop
+		"""rayCastTo(other,dist,prop): look towards another point/KX_GameObject and return first object hit within dist that matches prop
 prop = property name that object must have; can be omitted => detect any object
 dist = max distance to look (can be negative => look behind); 0 or omitted => detect up to other
-other = 3-tuple or object reference'''
+other = 3-tuple or object reference"""
 
 	def reinstancePhysicsMesh(*argv):
 		pass
@@ -1709,13 +1711,13 @@ other = 3-tuple or object reference'''
 	scaling = getset_descriptor
 	scene = getset_descriptor
 	def sendMessage(*argv):
-		'''sendMessage(subject, [body, to])
-sends a message in same manner as a message actuatorsubject = Subject of the message (string)body = Message body (string)to = Name of object to send the message to'''
+		"""sendMessage(subject, [body, to])
+sends a message in same manner as a message actuatorsubject = Subject of the message (string)body = Message body (string)to = Name of object to send the message to"""
 
 	sensors = getset_descriptor
 	def setActionFrame(*argv):
-		'''setActionFrame(frame, layer=0)
-Set the current frame of the action playing in the supplied layer'''
+		"""setActionFrame(frame, layer=0)
+Set the current frame of the action playing in the supplied layer"""
 
 	def setAngularVelocity(*argv):
 		pass
@@ -1752,8 +1754,8 @@ Set the current frame of the action playing in the supplied layer'''
 	state = getset_descriptor
 	staticShadow = getset_descriptor
 	def stopAction(*argv):
-		'''stopAction(layer=0)
-Stop playing the action on the given layer'''
+		"""stopAction(layer=0)
+Stop playing the action on the given layer"""
 
 	def suspendDynamics(*argv):
 		pass
@@ -1764,7 +1766,7 @@ Stop playing the action on the given layer'''
 	timeOffset = getset_descriptor
 	type = getset_descriptor
 	def updateShadow(*argv):
-		'''updateShadow(): Set the shadow to be updated next frame if the lamp uses a static shadow.'''
+		"""updateShadow(): Set the shadow to be updated next frame if the lamp uses a static shadow."""
 
 	useShadow = getset_descriptor
 	visible = getset_descriptor
@@ -1836,7 +1838,7 @@ class KX_MouseActuator:
 	object_axis = getset_descriptor
 	owner = getset_descriptor
 	def reset(*argv):
-		'''reset() : undo rotation caused by actuator'''
+		"""reset() : undo rotation caused by actuator"""
 
 	reset_x = getset_descriptor
 	reset_y = getset_descriptor
@@ -1850,8 +1852,8 @@ class KX_MouseFocusSensor:
 	executePriority = getset_descriptor
 	frequency = getset_descriptor
 	def getButtonStatus(*argv):
-		'''getButtonStatus(button)
-Get the given button's status (KX_INPUT_NONE, KX_INPUT_NONE, KX_INPUT_JUST_ACTIVATED, KX_INPUT_ACTIVE, KX_INPUT_JUST_RELEASED).'''
+		"""getButtonStatus(button)
+Get the given button's status (KX_INPUT_NONE, KX_INPUT_NONE, KX_INPUT_JUST_ACTIVATED, KX_INPUT_ACTIVE, KX_INPUT_JUST_RELEASED)."""
 
 	hitNormal = getset_descriptor
 	hitObject = getset_descriptor
@@ -1872,9 +1874,9 @@ Get the given button's status (KX_INPUT_NONE, KX_INPUT_NONE, KX_INPUT_JUST_ACTIV
 	raySource = getset_descriptor
 	rayTarget = getset_descriptor
 	def reset(*argv):
-		'''reset()
+		"""reset()
 Reset sensor internal state, effect depends on the type of sensor and settings.
-The sensor is put in its initial state as if it was just activated.'''
+The sensor is put in its initial state as if it was just activated."""
 
 	skippedTicks = getset_descriptor
 	status = getset_descriptor
@@ -1899,9 +1901,9 @@ class KX_MovementSensor:
 	pos_ticks = getset_descriptor
 	positive = getset_descriptor
 	def reset(*argv):
-		'''reset()
+		"""reset()
 Reset sensor internal state, effect depends on the type of sensor and settings.
-The sensor is put in its initial state as if it was just activated.'''
+The sensor is put in its initial state as if it was just activated."""
 
 	skippedTicks = getset_descriptor
 	status = getset_descriptor
@@ -1914,8 +1916,8 @@ The sensor is put in its initial state as if it was just activated.'''
 class KX_NavMeshObject:
 	actuators = getset_descriptor
 	def addDebugProperty(*argv):
-		'''addDebugProperty(name, visible=1)
-Added or remove a debug property to the debug list.'''
+		"""addDebugProperty(name, visible=1)
+Added or remove a debug property to the debug list."""
 
 	def alignAxisToVect(*argv):
 		pass
@@ -1957,8 +1959,8 @@ Added or remove a debug property to the debug list.'''
 		pass
 
 	def draw(*argv):
-		'''draw(mode): navigation mesh debug drawing
-mode: WALLS, POLYS, TRIS'''
+		"""draw(mode): navigation mesh debug drawing
+mode: WALLS, POLYS, TRIS"""
 
 	def enableRigidBody(*argv):
 		pass
@@ -1967,19 +1969,19 @@ mode: WALLS, POLYS, TRIS'''
 		pass
 
 	def findPath(*argv):
-		'''findPath(start, goal): find path from start to goal points
-Returns a path as list of points)'''
+		"""findPath(start, goal): find path from start to goal points
+Returns a path as list of points)"""
 
 	def get(*argv):
 		pass
 
 	def getActionFrame(*argv):
-		'''getActionFrame(layer=0)
-Gets the current frame of the action playing in the supplied layer'''
+		"""getActionFrame(layer=0)
+Gets the current frame of the action playing in the supplied layer"""
 
 	def getActionName(*argv):
-		'''getActionName(layer=0)
-Gets the name of the current action playing in the supplied layer'''
+		"""getActionName(layer=0)
+Gets the name of the current action playing in the supplied layer"""
 
 	def getAngularVelocity(*argv):
 		pass
@@ -1988,7 +1990,7 @@ Gets the name of the current action playing in the supplied layer'''
 		pass
 
 	def getDistanceTo(*argv):
-		'''getDistanceTo(other): get distance to another point/KX_GameObject'''
+		"""getDistanceTo(other): get distance to another point/KX_GameObject"""
 
 	def getLinearVelocity(*argv):
 		pass
@@ -2003,8 +2005,8 @@ Gets the name of the current action playing in the supplied layer'''
 		pass
 
 	def getVectTo(*argv):
-		'''getVectTo(other): get vector and the distance to another point/KX_GameObject
-Returns a 3-tuple with (distance,worldVector,localVector)'''
+		"""getVectTo(other): get vector and the distance to another point/KX_GameObject
+Returns a 3-tuple with (distance,worldVector,localVector)"""
 
 	def getVelocity(*argv):
 		pass
@@ -2013,8 +2015,8 @@ Returns a 3-tuple with (distance,worldVector,localVector)'''
 	groupObject = getset_descriptor
 	invalid = getset_descriptor
 	def isPlayingAction(*argv):
-		'''isPlayingAction(layer=0)
-Checks to see if there is an action playing in the given layer'''
+		"""isPlayingAction(layer=0)
+Checks to see if there is an action playing in the given layer"""
 
 	isSuspendDynamics = getset_descriptor
 	life = getset_descriptor
@@ -2037,12 +2039,12 @@ Checks to see if there is an action playing in the given layer'''
 	orientation = getset_descriptor
 	parent = getset_descriptor
 	def playAction(*argv):
-		'''playAction(name, start_frame, end_frame, layer=0, priority=0 blendin=0, play_mode=ACT_MODE_PLAY, layer_weight=0.0, ipo_flags=0, speed=1.0)
-Plays an action'''
+		"""playAction(name, start_frame, end_frame, layer=0, priority=0 blendin=0, play_mode=ACT_MODE_PLAY, layer_weight=0.0, ipo_flags=0, speed=1.0)
+Plays an action"""
 
 	position = getset_descriptor
 	def rayCast(*argv):
-		'''rayCast(to,from,dist,prop,face,xray,poly,mask): cast a ray and return 3-tuple (object,hit,normal) or 4-tuple (object,hit,normal,polygon) or 4-tuple (object,hit,normal,polygon,hituv) of contact point with object within dist that matches prop.
+		"""rayCast(to,from,dist,prop,face,xray,poly,mask): cast a ray and return 3-tuple (object,hit,normal) or 4-tuple (object,hit,normal,polygon) or 4-tuple (object,hit,normal,polygon,hituv) of contact point with object within dist that matches prop.
  If no hit, return (None,None,None) or (None,None,None,None) or (None,None,None,None,None).
  to   = 3-tuple or object reference for destination of ray (if object, use center of object)
  from = 3-tuple or object reference for origin of ray (if object, use center of object)
@@ -2062,20 +2064,20 @@ Note: The object on which you call this method matters: the ray will ignore it.
         prop off, xray off: return closest hit or no hit if there is no object on the full extend of the ray
         prop off, xray on : idem
         prop on,  xray off: return closest hit if it matches prop, no hit otherwise
-        prop on,  xray on : return closest hit matching prop or no hit if there is no object matching prop on the full extend of the ray'''
+        prop on,  xray on : return closest hit matching prop or no hit if there is no object matching prop on the full extend of the ray"""
 
 	def rayCastTo(*argv):
-		'''rayCastTo(other,dist,prop): look towards another point/KX_GameObject and return first object hit within dist that matches prop
+		"""rayCastTo(other,dist,prop): look towards another point/KX_GameObject and return first object hit within dist that matches prop
 prop = property name that object must have; can be omitted => detect any object
 dist = max distance to look (can be negative => look behind); 0 or omitted => detect up to other
-other = 3-tuple or object reference'''
+other = 3-tuple or object reference"""
 
 	def raycast(*argv):
-		'''raycast(start, goal): raycast from start to goal points
-Returns hit factor)'''
+		"""raycast(start, goal): raycast from start to goal points
+Returns hit factor)"""
 
 	def rebuild(*argv):
-		'''rebuild(): rebuild navigation mesh'''
+		"""rebuild(): rebuild navigation mesh"""
 
 	def reinstancePhysicsMesh(*argv):
 		pass
@@ -2098,13 +2100,13 @@ Returns hit factor)'''
 	scaling = getset_descriptor
 	scene = getset_descriptor
 	def sendMessage(*argv):
-		'''sendMessage(subject, [body, to])
-sends a message in same manner as a message actuatorsubject = Subject of the message (string)body = Message body (string)to = Name of object to send the message to'''
+		"""sendMessage(subject, [body, to])
+sends a message in same manner as a message actuatorsubject = Subject of the message (string)body = Message body (string)to = Name of object to send the message to"""
 
 	sensors = getset_descriptor
 	def setActionFrame(*argv):
-		'''setActionFrame(frame, layer=0)
-Set the current frame of the action playing in the supplied layer'''
+		"""setActionFrame(frame, layer=0)
+Set the current frame of the action playing in the supplied layer"""
 
 	def setAngularVelocity(*argv):
 		pass
@@ -2129,8 +2131,8 @@ Set the current frame of the action playing in the supplied layer'''
 
 	state = getset_descriptor
 	def stopAction(*argv):
-		'''stopAction(layer=0)
-Stop playing the action on the given layer'''
+		"""stopAction(layer=0)
+Stop playing the action on the given layer"""
 
 	def suspendDynamics(*argv):
 		pass
@@ -2164,9 +2166,9 @@ class KX_NearSensor:
 	positive = getset_descriptor
 	propName = getset_descriptor
 	def reset(*argv):
-		'''reset()
+		"""reset()
 Reset sensor internal state, effect depends on the type of sensor and settings.
-The sensor is put in its initial state as if it was just activated.'''
+The sensor is put in its initial state as if it was just activated."""
 
 	resetDistance = getset_descriptor
 	skippedTicks = getset_descriptor
@@ -2202,9 +2204,9 @@ class KX_NetworkMessageSensor:
 	pos_ticks = getset_descriptor
 	positive = getset_descriptor
 	def reset(*argv):
-		'''reset()
+		"""reset()
 Reset sensor internal state, effect depends on the type of sensor and settings.
-The sensor is put in its initial state as if it was just activated.'''
+The sensor is put in its initial state as if it was just activated."""
 
 	skippedTicks = getset_descriptor
 	status = getset_descriptor
@@ -2252,35 +2254,35 @@ class KX_ParentActuator:
 class KX_PolyProxy:
 	collide = getset_descriptor
 	def getMaterial(*argv):
-		'''getMaterial() : returns a material'''
+		"""getMaterial() : returns a material"""
 
 	def getMaterialIndex(*argv):
-		'''getMaterialIndex() : return the material index of the polygon in the mesh'''
+		"""getMaterialIndex() : return the material index of the polygon in the mesh"""
 
 	def getMaterialName(*argv):
-		'''getMaterialName() : returns the polygon material name, "NoMaterial" if no material'''
+		"""getMaterialName() : returns the polygon material name, "NoMaterial" if no material"""
 
 	def getMesh(*argv):
-		'''getMesh() : returns a mesh proxy'''
+		"""getMesh() : returns a mesh proxy"""
 
 	def getNumVertex(*argv):
-		'''getNumVertex() : returns the number of vertex of the polygon, 3 or 4'''
+		"""getNumVertex() : returns the number of vertex of the polygon, 3 or 4"""
 
 	def getTextureName(*argv):
-		'''getTexturelName() : returns the polygon texture name, "NULL" if no texture'''
+		"""getTexturelName() : returns the polygon texture name, "NULL" if no texture"""
 
 	def getVertexIndex(*argv):
-		'''getVertexIndex(vertex) : returns the mesh vertex index of a polygon vertex
+		"""getVertexIndex(vertex) : returns the mesh vertex index of a polygon vertex
 vertex: index of the vertex in the polygon: 0->3
 return value can be used to retrieve the vertex details through mesh proxy
-Note: getVertexIndex(3) on a triangle polygon returns 0'''
+Note: getVertexIndex(3) on a triangle polygon returns 0"""
 
 	invalid = getset_descriptor
 	def isCollider(*argv):
-		'''isCollider() : returns whether the polygon is receives collision or not'''
+		"""isCollider() : returns whether the polygon is receives collision or not"""
 
 	def isVisible(*argv):
-		'''isVisible() : returns whether the polygon is visible or not'''
+		"""isVisible() : returns whether the polygon is visible or not"""
 
 	material = getset_descriptor
 	material_id = getset_descriptor
@@ -2319,9 +2321,9 @@ class KX_RadarSensor:
 	positive = getset_descriptor
 	propName = getset_descriptor
 	def reset(*argv):
-		'''reset()
+		"""reset()
 Reset sensor internal state, effect depends on the type of sensor and settings.
-The sensor is put in its initial state as if it was just activated.'''
+The sensor is put in its initial state as if it was just activated."""
 
 	resetDistance = getset_descriptor
 	skippedTicks = getset_descriptor
@@ -2354,9 +2356,9 @@ class KX_RaySensor:
 	range = getset_descriptor
 	rayDirection = getset_descriptor
 	def reset(*argv):
-		'''reset()
+		"""reset()
 Reset sensor internal state, effect depends on the type of sensor and settings.
-The sensor is put in its initial state as if it was just activated.'''
+The sensor is put in its initial state as if it was just activated."""
 
 	skippedTicks = getset_descriptor
 	status = getset_descriptor
@@ -2398,7 +2400,7 @@ class KX_SCA_EndObjectActuator:
 class KX_SCA_ReplaceMeshActuator:
 	executePriority = getset_descriptor
 	def instantReplaceMesh(*argv):
-		'''instantReplaceMesh() : immediately replace mesh without delay'''
+		"""instantReplaceMesh() : immediately replace mesh without delay"""
 
 	invalid = getset_descriptor
 	mesh = getset_descriptor
@@ -2412,18 +2414,18 @@ class KX_Scene:
 	activity_culling = getset_descriptor
 	activity_culling_radius = getset_descriptor
 	def addObject(*argv):
-		'''addObject(object, other, time=0)
-Returns the added object.'''
+		"""addObject(object, other, time=0)
+Returns the added object."""
 
 	cameras = getset_descriptor
 	dbvt_culling = getset_descriptor
 	def drawObstacleSimulation(*argv):
-		'''drawObstacleSimulation()
-Draw debug visualization of obstacle simulation.'''
+		"""drawObstacleSimulation()
+Draw debug visualization of obstacle simulation."""
 
 	def end(*argv):
-		'''end()
-Removes this scene from the game.'''
+		"""end()
+Removes this scene from the game."""
 
 	filterManager = getset_descriptor
 	def get(*argv):
@@ -2439,21 +2441,21 @@ Removes this scene from the game.'''
 	pre_draw = getset_descriptor
 	pre_draw_setup = getset_descriptor
 	def replace(*argv):
-		'''replace(newScene)
+		"""replace(newScene)
 Replaces this scene with another one.
-Return True if the new scene exists and scheduled for replacement, False otherwise.'''
+Return True if the new scene exists and scheduled for replacement, False otherwise."""
 
 	def restart(*argv):
-		'''restart()
-Restarts this scene.'''
+		"""restart()
+Restarts this scene."""
 
 	def resume(*argv):
-		'''resume()
-Resumes this scene.'''
+		"""resume()
+Resumes this scene."""
 
 	def suspend(*argv):
-		'''suspend()
-Suspends this scene.'''
+		"""suspend()
+Suspends this scene."""
 
 	suspended = getset_descriptor
 	texts = getset_descriptor
@@ -2483,18 +2485,18 @@ class KX_SoundActuator:
 	name = getset_descriptor
 	owner = getset_descriptor
 	def pauseSound(*argv):
-		'''pauseSound()
-Pauses the sound.'''
+		"""pauseSound()
+Pauses the sound."""
 
 	pitch = getset_descriptor
 	sound = getset_descriptor
 	def startSound(*argv):
-		'''startSound()
-Starts the sound.'''
+		"""startSound()
+Starts the sound."""
 
 	def stopSound(*argv):
-		'''stopSound()
-Stops the sound.'''
+		"""stopSound()
+Stops the sound."""
 
 	time = getset_descriptor
 	volume = getset_descriptor
@@ -2704,9 +2706,9 @@ class SCA_ActuatorSensor:
 	pos_ticks = getset_descriptor
 	positive = getset_descriptor
 	def reset(*argv):
-		'''reset()
+		"""reset()
 Reset sensor internal state, effect depends on the type of sensor and settings.
-The sensor is put in its initial state as if it was just activated.'''
+The sensor is put in its initial state as if it was just activated."""
 
 	skippedTicks = getset_descriptor
 	status = getset_descriptor
@@ -2727,9 +2729,9 @@ class SCA_AlwaysSensor:
 	pos_ticks = getset_descriptor
 	positive = getset_descriptor
 	def reset(*argv):
-		'''reset()
+		"""reset()
 Reset sensor internal state, effect depends on the type of sensor and settings.
-The sensor is put in its initial state as if it was just activated.'''
+The sensor is put in its initial state as if it was just activated."""
 
 	skippedTicks = getset_descriptor
 	status = getset_descriptor
@@ -2753,9 +2755,9 @@ class SCA_DelaySensor:
 	positive = getset_descriptor
 	repeat = getset_descriptor
 	def reset(*argv):
-		'''reset()
+		"""reset()
 Reset sensor internal state, effect depends on the type of sensor and settings.
-The sensor is put in its initial state as if it was just activated.'''
+The sensor is put in its initial state as if it was just activated."""
 
 	skippedTicks = getset_descriptor
 	status = getset_descriptor
@@ -2796,9 +2798,9 @@ class SCA_ISensor:
 	pos_ticks = getset_descriptor
 	positive = getset_descriptor
 	def reset(*argv):
-		'''reset()
+		"""reset()
 Reset sensor internal state, effect depends on the type of sensor and settings.
-The sensor is put in its initial state as if it was just activated.'''
+The sensor is put in its initial state as if it was just activated."""
 
 	skippedTicks = getset_descriptor
 	status = getset_descriptor
@@ -2823,12 +2825,12 @@ class SCA_JoystickSensor:
 	executePriority = getset_descriptor
 	frequency = getset_descriptor
 	def getButtonActiveList(*argv):
-		'''getButtonActiveList
-Returns a list containing the indices of the button currently pressed.'''
+		"""getButtonActiveList
+Returns a list containing the indices of the button currently pressed."""
 
 	def getButtonStatus(*argv):
-		'''getButtonStatus(buttonIndex)
-Returns a bool of the current pressed state of the specified button.'''
+		"""getButtonStatus(buttonIndex)
+Returns a bool of the current pressed state of the specified button."""
 
 	hat = getset_descriptor
 	hatSingle = getset_descriptor
@@ -2846,9 +2848,9 @@ Returns a bool of the current pressed state of the specified button.'''
 	pos_ticks = getset_descriptor
 	positive = getset_descriptor
 	def reset(*argv):
-		'''reset()
+		"""reset()
 Reset sensor internal state, effect depends on the type of sensor and settings.
-The sensor is put in its initial state as if it was just activated.'''
+The sensor is put in its initial state as if it was just activated."""
 
 	skippedTicks = getset_descriptor
 	status = getset_descriptor
@@ -2863,8 +2865,8 @@ class SCA_KeyboardSensor:
 	executePriority = getset_descriptor
 	frequency = getset_descriptor
 	def getKeyStatus(*argv):
-		'''getKeyStatus(keycode)
-Get the given key's status (NONE, JUSTACTIVATED, ACTIVE or JUSTRELEASED).'''
+		"""getKeyStatus(keycode)
+Get the given key's status (NONE, JUSTACTIVATED, ACTIVE or JUSTRELEASED)."""
 
 	hold1 = getset_descriptor
 	hold2 = getset_descriptor
@@ -2879,9 +2881,9 @@ Get the given key's status (NONE, JUSTACTIVATED, ACTIVE or JUSTRELEASED).'''
 	pos_ticks = getset_descriptor
 	positive = getset_descriptor
 	def reset(*argv):
-		'''reset()
+		"""reset()
 Reset sensor internal state, effect depends on the type of sensor and settings.
-The sensor is put in its initial state as if it was just activated.'''
+The sensor is put in its initial state as if it was just activated."""
 
 	skippedTicks = getset_descriptor
 	status = getset_descriptor
@@ -2897,8 +2899,8 @@ class SCA_MouseSensor:
 	executePriority = getset_descriptor
 	frequency = getset_descriptor
 	def getButtonStatus(*argv):
-		'''getButtonStatus(button)
-Get the given button's status (KX_INPUT_NONE, KX_INPUT_NONE, KX_INPUT_JUST_ACTIVATED, KX_INPUT_ACTIVE, KX_INPUT_JUST_RELEASED).'''
+		"""getButtonStatus(button)
+Get the given button's status (KX_INPUT_NONE, KX_INPUT_NONE, KX_INPUT_JUST_ACTIVATED, KX_INPUT_ACTIVE, KX_INPUT_JUST_RELEASED)."""
 
 	invalid = getset_descriptor
 	invert = getset_descriptor
@@ -2911,9 +2913,9 @@ Get the given button's status (KX_INPUT_NONE, KX_INPUT_NONE, KX_INPUT_JUST_ACTIV
 	position = getset_descriptor
 	positive = getset_descriptor
 	def reset(*argv):
-		'''reset()
+		"""reset()
 Reset sensor internal state, effect depends on the type of sensor and settings.
-The sensor is put in its initial state as if it was just activated.'''
+The sensor is put in its initial state as if it was just activated."""
 
 	skippedTicks = getset_descriptor
 	status = getset_descriptor
@@ -2977,9 +2979,9 @@ class SCA_PropertySensor:
 	positive = getset_descriptor
 	propName = getset_descriptor
 	def reset(*argv):
-		'''reset()
+		"""reset()
 Reset sensor internal state, effect depends on the type of sensor and settings.
-The sensor is put in its initial state as if it was just activated.'''
+The sensor is put in its initial state as if it was just activated."""
 
 	skippedTicks = getset_descriptor
 	status = getset_descriptor
@@ -3022,12 +3024,12 @@ class SCA_PythonKeyboard:
 	active_events = getset_descriptor
 	events = getset_descriptor
 	def getClipboard(*argv):
-		'''getCliboard doc'''
+		"""getCliboard doc"""
 
 	inputs = getset_descriptor
 	invalid = getset_descriptor
 	def setClipboard(*argv):
-		'''setCliboard doc'''
+		"""setCliboard doc"""
 
 	text = getset_descriptor
 
@@ -3051,62 +3053,62 @@ class SCA_RandomActuator:
 	propName = getset_descriptor
 	seed = getset_descriptor
 	def setBoolBernouilli(*argv):
-		'''setBoolBernouilli(value)
+		"""setBoolBernouilli(value)
 - value: a float between 0 and 1
-Return false value * 100%% of the time.'''
+Return false value * 100%% of the time."""
 
 	def setBoolConst(*argv):
-		'''setBoolConst(value)
+		"""setBoolConst(value)
 - value: 0 or 1
-Set this generator to produce a constant boolean value.'''
+Set this generator to produce a constant boolean value."""
 
 	def setBoolUniform(*argv):
-		'''setBoolUniform()
-Set this generator to produce true and false, each with 50%% chance of occurring'''
+		"""setBoolUniform()
+Set this generator to produce true and false, each with 50%% chance of occurring"""
 
 	def setFloatConst(*argv):
-		'''setFloatConst(value)
+		"""setFloatConst(value)
 - value: float
-Always return value'''
+Always return value"""
 
 	def setFloatNegativeExponential(*argv):
-		'''setFloatNegativeExponential(half_life)
+		"""setFloatNegativeExponential(half_life)
 - half_life: float
 Return negative-exponentially distributed numbers. The half-life 'time'
-is characterized by half_life.'''
+is characterized by half_life."""
 
 	def setFloatNormal(*argv):
-		'''setFloatNormal(mean, standard_deviation)
+		"""setFloatNormal(mean, standard_deviation)
 - mean: float
 - standard_deviation: float
 Return normal-distributed numbers. The average is mean, and the
-deviation from the mean is characterized by standard_deviation.'''
+deviation from the mean is characterized by standard_deviation."""
 
 	def setFloatUniform(*argv):
-		'''setFloatUniform(lower_bound, upper_bound)
+		"""setFloatUniform(lower_bound, upper_bound)
 - lower_bound: float
 - upper_bound: float
 Return a random integer between lower_bound and
-upper_bound.'''
+upper_bound."""
 
 	def setIntConst(*argv):
-		'''setIntConst(value)
+		"""setIntConst(value)
 - value: integer
-Always return value'''
+Always return value"""
 
 	def setIntPoisson(*argv):
-		'''setIntPoisson(value)
+		"""setIntPoisson(value)
 - value: float
 Return a Poisson-distributed number. This performs a series
 of Bernouilli tests with parameter value. It returns the
-number of tries needed to achieve succes.'''
+number of tries needed to achieve succes."""
 
 	def setIntUniform(*argv):
-		'''setIntUniform(lower_bound, upper_bound)
+		"""setIntUniform(lower_bound, upper_bound)
 - lower_bound: integer
 - upper_bound: integer
 Return a random integer between lower_bound and
-upper_bound. The boundaries are included.'''
+upper_bound. The boundaries are included."""
 
 
 class SCA_RandomSensor:
@@ -3122,9 +3124,9 @@ class SCA_RandomSensor:
 	pos_ticks = getset_descriptor
 	positive = getset_descriptor
 	def reset(*argv):
-		'''reset()
+		"""reset()
 Reset sensor internal state, effect depends on the type of sensor and settings.
-The sensor is put in its initial state as if it was just activated.'''
+The sensor is put in its initial state as if it was just activated."""
 
 	seed = getset_descriptor
 	skippedTicks = getset_descriptor
@@ -3163,16 +3165,5 @@ class SCA_XORController:
 	state = getset_descriptor
 	useHighPriority = getset_descriptor
 
-class VideoTexture.Texture:
-	bindId = getset_descriptor
-	def close(*argv):
-		'''Close dynamic texture and restore original'''
-
-	invalid = getset_descriptor
-	mipmap = getset_descriptor
-	def refresh(*argv):
-		'''Refresh texture from source'''
-
-	source = getset_descriptor
 
 

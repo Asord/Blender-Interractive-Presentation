@@ -1,24 +1,24 @@
 def edge_face_count(*argv):
-	''':return: list face users for each item in mesh.edges.
-:rtype: list'''
+	""":return: list face users for each item in mesh.edges.
+:rtype: list"""
 
 def edge_face_count_dict(*argv):
-	''':return: dict of edge keys with their value set to the number of
+	""":return: dict of edge keys with their value set to the number of
    faces using each edge.
-:rtype: dict'''
+:rtype: dict"""
 
 def edge_loops_from_edges(*argv):
-	'''Edge loops defined by edges
+	"""Edge loops defined by edges
 
 Takes me.edges or a list of edges and returns the edge loops
 
 return a list of vertex indices.
 [ [1, 6, 7, 2], ...]
 
-closed loops have matching start and end values.'''
+closed loops have matching start and end values."""
 
 def edge_loops_from_tessfaces(*argv):
-	'''Edge loops defined by faces
+	"""Edge loops defined by faces
 
 Takes me.tessfaces or a list of faces and returns the edge loops
 These edge loops are the edges that sit between quads, so they dont touch
@@ -33,38 +33,38 @@ return a list of edge key lists
 :arg tessfaces: optional face list to only use some of the meshes faces.
 :type tessfaces: :class:`bpy.types.MeshTessFace`, sequence or or NoneType
 :return: return a list of edge vertex index lists.
-:rtype: list'''
+:rtype: list"""
 
 def face_random_points(*argv):
-	'''Generates a list of random points over mesh tessfaces.
+	"""Generates a list of random points over mesh tessfaces.
 
 :arg num_points: the number of random points to generate on each face.
 :type int:
 :arg tessfaces: list of the faces to generate points on.
 :type tessfaces: :class:`bpy.types.MeshTessFace`, sequence
 :return: list of random points over all faces.
-:rtype: list'''
+:rtype: list"""
 
 def mesh_linked_tessfaces(*argv):
-	'''Splits the mesh into connected faces, use this for seperating cubes from
+	"""Splits the mesh into connected faces, use this for seperating cubes from
 other mesh elements within 1 mesh datablock.
 
 :arg mesh: the mesh used to group with.
 :type mesh: :class:`bpy.types.Mesh`
 :return: lists of lists containing faces.
-:rtype: list'''
+:rtype: list"""
 
 def mesh_linked_uv_islands(*argv):
-	'''Splits the mesh into connected polygons, use this for seperating cubes from
+	"""Splits the mesh into connected polygons, use this for seperating cubes from
 other mesh elements within 1 mesh datablock.
 
 :arg mesh: the mesh used to group with.
 :type mesh: :class:`bpy.types.Mesh`
 :return: lists of lists containing polygon indices
-:rtype: list'''
+:rtype: list"""
 
 def ngon_tessellate(*argv):
-	'''Takes a polyline of indices (fgon) and returns a list of face
+	"""Takes a polyline of indices (fgon) and returns a list of face
 index lists. Designed to be used for importers that need indices for an
 fgon to create from existing verts.
 
@@ -77,6 +77,6 @@ fgon to create from existing verts.
 :arg fix_loops: If this is enabled polylines
    that use loops to make multiple
    polylines are delt with correctly.
-:type fix_loops: bool'''
+:type fix_loops: bool"""
 
 

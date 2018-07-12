@@ -1,4 +1,4 @@
-'''This module provides access id property types (currently mainly for docs).'''
+"""This module provides access id property types (currently mainly for docs)."""
 
-import types
+from . import *
 

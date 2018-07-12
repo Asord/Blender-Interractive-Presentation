@@ -1,4 +1,4 @@
-'''This module provides access to the audaspace audio library.'''
+"""This module provides access to the audaspace audio library."""
 
 AUD_DEVICE_JACK = int
 AUD_DEVICE_NULL = int
@@ -22,42 +22,44 @@ AUD_STATUS_INVALID = int
 AUD_STATUS_PAUSED = int
 AUD_STATUS_PLAYING = int
 AUD_STATUS_STOPPED = int
+
+getset_descriptor = object()
 class Device:
-	'''Device objects represent an audio output backend like OpenAL or SDL, but might also represent a file output or RAM buffer output.'''
+	"""Device objects represent an audio output backend like OpenAL or SDL, but might also represent a file output or RAM buffer output."""
 
 	channels = getset_descriptor
-	'''Device objects represent an audio output backend like OpenAL or SDL, but might also represent a file output or RAM buffer output.'''
+	"""Device objects represent an audio output backend like OpenAL or SDL, but might also represent a file output or RAM buffer output."""
 
 	distance_model = getset_descriptor
-	'''Device objects represent an audio output backend like OpenAL or SDL, but might also represent a file output or RAM buffer output.'''
+	"""Device objects represent an audio output backend like OpenAL or SDL, but might also represent a file output or RAM buffer output."""
 
 	doppler_factor = getset_descriptor
-	'''Device objects represent an audio output backend like OpenAL or SDL, but might also represent a file output or RAM buffer output.'''
+	"""Device objects represent an audio output backend like OpenAL or SDL, but might also represent a file output or RAM buffer output."""
 
 	format = getset_descriptor
-	'''Device objects represent an audio output backend like OpenAL or SDL, but might also represent a file output or RAM buffer output.'''
+	"""Device objects represent an audio output backend like OpenAL or SDL, but might also represent a file output or RAM buffer output."""
 
 	listener_location = getset_descriptor
-	'''Device objects represent an audio output backend like OpenAL or SDL, but might also represent a file output or RAM buffer output.'''
+	"""Device objects represent an audio output backend like OpenAL or SDL, but might also represent a file output or RAM buffer output."""
 
 	listener_orientation = getset_descriptor
-	'''Device objects represent an audio output backend like OpenAL or SDL, but might also represent a file output or RAM buffer output.'''
+	"""Device objects represent an audio output backend like OpenAL or SDL, but might also represent a file output or RAM buffer output."""
 
 	listener_velocity = getset_descriptor
-	'''Device objects represent an audio output backend like OpenAL or SDL, but might also represent a file output or RAM buffer output.'''
+	"""Device objects represent an audio output backend like OpenAL or SDL, but might also represent a file output or RAM buffer output."""
 
 	def lock(*argv):
-		'''lock()
+		"""lock()
 
 Locks the device so that it's guaranteed, that no samples are read from the streams until :meth:`unlock` is called.
 This is useful if you want to do start/stop/pause/resume some sounds at the same time.
 
 .. note:: The device has to be unlocked as often as locked to be able to continue playback.
 
-.. warning:: Make sure the time between locking and unlocking is as short as possible to avoid clicks.'''
+.. warning:: Make sure the time between locking and unlocking is as short as possible to avoid clicks."""
 
 	def play(*argv):
-		'''play(factory, keep=False)
+		"""play(factory, keep=False)
 
 Plays a factory.
 
@@ -66,33 +68,33 @@ Plays a factory.
 :arg keep: See :attr:`Handle.keep`.
 :type keep: bool
 :return: The playback handle with which playback can be controlled with.
-:rtype: :class:`Handle`'''
+:rtype: :class:`Handle`"""
 
 	rate = getset_descriptor
-	'''Device objects represent an audio output backend like OpenAL or SDL, but might also represent a file output or RAM buffer output.'''
+	"""Device objects represent an audio output backend like OpenAL or SDL, but might also represent a file output or RAM buffer output."""
 
 	speed_of_sound = getset_descriptor
-	'''Device objects represent an audio output backend like OpenAL or SDL, but might also represent a file output or RAM buffer output.'''
+	"""Device objects represent an audio output backend like OpenAL or SDL, but might also represent a file output or RAM buffer output."""
 
 	def stopAll(*argv):
-		'''stopAll()
+		"""stopAll()
 
-Stops all playing and paused sounds.'''
+Stops all playing and paused sounds."""
 
 	def unlock(*argv):
-		'''unlock()
+		"""unlock()
 
-Unlocks the device after a lock call, see :meth:`lock` for details.'''
+Unlocks the device after a lock call, see :meth:`lock` for details."""
 
 	volume = getset_descriptor
-	'''Device objects represent an audio output backend like OpenAL or SDL, but might also represent a file output or RAM buffer output.'''
+	"""Device objects represent an audio output backend like OpenAL or SDL, but might also represent a file output or RAM buffer output."""
 
 
 class Factory:
-	'''Factory objects are immutable and represent a sound that can be played simultaneously multiple times. They are called factories because they create reader objects internally that are used for playback.'''
+	"""Factory objects are immutable and represent a sound that can be played simultaneously multiple times. They are called factories because they create reader objects internally that are used for playback."""
 
 	def buffer(*argv):
-		'''buffer()
+		"""buffer()
 
 Buffers a factory into RAM.
 This saves CPU usage needed for decoding and file access if the underlying factory reads from a file on the harddisk, but it consumes a lot of memory.
@@ -102,20 +104,20 @@ This saves CPU usage needed for decoding and file access if the underlying facto
 
 .. note:: Only known-length factories can be buffered.
 
-.. warning:: Raw PCM data needs a lot of space, only buffer short factories.'''
+.. warning:: Raw PCM data needs a lot of space, only buffer short factories."""
 
 	def delay(*argv):
-		'''delay(time)
+		"""delay(time)
 
 Delays by playing adding silence in front of the other factory's data.
 
 :arg time: How many seconds of silence should be added before the factory.
 :type time: float
 :return: The created :class:`Factory` object.
-:rtype: :class:`Factory`'''
+:rtype: :class:`Factory`"""
 
 	def fadein(*argv):
-		'''fadein(start, length)
+		"""fadein(start, length)
 
 Fades a factory in by raising the volume linearly in the given time interval.
 
@@ -126,10 +128,10 @@ Fades a factory in by raising the volume linearly in the given time interval.
 :return: The created :class:`Factory` object.
 :rtype: :class:`Factory`
 
-.. note:: Before the fade starts it plays silence.'''
+.. note:: Before the fade starts it plays silence."""
 
 	def fadeout(*argv):
-		'''fadeout(start, length)
+		"""fadeout(start, length)
 
 Fades a factory in by lowering the volume linearly in the given time interval.
 
@@ -140,10 +142,10 @@ Fades a factory in by lowering the volume linearly in the given time interval.
 :return: The created :class:`Factory` object.
 :rtype: :class:`Factory`
 
-.. note:: After the fade this factory plays silence, so that the length of the factory is not altered.'''
+.. note:: After the fade this factory plays silence, so that the length of the factory is not altered."""
 
 	def file(*argv):
-		'''file(filename)
+		"""file(filename)
 
 Creates a factory object of a sound file.
 
@@ -152,10 +154,10 @@ Creates a factory object of a sound file.
 :return: The created :class:`Factory` object.
 :rtype: :class:`Factory`
 
-.. warning:: If the file doesn't exist or can't be read you will not get an exception immediately, but when you try to start playback of that factory.'''
+.. warning:: If the file doesn't exist or can't be read you will not get an exception immediately, but when you try to start playback of that factory."""
 
 	def filter(*argv):
-		'''filter(b, a = (1))
+		"""filter(b, a = (1))
 
 Filters a factory with the supplied IIR filter coefficients.
 Without the second parameter you'll get a FIR filter.
@@ -167,10 +169,10 @@ If the first value of the a sequence is neither 0 nor 1, all filter coefficients
 :arg a: The denominator filter coefficients.
 :type a: sequence of float
 :return: The created :class:`Factory` object.
-:rtype: :class:`Factory`'''
+:rtype: :class:`Factory`"""
 
 	def highpass(*argv):
-		'''highpass(frequency, Q=0.5)
+		"""highpass(frequency, Q=0.5)
 
 Creates a second order highpass filter based on the transfer function H(s) = s^2 / (s^2 + s/Q + 1)
 
@@ -179,10 +181,10 @@ Creates a second order highpass filter based on the transfer function H(s) = s^2
 :arg Q: Q factor of the lowpass.
 :type Q: float
 :return: The created :class:`Factory` object.
-:rtype: :class:`Factory`'''
+:rtype: :class:`Factory`"""
 
 	def join(*argv):
-		'''join(factory)
+		"""join(factory)
 
 Plays two factories in sequence.
 
@@ -191,10 +193,10 @@ Plays two factories in sequence.
 :return: The created :class:`Factory` object.
 :rtype: :class:`Factory`
 
-.. note:: The two factories have to have the same specifications (channels and samplerate).'''
+.. note:: The two factories have to have the same specifications (channels and samplerate)."""
 
 	def limit(*argv):
-		'''limit(start, end)
+		"""limit(start, end)
 
 Limits a factory within a specific start and end time.
 
@@ -203,10 +205,10 @@ Limits a factory within a specific start and end time.
 :arg end: End time in seconds.
 :type end: float
 :return: The created :class:`Factory` object.
-:rtype: :class:`Factory`'''
+:rtype: :class:`Factory`"""
 
 	def loop(*argv):
-		'''loop(count)
+		"""loop(count)
 
 Loops a factory.
 
@@ -215,10 +217,10 @@ Loops a factory.
 :return: The created :class:`Factory` object.
 :rtype: :class:`Factory`
 
-.. note:: This is a filter function, you might consider using :attr:`Handle.loop_count` instead.'''
+.. note:: This is a filter function, you might consider using :attr:`Handle.loop_count` instead."""
 
 	def lowpass(*argv):
-		'''lowpass(frequency, Q=0.5)
+		"""lowpass(frequency, Q=0.5)
 
 Creates a second order lowpass filter based on the transfer function H(s) = 1 / (s^2 + s/Q + 1)
 
@@ -227,10 +229,10 @@ Creates a second order lowpass filter based on the transfer function H(s) = 1 / 
 :arg Q: Q factor of the lowpass.
 :type Q: float
 :return: The created :class:`Factory` object.
-:rtype: :class:`Factory`'''
+:rtype: :class:`Factory`"""
 
 	def mix(*argv):
-		'''mix(factory)
+		"""mix(factory)
 
 Mixes two factories.
 
@@ -239,19 +241,19 @@ Mixes two factories.
 :return: The created :class:`Factory` object.
 :rtype: :class:`Factory`
 
-.. note:: The two factories have to have the same specifications (channels and samplerate).'''
+.. note:: The two factories have to have the same specifications (channels and samplerate)."""
 
 	def pingpong(*argv):
-		'''pingpong()
+		"""pingpong()
 
 Plays a factory forward and then backward.
 This is like joining a factory with its reverse.
 
 :return: The created :class:`Factory` object.
-:rtype: :class:`Factory`'''
+:rtype: :class:`Factory`"""
 
 	def pitch(*argv):
-		'''pitch(factor)
+		"""pitch(factor)
 
 Changes the pitch of a factory with a specific factor.
 
@@ -262,10 +264,10 @@ Changes the pitch of a factory with a specific factor.
 
 .. note:: This is done by changing the sample rate of the underlying factory, which has to be an integer, so the factor value rounded and the factor may not be 100 % accurate.
 
-.. note:: This is a filter function, you might consider using :attr:`Handle.pitch` instead.'''
+.. note:: This is a filter function, you might consider using :attr:`Handle.pitch` instead."""
 
 	def reverse(*argv):
-		'''reverse()
+		"""reverse()
 
 Plays a factory reversed.
 
@@ -274,10 +276,10 @@ Plays a factory reversed.
 
 .. note:: The factory has to have a finite length and has to be seekable. It's recommended to use this only with factories       with fast and accurate seeking, which is not true for encoded audio files, such ones should be buffered using :meth:`buffer` before being played reversed.
 
-.. warning:: If seeking is not accurate in the underlying factory you'll likely hear skips/jumps/cracks.'''
+.. warning:: If seeking is not accurate in the underlying factory you'll likely hear skips/jumps/cracks."""
 
 	def sine(*argv):
-		'''sine(frequency, rate=48000)
+		"""sine(frequency, rate=48000)
 
 Creates a sine factory which plays a sine wave.
 
@@ -286,20 +288,20 @@ Creates a sine factory which plays a sine wave.
 :arg rate: The sampling rate in Hz. It's recommended to set this value to the playback device's samling rate to avoid resamping.
 :type rate: int
 :return: The created :class:`Factory` object.
-:rtype: :class:`Factory`'''
+:rtype: :class:`Factory`"""
 
 	def square(*argv):
-		'''square(threshold = 0)
+		"""square(threshold = 0)
 
 Makes a square wave out of an audio wave by setting all samples with a amplitude >= threshold to 1, all <= -threshold to -1 and all between to 0.
 
 :arg threshold: Threshold value over which an amplitude counts non-zero.
 :type threshold: float
 :return: The created :class:`Factory` object.
-:rtype: :class:`Factory`'''
+:rtype: :class:`Factory`"""
 
 	def volume(*argv):
-		'''volume(volume)
+		"""volume(volume)
 
 Changes the volume of a factory.
 
@@ -310,108 +312,108 @@ Changes the volume of a factory.
 
 .. note:: Should be in the range [0, 1] to avoid clipping.
 
-.. note:: This is a filter function, you might consider using :attr:`Handle.volume` instead.'''
+.. note:: This is a filter function, you might consider using :attr:`Handle.volume` instead."""
 
 
 class Handle:
-	'''Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles.'''
+	"""Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles."""
 
 	attenuation = getset_descriptor
-	'''Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles.'''
+	"""Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles."""
 
 	cone_angle_inner = getset_descriptor
-	'''Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles.'''
+	"""Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles."""
 
 	cone_angle_outer = getset_descriptor
-	'''Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles.'''
+	"""Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles."""
 
 	cone_volume_outer = getset_descriptor
-	'''Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles.'''
+	"""Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles."""
 
 	distance_maximum = getset_descriptor
-	'''Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles.'''
+	"""Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles."""
 
 	distance_reference = getset_descriptor
-	'''Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles.'''
+	"""Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles."""
 
 	keep = getset_descriptor
-	'''Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles.'''
+	"""Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles."""
 
 	location = getset_descriptor
-	'''Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles.'''
+	"""Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles."""
 
 	loop_count = getset_descriptor
-	'''Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles.'''
+	"""Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles."""
 
 	orientation = getset_descriptor
-	'''Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles.'''
+	"""Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles."""
 
 	def pause(*argv):
-		'''pause()
+		"""pause()
 
 Pauses playback.
 
 :return: Whether the action succeeded.
-:rtype: bool'''
+:rtype: bool"""
 
 	pitch = getset_descriptor
-	'''Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles.'''
+	"""Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles."""
 
 	position = getset_descriptor
-	'''Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles.'''
+	"""Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles."""
 
 	relative = getset_descriptor
-	'''Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles.'''
+	"""Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles."""
 
 	def resume(*argv):
-		'''resume()
+		"""resume()
 
 Resumes playback.
 
 :return: Whether the action succeeded.
-:rtype: bool'''
+:rtype: bool"""
 
 	status = getset_descriptor
-	'''Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles.'''
+	"""Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles."""
 
 	def stop(*argv):
-		'''stop()
+		"""stop()
 
 Stops playback.
 
 :return: Whether the action succeeded.
 :rtype: bool
 
-.. note:: This makes the handle invalid.'''
+.. note:: This makes the handle invalid."""
 
 	velocity = getset_descriptor
-	'''Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles.'''
+	"""Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles."""
 
 	volume = getset_descriptor
-	'''Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles.'''
+	"""Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles."""
 
 	volume_maximum = getset_descriptor
-	'''Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles.'''
+	"""Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles."""
 
 	volume_minimum = getset_descriptor
-	'''Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles.'''
+	"""Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles."""
 
 
 def device(*argv):
-	'''device()
+	"""device()
 
 Returns the application's :class:`Device`.
 
 :return: The application's :class:`Device`.
-:rtype: :class:`Device`'''
+:rtype: :class:`Device`"""
 
 class error:
-	'''Common base class for all non-exit exceptions.'''
+	"""Common base class for all non-exit exceptions."""
 
 	args = getset_descriptor
 	def with_traceback(*argv):
-		'''Exception.with_traceback(tb) --
-set self.__traceback__ to tb and return self.'''
+		"""Exception.with_traceback(tb) --
+set self.__traceback__ to tb and return self."""
 
 
 

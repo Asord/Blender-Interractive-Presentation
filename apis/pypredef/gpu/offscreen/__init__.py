@@ -1,23 +1,23 @@
-'''This module provides access to offscreen rendering functions.'''
+"""This module provides access to offscreen rendering functions."""
 
 class GPUOffScreen:
-	'''.. class:: GPUOffscreen
-This object gives access to off screen buffers.'''
+	""".. class:: GPUOffscreen
+This object gives access to off screen buffers."""
 
 	def bind(*argv):
-		'''bind(save=True)
+		"""bind(save=True)
 
 Bind the offscreen object.
 
 :param save: save OpenGL current states.
-:type save: bool'''
+:type save: bool"""
 
-	color_texture = getset_descriptor
-	'''.. class:: GPUOffscreen
-This object gives access to off screen buffers.'''
+	color_texture = object()
+	""".. class:: GPUOffscreen
+This object gives access to off screen buffers."""
 
 	def draw_view3d(*argv):
-		'''draw_view3d(scene, view3d, region, modelview_matrix, projection_matrix)
+		"""draw_view3d(scene, view3d, region, modelview_matrix, projection_matrix)
 
 Draw the 3d viewport in the offscreen object.
 
@@ -30,33 +30,33 @@ Draw the 3d viewport in the offscreen object.
 :param modelview_matrix: ModelView Matrix.
 :type modelview_matrix: :class:`mathutils.Matrix`
 :param projection_matrix: Projection Matrix.
-:type projection_matrix: :class:`mathutils.Matrix`'''
+:type projection_matrix: :class:`mathutils.Matrix`"""
 
 	def free(*argv):
-		'''free()
+		"""free()
 
 Free the offscreen object
-The framebuffer, texture and render objects will no longer be accessible.'''
+The framebuffer, texture and render objects will no longer be accessible."""
 
-	height = getset_descriptor
-	'''.. class:: GPUOffscreen
-This object gives access to off screen buffers.'''
+	height = object()
+	""".. class:: GPUOffscreen
+This object gives access to off screen buffers."""
 
 	def unbind(*argv):
-		'''unbind(restore=True)
+		"""unbind(restore=True)
 
 Unbind the offscreen object.
 
 :param restore: restore OpenGL previous states.
-:type restore: bool'''
+:type restore: bool"""
 
-	width = getset_descriptor
-	'''.. class:: GPUOffscreen
-This object gives access to off screen buffers.'''
+	width = object()
+	""".. class:: GPUOffscreen
+This object gives access to off screen buffers."""
 
 
 def new(*argv):
-	'''new(width, height, samples=0)
+	"""new(width, height, samples=0)
 
 Return a GPUOffScreen.
 
@@ -67,6 +67,6 @@ Return a GPUOffScreen.
 :param samples: OpenGL samples to use for MSAA or zero to disable.
 :type samples: int
 :return: Newly created off-screen buffer.
-:rtype: :class:`gpu.GPUOffscreen`'''
+:rtype: :class:`gpu.GPUOffscreen`"""
 
 

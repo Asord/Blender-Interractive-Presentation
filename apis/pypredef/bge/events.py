@@ -1,4 +1,4 @@
-'''This modules provides defines for key-codes'''
+"""This modules provides defines for key-codes"""
 
 ACCENTGRAVEKEY = int
 AKEY = int
@@ -18,12 +18,12 @@ ENTERKEY = int
 EQUALKEY = int
 ESCKEY = int
 def EventToCharacter(*argv):
-	'''EventToCharacter(event, is_shift)
-Take a valid event from the GameKeys module or Keyboard Sensor and return a character'''
+	"""EventToCharacter(event, is_shift)
+Take a valid event from the GameKeys module or Keyboard Sensor and return a character"""
 
 def EventToString(*argv):
-	'''EventToString(event)
-Take a valid event from the GameKeys module or Keyboard Sensor and return a name'''
+	"""EventToString(event)
+Take a valid event from the GameKeys module or Keyboard Sensor and return a name"""
 
 F10KEY = int
 F11KEY = int

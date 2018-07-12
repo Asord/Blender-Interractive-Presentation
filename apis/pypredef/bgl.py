@@ -1,7 +1,7 @@
 class Buffer:
-	dimensions = getset_descriptor
+	dimensions = object()
 	def to_list(*argv):
-		'''return the buffer as a list'''
+		"""return the buffer as a list"""
 
 
 GL_2D = int

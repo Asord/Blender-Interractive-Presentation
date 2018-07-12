@@ -1,5 +1,5 @@
 def bake_action(*argv):
-	'''Return an image from the file path with options to search multiple paths
+	"""Return an image from the file path with options to search multiple paths
 and return a placeholder if its not found.
 
 :arg frame_start: First frame to bake.
@@ -27,7 +27,7 @@ and return a placeholder if its not found.
 :type action: :class:`bpy.types.Action` or None
 
 :return: an action or None
-:rtype: :class:`bpy.types.Action`'''
+:rtype: :class:`bpy.types.Action`"""
 
 import bpy
 
