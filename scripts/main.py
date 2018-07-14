@@ -22,6 +22,7 @@ classes = (
     OperatorDefEndMotion,
     OperatorValidateMotion,
     OperatorCancelMotion,
+    OperatorAction,
     OperatorRemoveAnimation,
     OperatorUnlinkObject,
     OperatorLinkObject,

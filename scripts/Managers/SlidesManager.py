@@ -132,6 +132,11 @@ class Slides(object):
                     self.startMotion = [0.0, 0.0, 0.0]
                     self.endMotion = [0.0, 0.0, 0.0]
 
+                if anim == "action":
+                    self.gestionSlide.camera.game.actuators[obj.name].to_property = obj.name + "-action"
+                    obj.name += "-action"
+                    AnimationManager.animation(anim, obj.animation_data.action, context.scene.frame_end)
+
     def removeAnimation(self, anim):
         """
         remove an animation to the selected object
@@ -151,6 +156,11 @@ class Slides(object):
                     obj.name = obj.name[0:8]
                     self.gestionSlide.camera.game.actuators[obj.name].to_property = obj.name
                     AnimationManager.animation(anim)
+                if anim == "delAction":
+                    obj.name = obj.name[0:8]
+                    self.gestionSlide.camera.game.actuators[obj.name].to_property = obj.name
+                    AnimationManager.animation(anim)
+
 
     def __del__(self):
         """

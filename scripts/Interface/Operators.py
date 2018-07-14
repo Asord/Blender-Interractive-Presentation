@@ -144,6 +144,16 @@ class OperatorCancelMotion(Operator):
 
         return {'RUNNING_MODAL'}
 
+class OperatorAction(Operator):
+    bl_idname = "operator.add_action"
+    bl_label = XMLData["button@Action"]
+    bl_description = XMLData["desc@AddActionDesc"]
+
+    def invoke(self, context, event):
+        gestSlide = SlidesManager()
+        gestSlide.listSlides[gestSlide.posActiveSlide].addAnimation('action')
+        return {'RUNNING_MODAL'}
+
 class OperatorRemoveAnimation(Operator):
     bl_idname = "operator.remove_animation"
     bl_label = XMLData["button@RemoveAnimation"]
@@ -159,6 +169,8 @@ class OperatorRemoveAnimation(Operator):
                 gestSlide.listSlides[gestSlide.posActiveSlide].removeAnimation('delFlash')
             elif controllers[0].actuators[0].name == "motion":
                 gestSlide.listSlides[gestSlide.posActiveSlide].removeAnimation('delMotion')
+            elif controllers[0].actuators[0].name == "action":
+                gestSlide.listSlides[gestSlide.posActiveSlide].removeAnimation('delAction')
 
         return {'RUNNING_MODAL'}
 

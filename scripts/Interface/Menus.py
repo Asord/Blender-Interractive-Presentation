@@ -61,6 +61,7 @@ class MenuAnimation(Menu):
 
         if not context.scene.prop_custom_motion['is_Enable']:
             self.col.operator(Operators.OperatorFlash.bl_idname, text=XMLData["button@Flash"])
+            self.col.operator(Operators.OperatorAction.bl_idname, text=XMLData["button@Action"])
             self.col.operator(Operators.OperatorMotion.bl_idname, text=XMLData["button@Motion"])
             self.col.operator(Operators.OperatorRemoveAnimation.bl_idname, text=XMLData["button@RemoveAnimation"])
 

@@ -30,6 +30,8 @@
         <desc   type="ValidateMotionDesc">Validate the locations of the start and the end of the motion animation</desc>
         <button type="CancelMotion">Cancel animation</button>
         <desc   type="CancelMotionDesc">Cancel the motion and return to the choice of the animations</desc>
+        <button type="Action">Action</button>
+        <desc  type="AddActionDesc">Add an action animation to the object</desc>
         <button type="RemoveAnimation">Remove animation</button>
         <desc   type="RemoveAnimationDesc">Remove the animation of the object and rename it</desc>
 
