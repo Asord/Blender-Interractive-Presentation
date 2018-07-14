@@ -1,5 +1,5 @@
 def load_image(*argv):
-	'''Return an image from the file path with options to search multiple paths
+	"""Return an image from the file path with options to search multiple paths
 and return a placeholder if its not found.
 
 :arg filepath: The image filename
@@ -34,6 +34,6 @@ and return a placeholder if its not found.
    is also enabled).
 :type force_reload: bool
 :return: an image or None
-:rtype: :class:`bpy.types.Image`'''
+:rtype: :class:`bpy.types.Image`"""
 
 

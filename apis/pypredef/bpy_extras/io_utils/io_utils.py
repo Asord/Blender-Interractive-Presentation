@@ -1,5 +1,5 @@
 def BoolProperty(*argv):
-	'''.. function:: BoolProperty(name="", description="", default=False, options={'ANIMATABLE'}, subtype='NONE', update=None, get=None, set=None)
+	""".. function:: BoolProperty(name="", description="", default=False, options={'ANIMATABLE'}, subtype='NONE', update=None, get=None, set=None)
 
 Returns a new boolean property definition.
 
@@ -20,10 +20,10 @@ Returns a new boolean property definition.
 :type get: function
 :arg set: Function to be called when this value is 'written',
    This function must take 2 values (self, value) and return None.
-:type set: function'''
+:type set: function"""
 
 def EnumProperty(*argv):
-	'''.. function:: EnumProperty(items, name="", description="", default=None, options={'ANIMATABLE'}, update=None, get=None, set=None)
+	""".. function:: EnumProperty(items, name="", description="", default=None, options={'ANIMATABLE'}, update=None, get=None, set=None)
 
 Returns a new enumerator property definition.
 
@@ -72,7 +72,7 @@ Returns a new enumerator property definition.
 :type get: function
 :arg set: Function to be called when this value is 'written',
    This function must take 2 values (self, value) and return None.
-:type set: function'''
+:type set: function"""
 
 class ExportHelper:
 	def check(*argv):
@@ -97,7 +97,7 @@ class ImportHelper:
 	order = list
 
 def StringProperty(*argv):
-	'''.. function:: StringProperty(name="", description="", default="", maxlen=0, options={'ANIMATABLE'}, subtype='NONE', update=None, get=None, set=None)
+	""".. function:: StringProperty(name="", description="", default="", maxlen=0, options={'ANIMATABLE'}, subtype='NONE', update=None, get=None, set=None)
 
 Returns a new string property definition.
 
@@ -122,14 +122,14 @@ Returns a new string property definition.
 :type get: function
 :arg set: Function to be called when this value is 'written',
    This function must take 2 values (self, value) and return None.
-:type set: function'''
+:type set: function"""
 
 def axis_conversion(*argv):
-	'''Each argument us an axis in ['X', 'Y', 'Z', '-X', '-Y', '-Z']
-where the first 2 are a source and the second 2 are the target.'''
+	"""Each argument us an axis in ['X', 'Y', 'Z', '-X', '-Y', '-Z']
+where the first 2 are a source and the second 2 are the target."""
 
 def axis_conversion_ensure(*argv):
-	'''Function to ensure an operator has valid axis conversion settings, intended
+	"""Function to ensure an operator has valid axis conversion settings, intended
 to be used from :class:`bpy.types.Operator.check`.
 
 :arg operator: the operator to access axis attributes from.
@@ -139,7 +139,7 @@ to be used from :class:`bpy.types.Operator.check`.
 :arg up_attr: attribute storing the up axis
 :type up_attr: string
 :return: True if the value was modified.
-:rtype: boolean'''
+:rtype: boolean"""
 
 import bpy
 def create_derived_objects(*argv):
@@ -152,7 +152,7 @@ def orientation_helper_factory(*argv):
 	pass
 
 def path_reference(*argv):
-	'''Return a filepath relative to a destination directory, for use with
+	"""Return a filepath relative to a destination directory, for use with
 exporters.
 
 :arg filepath: the file path to return,
@@ -175,19 +175,19 @@ exporters.
 :arg library: The library this path is relative to.
 :type library: :class:`bpy.types.Library` or None
 :return: the new filepath.
-:rtype: string'''
+:rtype: string"""
 
 def path_reference_copy(*argv):
-	'''Execute copying files of path_reference
+	"""Execute copying files of path_reference
 
 :arg copy_set: set of (from, to) pairs to copy.
 :type copy_set: set
 :arg report: function used for reporting warnings, takes a string argument.
-:type report: function'''
+:type report: function"""
 
 path_reference_mode = tuple
 def unique_name(*argv):
-	'''Helper function for storing unique names which may have special characters
+	"""Helper function for storing unique names which may have special characters
 stripped and restricted to a maximum length.
 
 :arg key: unique item this name belongs to, name_dict[key] will be reused
@@ -204,7 +204,7 @@ stripped and restricted to a maximum length.
 :type clean_func: function
 :arg sep: Separator to use when between the name and a number when a
    duplicate name is found.
-:type sep: string'''
+:type sep: string"""
 
 def unpack_face_list(*argv):
 	pass

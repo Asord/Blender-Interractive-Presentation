@@ -1,9 +1,9 @@
-'''This module contains some data/methods regarding units handling.'''
+"""This module contains some data/methods regarding units handling."""
 
-categories = categories
-systems = systems
+categories = object()
+systems = object()
 def to_string(*argv):
-	'''.. method:: to_string(unit_system, unit_category, value, precision=3, split_unit=False, compatible_unit=False)
+	""".. method:: to_string(unit_system, unit_category, value, precision=3, split_unit=False, compatible_unit=False)
 
 Convert a given input float value into a string with units.
 
@@ -22,10 +22,10 @@ Convert a given input float value into a string with units.
 :type compatible_unit: bool
 :return: The converted string.
 :rtype: str
-:raises ValueError: if conversion fails to generate a valid python string.'''
+:raises ValueError: if conversion fails to generate a valid python string."""
 
 def to_value(*argv):
-	'''.. method:: to_value(unit_system, unit_category, str_input, str_ref_unit=None)
+	""".. method:: to_value(unit_system, unit_category, str_input, str_ref_unit=None)
 
 Convert a given input string into a float value.
 
@@ -40,6 +40,6 @@ Convert a given input string into a float value.
 :type str_ref_unit: string or None
 :return: The converted/interpreted value.
 :rtype: float
-:raises ValueError: if conversion fails to generate a valid python float value.'''
+:raises ValueError: if conversion fails to generate a valid python float value."""
 
 

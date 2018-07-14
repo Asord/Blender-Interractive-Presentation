@@ -1,7 +1,7 @@
-'''The Blender geometry module'''
+"""The Blender geometry module"""
 
 def area_tri(*argv):
-	'''.. function:: area_tri(v1, v2, v3)
+	""".. function:: area_tri(v1, v2, v3)
 
 Returns the area size of the 2D or 3D triangle defined.
 
@@ -11,10 +11,10 @@ Returns the area size of the 2D or 3D triangle defined.
 :type v2: :class:`mathutils.Vector`
 :arg v3: Point3
 :type v3: :class:`mathutils.Vector`
-:rtype: float'''
+:rtype: float"""
 
 def barycentric_transform(*argv):
-	'''.. function:: barycentric_transform(point, tri_a1, tri_a2, tri_a3, tri_b1, tri_b2, tri_b3)
+	""".. function:: barycentric_transform(point, tri_a1, tri_a2, tri_a3, tri_b1, tri_b2, tri_b3)
 
 Return a transformed point, the transformation is defined by 2 triangles.
 
@@ -33,40 +33,40 @@ Return a transformed point, the transformation is defined by 2 triangles.
 :arg tri_a3: target triangle vertex.
 :type tri_a3: :class:`mathutils.Vector`
 :return: The transformed point
-:rtype: :class:`mathutils.Vector`'s'''
+:rtype: :class:`mathutils.Vector`'s"""
 
 def box_fit_2d(*argv):
-	'''.. function:: box_fit_2d(points)
+	""".. function:: box_fit_2d(points)
 
 Returns an angle that best fits the points to an axis aligned rectangle
 
 :arg points: list of 2d points.
 :type points: list
 :return: angle
-:rtype: float'''
+:rtype: float"""
 
 def box_pack_2d(*argv):
-	'''.. function:: box_pack_2d(boxes)
+	""".. function:: box_pack_2d(boxes)
 
 Returns the normal of the 3D tri or quad.
 
 :arg boxes: list of boxes, each box is a list where the first 4 items are [x, y, width, height, ...] other items are ignored.
 :type boxes: list
 :return: the width and height of the packed bounding box
-:rtype: tuple, pair of floats'''
+:rtype: tuple, pair of floats"""
 
 def convex_hull_2d(*argv):
-	'''.. function:: convex_hull_2d(points)
+	""".. function:: convex_hull_2d(points)
 
 Returns a list of indices into the list given
 
 :arg points: list of 2d points.
 :type points: list
 :return: a list of indices
-:rtype: list of ints'''
+:rtype: list of ints"""
 
 def distance_point_to_plane(*argv):
-	'''.. function:: distance_point_to_plane(pt, plane_co, plane_no)
+	""".. function:: distance_point_to_plane(pt, plane_co, plane_no)
 
 Returns the signed distance between a point and a plane    (negative when below the normal).
 
@@ -76,10 +76,10 @@ Returns the signed distance between a point and a plane    (negative when below 
 :type plane_co: :class:`mathutils.Vector`
 :arg plane_no: The direction the plane is facing
 :type plane_no: :class:`mathutils.Vector`
-:rtype: float'''
+:rtype: float"""
 
 def interpolate_bezier(*argv):
-	'''.. function:: interpolate_bezier(knot1, handle1, handle2, knot2, resolution)
+	""".. function:: interpolate_bezier(knot1, handle1, handle2, knot2, resolution)
 
 Interpolate a bezier spline segment.
 
@@ -94,10 +94,10 @@ Interpolate a bezier spline segment.
 :arg resolution: Number of points to return.
 :type resolution: int
 :return: The interpolated points
-:rtype: list of :class:`mathutils.Vector`'s'''
+:rtype: list of :class:`mathutils.Vector`'s"""
 
 def intersect_line_line(*argv):
-	'''.. function:: intersect_line_line(v1, v2, v3, v4)
+	""".. function:: intersect_line_line(v1, v2, v3, v4)
 
 Returns a tuple with the points on each line respectively closest to the other.
 
@@ -109,10 +109,10 @@ Returns a tuple with the points on each line respectively closest to the other.
 :type v3: :class:`mathutils.Vector`
 :arg v4: Second point of the second line
 :type v4: :class:`mathutils.Vector`
-:rtype: tuple of :class:`mathutils.Vector`'s'''
+:rtype: tuple of :class:`mathutils.Vector`'s"""
 
 def intersect_line_line_2d(*argv):
-	'''.. function:: intersect_line_line_2d(lineA_p1, lineA_p2, lineB_p1, lineB_p2)
+	""".. function:: intersect_line_line_2d(lineA_p1, lineA_p2, lineB_p1, lineB_p2)
 
 Takes 2 segments (defined by 4 vectors) and returns a vector for their point of intersection or None.
 
@@ -127,10 +127,10 @@ Takes 2 segments (defined by 4 vectors) and returns a vector for their point of 
 :arg lineB_p2: Second point of the second line
 :type lineB_p2: :class:`mathutils.Vector`
 :return: The point of intersection or None when not found
-:rtype: :class:`mathutils.Vector` or None'''
+:rtype: :class:`mathutils.Vector` or None"""
 
 def intersect_line_plane(*argv):
-	'''.. function:: intersect_line_plane(line_a, line_b, plane_co, plane_no, no_flip=False)
+	""".. function:: intersect_line_plane(line_a, line_b, plane_co, plane_no, no_flip=False)
 
 Calculate the intersection between a line (as 2 vectors) and a plane.
 Returns a vector for the intersection or None.
@@ -144,10 +144,10 @@ Returns a vector for the intersection or None.
 :arg plane_no: The direction the plane is facing
 :type plane_no: :class:`mathutils.Vector`
 :return: The point of intersection or None when not found
-:rtype: :class:`mathutils.Vector` or None'''
+:rtype: :class:`mathutils.Vector` or None"""
 
 def intersect_line_sphere(*argv):
-	'''.. function:: intersect_line_sphere(line_a, line_b, sphere_co, sphere_radius, clip=True)
+	""".. function:: intersect_line_sphere(line_a, line_b, sphere_co, sphere_radius, clip=True)
 
 Takes a line (as 2 points) and a sphere (as a point and a radius) and
 returns the intersection
@@ -161,10 +161,10 @@ returns the intersection
 :arg sphere_radius: Radius of the sphere
 :type sphere_radius: sphere_radius
 :return: The intersection points as a pair of vectors or None when there is no intersection
-:rtype: A tuple pair containing :class:`mathutils.Vector` or None'''
+:rtype: A tuple pair containing :class:`mathutils.Vector` or None"""
 
 def intersect_line_sphere_2d(*argv):
-	'''.. function:: intersect_line_sphere_2d(line_a, line_b, sphere_co, sphere_radius, clip=True)
+	""".. function:: intersect_line_sphere_2d(line_a, line_b, sphere_co, sphere_radius, clip=True)
 
 Takes a line (as 2 points) and a sphere (as a point and a radius) and
 returns the intersection
@@ -178,10 +178,10 @@ returns the intersection
 :arg sphere_radius: Radius of the sphere
 :type sphere_radius: sphere_radius
 :return: The intersection points as a pair of vectors or None when there is no intersection
-:rtype: A tuple pair containing :class:`mathutils.Vector` or None'''
+:rtype: A tuple pair containing :class:`mathutils.Vector` or None"""
 
 def intersect_plane_plane(*argv):
-	'''.. function:: intersect_plane_plane(plane_a_co, plane_a_no, plane_b_co, plane_b_no)
+	""".. function:: intersect_plane_plane(plane_a_co, plane_a_no, plane_b_co, plane_b_no)
 
 Return the intersection between two planes
 
@@ -194,10 +194,10 @@ Return the intersection between two planes
 :arg plane_b_no: Normal of the second plane
 :type plane_b_no: :class:`mathutils.Vector`
 :return: The line of the intersection represented as a point and a vector
-:rtype: tuple pair of :class:`mathutils.Vector` or None if the intersection can't be calculated'''
+:rtype: tuple pair of :class:`mathutils.Vector` or None if the intersection can't be calculated"""
 
 def intersect_point_line(*argv):
-	'''.. function:: intersect_point_line(pt, line_p1, line_p2)
+	""".. function:: intersect_point_line(pt, line_p1, line_p2)
 
 Takes a point and a line and returns a tuple with the closest point on the line and its distance from the first point of the line as a percentage of the length of the line.
 
@@ -207,10 +207,10 @@ Takes a point and a line and returns a tuple with the closest point on the line 
 :type line_p1: :class:`mathutils.Vector`
 :arg line_p1: Second point of the line
 :type line_p1: :class:`mathutils.Vector`
-:rtype: (:class:`mathutils.Vector`, float)'''
+:rtype: (:class:`mathutils.Vector`, float)"""
 
 def intersect_point_quad_2d(*argv):
-	'''.. function:: intersect_point_quad_2d(pt, quad_p1, quad_p2, quad_p3, quad_p4)
+	""".. function:: intersect_point_quad_2d(pt, quad_p1, quad_p2, quad_p3, quad_p4)
 
 Takes 5 vectors (using only the x and y coordinates): one is the point and the next 4 define the quad, 
 only the x and y are used from the vectors. Returns 1 if the point is within the quad, otherwise 0.
@@ -226,10 +226,10 @@ Works only with convex quads without singular edges.
 :type quad_p3: :class:`mathutils.Vector`
 :arg quad_p4: Fourth point of the quad
 :type quad_p4: :class:`mathutils.Vector`
-:rtype: int'''
+:rtype: int"""
 
 def intersect_point_tri(*argv):
-	'''.. function:: intersect_point_tri(pt, tri_p1, tri_p2, tri_p3)
+	""".. function:: intersect_point_tri(pt, tri_p1, tri_p2, tri_p3)
 
 Takes 4 vectors: one is the point and the next 3 define the triangle.
 
@@ -242,10 +242,10 @@ Takes 4 vectors: one is the point and the next 3 define the triangle.
 :arg tri_p3: Third point of the triangle
 :type tri_p3: :class:`mathutils.Vector`
 :return: Point on the triangles plane or None if its outside the triangle
-:rtype: :class:`mathutils.Vector` or None'''
+:rtype: :class:`mathutils.Vector` or None"""
 
 def intersect_point_tri_2d(*argv):
-	'''.. function:: intersect_point_tri_2d(pt, tri_p1, tri_p2, tri_p3)
+	""".. function:: intersect_point_tri_2d(pt, tri_p1, tri_p2, tri_p3)
 
 Takes 4 vectors (using only the x and y coordinates): one is the point and the next 3 define the triangle. Returns 1 if the point is within the triangle, otherwise 0.
 
@@ -257,10 +257,10 @@ Takes 4 vectors (using only the x and y coordinates): one is the point and the n
 :type tri_p2: :class:`mathutils.Vector`
 :arg tri_p3: Third point of the triangle
 :type tri_p3: :class:`mathutils.Vector`
-:rtype: int'''
+:rtype: int"""
 
 def intersect_ray_tri(*argv):
-	'''.. function:: intersect_ray_tri(v1, v2, v3, ray, orig, clip=True)
+	""".. function:: intersect_ray_tri(v1, v2, v3, ray, orig, clip=True)
 
 Returns the intersection between a ray and a triangle, if possible, returns None otherwise.
 
@@ -277,10 +277,10 @@ Returns the intersection between a ray and a triangle, if possible, returns None
 :arg clip: When False, don't restrict the intersection to the area of the triangle, use the infinite plane defined by the triangle.
 :type clip: boolean
 :return: The point of intersection or None if no intersection is found
-:rtype: :class:`mathutils.Vector` or None'''
+:rtype: :class:`mathutils.Vector` or None"""
 
 def intersect_sphere_sphere_2d(*argv):
-	'''.. function:: intersect_sphere_sphere_2d(p_a, radius_a, p_b, radius_b)
+	""".. function:: intersect_sphere_sphere_2d(p_a, radius_a, p_b, radius_b)
 
 Returns 2 points on between intersecting circles.
 
@@ -292,37 +292,37 @@ Returns 2 points on between intersecting circles.
 :type p_b: :class:`mathutils.Vector`
 :arg radius_b: Radius of the second circle
 :type radius_b: float
-:rtype: tuple of :class:`mathutils.Vector`'s or None when there is no intersection'''
+:rtype: tuple of :class:`mathutils.Vector`'s or None when there is no intersection"""
 
 def normal(*argv):
-	'''.. function:: normal(vectors)
+	""".. function:: normal(vectors)
 
 Returns the normal of a 3D polygon.
 
 :arg vectors: Vectors to calculate normals with
 :type vectors: sequence of 3 or more 3d vector
-:rtype: :class:`mathutils.Vector`'''
+:rtype: :class:`mathutils.Vector`"""
 
 def points_in_planes(*argv):
-	'''.. function:: points_in_planes(planes)
+	""".. function:: points_in_planes(planes)
 
 Returns a list of points inside all planes given and a list of index values for the planes used.
 
 :arg planes: List of planes (4D vectors).
 :type planes: list of :class:`mathutils.Vector`
 :return: two lists, once containing the vertices inside the planes, another containing the plane indices used
-:rtype: pair of lists'''
+:rtype: pair of lists"""
 
 def tessellate_polygon(*argv):
-	'''.. function:: tessellate_polygon(veclist_list)
+	""".. function:: tessellate_polygon(veclist_list)
 
 Takes a list of polylines (each point a vector) and returns the point indices for a polyline filled with triangles.
 
 :arg veclist_list: list of polylines
-:rtype: list'''
+:rtype: list"""
 
 def volume_tetrahedron(*argv):
-	'''.. function:: volume_tetrahedron(v1, v2, v3, v4)
+	""".. function:: volume_tetrahedron(v1, v2, v3, v4)
 
 Return the volume formed by a tetrahedron (points can be in any order).
 
@@ -334,6 +334,6 @@ Return the volume formed by a tetrahedron (points can be in any order).
 :type v3: :class:`mathutils.Vector`
 :arg v4: Point4
 :type v4: :class:`mathutils.Vector`
-:rtype: float'''
+:rtype: float"""
 
 

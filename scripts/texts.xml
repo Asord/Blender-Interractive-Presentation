@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextData version="TDv1">
+    <en-US>
+        <!-- Main Menu -->
+        <label  type="Category">Presentation</label>
+        <label  type="MainMenu">Main Menu</label>
+        <button type="Camera">Switch to Camera</button>
+        <desc type="CameraDesc">Sitch to the slide camera view</desc>
+
+        <!-- Slide Menu -->
+        <label  type="Slide">Slides</label>
+        <button type="AddSlide">Add a Slide</button>
+        <desc   type="AddSlideDesc">Add a new slide after the current one</desc>
+        <button type="RemoveSlide">Remove a Slide</button>
+        <desc   type="RemoveSlideDesc">Remove the current slide</desc>
+        <prop   type="SlideSize">N° slide</prop>
+        <desc   type="SlideSizeDesc">Number of the slide to edit</desc>
+
+        <!-- Animation Menu -->
+        <label type="Animation">Animation</label>
+        <button type="Flash">Flash</button>
+        <desc  type="AddFlashDesc">Add a flash animation to the object</desc>
+        <button type="Motion">Motion</button>
+        <desc  type="MotionDesc">Add a motion animation to the object</desc>
+        <button type="DefStartMotion">Define start location</button>
+        <desc   type="DefStartMotionDesc">Define the location of the object at the start of the animation</desc>
+        <button type="DefEndMotion">Define end location</button>
+        <desc   type="DefEndMotionDesc">Define the location of the object at the end of the animation</desc>
+        <button type="ValidateMotion">Validate animation</button>
+        <desc   type="ValidateMotionDesc">Validate the locations of the start and the end of the motion animation</desc>
+        <button type="CancelMotion">Cancel animation</button>
+        <desc   type="CancelMotionDesc">Cancel the motion and return to the choice of the animations</desc>
+        <button type="Action">Action</button>
+        <desc  type="AddActionDesc">Add an action animation to the object</desc>
+        <button type="RemoveAnimation">Remove animation</button>
+        <desc   type="RemoveAnimationDesc">Remove the animation of the object and rename it</desc>
+
+        <!-- Popups -->
+        <label type="deleteSlideName">Warning</label>
+        <desc  type="deleteSlideDesc">Continue deleting slide will destroy objects</desc>
+        <popup type="DeleteSlideMessage">One or more objects are linked to the slide#Destroying slide will destroy the linked objects#Press 'OK' to delete anyway.</popup>
+
+        <!-- Objects Menu -->
+        <label type="Objects">Objects</label>
+        <label type="LinkObject">Link Object</label>
+        <desc type="LinkObjectDesc">Link an object to the active slide</desc>
+        <label type="UnlinkObject">Unlink Object</label>
+        <desc type="UnlinkObjectDesc">Unlink an object to the active slide</desc>
+
+    </en-US>
+</TextData>

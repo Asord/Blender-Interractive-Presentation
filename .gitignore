@@ -1,4 +1,7 @@
 .idea/
 blender/
+build/
+source/
+
 *.pyc
 *.pyd

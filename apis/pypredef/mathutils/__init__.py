@@ -1,4 +1,4 @@
-'''This module provides access to the math classes:
+"""This module provides access to the math classes:
 
 - :class:`Color`,
 - :class:`Euler`,
@@ -9,26 +9,26 @@
 .. note::
 
    Classes, methods and attributes that accept vectors also accept other numeric sequences,
-   such as tuples, lists.'''
+   such as tuples, lists."""
 
 class Color:
-	'''.. class:: Color(rgb)
+	""".. class:: Color(rgb)
 
 This object gives access to Colors in Blender.
 
 :param rgb: (r, g, b) color values
-:type rgb: 3d vector'''
+:type rgb: 3d vector"""
 
 	b = getset_descriptor
-	'''.. class:: Color(rgb)
+	""".. class:: Color(rgb)
 
 This object gives access to Colors in Blender.
 
 :param rgb: (r, g, b) color values
-:type rgb: 3d vector'''
+:type rgb: 3d vector"""
 
 	def copy(*argv):
-		'''.. function:: copy()
+		""".. function:: copy()
 
 Returns a copy of this color.
 
@@ -36,102 +36,102 @@ Returns a copy of this color.
 :rtype: :class:`Color`
 
 .. note:: use this to get a copy of a wrapped color with
-   no reference to the original data.'''
+   no reference to the original data."""
 
 	def freeze(*argv):
-		'''.. function:: freeze()
+		""".. function:: freeze()
 
 Make this object immutable.
 
 After this the object can be hashed, used in dictionaries & sets.
 
-:return: An instance of this object.'''
+:return: An instance of this object."""
 
 	g = getset_descriptor
-	'''.. class:: Color(rgb)
+	""".. class:: Color(rgb)
 
 This object gives access to Colors in Blender.
 
 :param rgb: (r, g, b) color values
-:type rgb: 3d vector'''
+:type rgb: 3d vector"""
 
 	h = getset_descriptor
-	'''.. class:: Color(rgb)
+	""".. class:: Color(rgb)
 
 This object gives access to Colors in Blender.
 
 :param rgb: (r, g, b) color values
-:type rgb: 3d vector'''
+:type rgb: 3d vector"""
 
 	hsv = getset_descriptor
-	'''.. class:: Color(rgb)
+	""".. class:: Color(rgb)
 
 This object gives access to Colors in Blender.
 
 :param rgb: (r, g, b) color values
-:type rgb: 3d vector'''
+:type rgb: 3d vector"""
 
 	is_frozen = getset_descriptor
-	'''.. class:: Color(rgb)
+	""".. class:: Color(rgb)
 
 This object gives access to Colors in Blender.
 
 :param rgb: (r, g, b) color values
-:type rgb: 3d vector'''
+:type rgb: 3d vector"""
 
 	is_wrapped = getset_descriptor
-	'''.. class:: Color(rgb)
+	""".. class:: Color(rgb)
 
 This object gives access to Colors in Blender.
 
 :param rgb: (r, g, b) color values
-:type rgb: 3d vector'''
+:type rgb: 3d vector"""
 
 	owner = getset_descriptor
-	'''.. class:: Color(rgb)
+	""".. class:: Color(rgb)
 
 This object gives access to Colors in Blender.
 
 :param rgb: (r, g, b) color values
-:type rgb: 3d vector'''
+:type rgb: 3d vector"""
 
 	r = getset_descriptor
-	'''.. class:: Color(rgb)
+	""".. class:: Color(rgb)
 
 This object gives access to Colors in Blender.
 
 :param rgb: (r, g, b) color values
-:type rgb: 3d vector'''
+:type rgb: 3d vector"""
 
 	s = getset_descriptor
-	'''.. class:: Color(rgb)
+	""".. class:: Color(rgb)
 
 This object gives access to Colors in Blender.
 
 :param rgb: (r, g, b) color values
-:type rgb: 3d vector'''
+:type rgb: 3d vector"""
 
 	v = getset_descriptor
-	'''.. class:: Color(rgb)
+	""".. class:: Color(rgb)
 
 This object gives access to Colors in Blender.
 
 :param rgb: (r, g, b) color values
-:type rgb: 3d vector'''
+:type rgb: 3d vector"""
 
 
 class Euler:
-	'''.. class:: Euler(angles, order='XYZ')
+	""".. class:: Euler(angles, order='XYZ')
 
 This object gives access to Eulers in Blender.
 
 :param angles: Three angles, in radians.
 :type angles: 3d vector
 :param order: Optional order of the angles, a permutation of ``XYZ``.
-:type order: str'''
+:type order: str"""
 
 	def copy(*argv):
-		'''.. function:: copy()
+		""".. function:: copy()
 
 Returns a copy of this euler.
 
@@ -139,75 +139,75 @@ Returns a copy of this euler.
 :rtype: :class:`Euler`
 
 .. note:: use this to get a copy of a wrapped euler with
-   no reference to the original data.'''
+   no reference to the original data."""
 
 	def freeze(*argv):
-		'''.. function:: freeze()
+		""".. function:: freeze()
 
 Make this object immutable.
 
 After this the object can be hashed, used in dictionaries & sets.
 
-:return: An instance of this object.'''
+:return: An instance of this object."""
 
 	is_frozen = getset_descriptor
-	'''.. class:: Euler(angles, order='XYZ')
+	""".. class:: Euler(angles, order='XYZ')
 
 This object gives access to Eulers in Blender.
 
 :param angles: Three angles, in radians.
 :type angles: 3d vector
 :param order: Optional order of the angles, a permutation of ``XYZ``.
-:type order: str'''
+:type order: str"""
 
 	is_wrapped = getset_descriptor
-	'''.. class:: Euler(angles, order='XYZ')
+	""".. class:: Euler(angles, order='XYZ')
 
 This object gives access to Eulers in Blender.
 
 :param angles: Three angles, in radians.
 :type angles: 3d vector
 :param order: Optional order of the angles, a permutation of ``XYZ``.
-:type order: str'''
+:type order: str"""
 
 	def make_compatible(*argv):
-		'''.. method:: make_compatible(other)
+		""".. method:: make_compatible(other)
 
 Make this euler compatible with another,
 so interpolating between them works as intended.
 
-.. note:: the rotation order is not taken into account for this function.'''
+.. note:: the rotation order is not taken into account for this function."""
 
 	order = getset_descriptor
-	'''.. class:: Euler(angles, order='XYZ')
+	""".. class:: Euler(angles, order='XYZ')
 
 This object gives access to Eulers in Blender.
 
 :param angles: Three angles, in radians.
 :type angles: 3d vector
 :param order: Optional order of the angles, a permutation of ``XYZ``.
-:type order: str'''
+:type order: str"""
 
 	owner = getset_descriptor
-	'''.. class:: Euler(angles, order='XYZ')
+	""".. class:: Euler(angles, order='XYZ')
 
 This object gives access to Eulers in Blender.
 
 :param angles: Three angles, in radians.
 :type angles: 3d vector
 :param order: Optional order of the angles, a permutation of ``XYZ``.
-:type order: str'''
+:type order: str"""
 
 	def rotate(*argv):
-		'''.. method:: rotate(other)
+		""".. method:: rotate(other)
 
 Rotates the euler by another mathutils value.
 
 :arg other: rotation component of mathutils value
-:type other: :class:`Euler`, :class:`Quaternion` or :class:`Matrix`'''
+:type other: :class:`Euler`, :class:`Quaternion` or :class:`Matrix`"""
 
 	def rotate_axis(*argv):
-		'''.. method:: rotate_axis(axis, angle)
+		""".. method:: rotate_axis(axis, angle)
 
 Rotates the euler a certain amount and returning a unique euler rotation
 (no 720 degree pitches).
@@ -215,82 +215,82 @@ Rotates the euler a certain amount and returning a unique euler rotation
 :arg axis: single character in ['X, 'Y', 'Z'].
 :type axis: string
 :arg angle: angle in radians.
-:type angle: float'''
+:type angle: float"""
 
 	def to_matrix(*argv):
-		'''.. method:: to_matrix()
+		""".. method:: to_matrix()
 
 Return a matrix representation of the euler.
 
 :return: A 3x3 roation matrix representation of the euler.
-:rtype: :class:`Matrix`'''
+:rtype: :class:`Matrix`"""
 
 	def to_quaternion(*argv):
-		'''.. method:: to_quaternion()
+		""".. method:: to_quaternion()
 
 Return a quaternion representation of the euler.
 
 :return: Quaternion representation of the euler.
-:rtype: :class:`Quaternion`'''
+:rtype: :class:`Quaternion`"""
 
 	x = getset_descriptor
-	'''.. class:: Euler(angles, order='XYZ')
+	""".. class:: Euler(angles, order='XYZ')
 
 This object gives access to Eulers in Blender.
 
 :param angles: Three angles, in radians.
 :type angles: 3d vector
 :param order: Optional order of the angles, a permutation of ``XYZ``.
-:type order: str'''
+:type order: str"""
 
 	y = getset_descriptor
-	'''.. class:: Euler(angles, order='XYZ')
+	""".. class:: Euler(angles, order='XYZ')
 
 This object gives access to Eulers in Blender.
 
 :param angles: Three angles, in radians.
 :type angles: 3d vector
 :param order: Optional order of the angles, a permutation of ``XYZ``.
-:type order: str'''
+:type order: str"""
 
 	z = getset_descriptor
-	'''.. class:: Euler(angles, order='XYZ')
+	""".. class:: Euler(angles, order='XYZ')
 
 This object gives access to Eulers in Blender.
 
 :param angles: Three angles, in radians.
 :type angles: 3d vector
 :param order: Optional order of the angles, a permutation of ``XYZ``.
-:type order: str'''
+:type order: str"""
 
 	def zero(*argv):
-		'''.. method:: zero()
+		""".. method:: zero()
 
-Set all values to zero.'''
+Set all values to zero."""
 
 
 class Matrix:
-	'''.. class:: Matrix([rows])
+	""".. class:: Matrix([rows])
 
 This object gives access to Matrices in Blender, supporting square and rectangular
 matrices from 2x2 up to 4x4.
 
 :param rows: Sequence of rows.
    When ommitted, a 4x4 identity matrix is constructed.
-:type rows: 2d number sequence'''
+:type rows: 2d number sequence"""
 
 	def Identity(*argv):
-		'''.. classmethod:: Identity(size)
+		""".. classmethod:: Identity(size)
 
 Create an identity matrix.
 
 :arg size: The size of the identity matrix to construct [2, 4].
 :type size: int
 :return: A new identity matrix.
-:rtype: :class:`Matrix`'''
+:rtype: :class:`Matrix`"""
 
 	def OrthoProjection(*argv):
-		'''.. classmethod:: OrthoProjection(axis, size)
+		""".. classmethod:: OrthoProjection(axis, size)
 
 Create a matrix to represent an orthographic projection.
 
@@ -301,10 +301,10 @@ Create a matrix to represent an orthographic projection.
 :arg size: The size of the projection matrix to construct [2, 4].
 :type size: int
 :return: A new projection matrix.
-:rtype: :class:`Matrix`'''
+:rtype: :class:`Matrix`"""
 
 	def Rotation(*argv):
-		'''.. classmethod:: Rotation(angle, size, axis)
+		""".. classmethod:: Rotation(angle, size, axis)
 
 Create a matrix representing a rotation.
 
@@ -316,10 +316,10 @@ Create a matrix representing a rotation.
    (optional when size is 2).
 :type axis: string or :class:`Vector`
 :return: A new rotation matrix.
-:rtype: :class:`Matrix`'''
+:rtype: :class:`Matrix`"""
 
 	def Scale(*argv):
-		'''.. classmethod:: Scale(factor, size, axis)
+		""".. classmethod:: Scale(factor, size, axis)
 
 Create a matrix representing a scaling.
 
@@ -330,10 +330,10 @@ Create a matrix representing a scaling.
 :arg axis: Direction to influence scale. (optional).
 :type axis: :class:`Vector`
 :return: A new scale matrix.
-:rtype: :class:`Matrix`'''
+:rtype: :class:`Matrix`"""
 
 	def Shear(*argv):
-		'''.. classmethod:: Shear(plane, size, factor)
+		""".. classmethod:: Shear(plane, size, factor)
 
 Create a matrix to represent an shear transformation.
 
@@ -346,94 +346,94 @@ Create a matrix to represent an shear transformation.
    pass a pair of floats corresponding with the *plane* axis.
 :type factor: float or float pair
 :return: A new shear matrix.
-:rtype: :class:`Matrix`'''
+:rtype: :class:`Matrix`"""
 
 	def Translation(*argv):
-		'''.. classmethod:: Translation(vector)
+		""".. classmethod:: Translation(vector)
 
 Create a matrix representing a translation.
 
 :arg vector: The translation vector.
 :type vector: :class:`Vector`
 :return: An identity matrix with a translation.
-:rtype: :class:`Matrix`'''
+:rtype: :class:`Matrix`"""
 
 	def adjugate(*argv):
-		'''.. method:: adjugate()
+		""".. method:: adjugate()
 
 Set the matrix to its adjugate.
 
 .. note:: When the matrix cant be adjugated a :exc:`ValueError` exception is raised.
 
-.. seealso:: <https://en.wikipedia.org/wiki/Adjugate_matrix>'''
+.. seealso:: <https://en.wikipedia.org/wiki/Adjugate_matrix>"""
 
 	def adjugated(*argv):
-		'''.. method:: adjugated()
+		""".. method:: adjugated()
 
 Return an adjugated copy of the matrix.
 
 :return: the adjugated matrix.
 :rtype: :class:`Matrix`
 
-.. note:: When the matrix cant be adjugated a :exc:`ValueError` exception is raised.'''
+.. note:: When the matrix cant be adjugated a :exc:`ValueError` exception is raised."""
 
 	col = getset_descriptor
-	'''.. class:: Matrix([rows])
+	""".. class:: Matrix([rows])
 
 This object gives access to Matrices in Blender, supporting square and rectangular
 matrices from 2x2 up to 4x4.
 
 :param rows: Sequence of rows.
    When ommitted, a 4x4 identity matrix is constructed.
-:type rows: 2d number sequence'''
+:type rows: 2d number sequence"""
 
 	def copy(*argv):
-		'''.. method:: copy()
+		""".. method:: copy()
 
 Returns a copy of this matrix.
 
 :return: an instance of itself
-:rtype: :class:`Matrix`'''
+:rtype: :class:`Matrix`"""
 
 	def decompose(*argv):
-		'''.. method:: decompose()
+		""".. method:: decompose()
 
 Return the location, rotation and scale components of this matrix.
 
 :return: loc, rot, scale triple.
-:rtype: (:class:`Vector`, :class:`Quaternion`, :class:`Vector`)'''
+:rtype: (:class:`Vector`, :class:`Quaternion`, :class:`Vector`)"""
 
 	def determinant(*argv):
-		'''.. method:: determinant()
+		""".. method:: determinant()
 
 Return the determinant of a matrix.
 
 :return: Return the determinant of a matrix.
 :rtype: float
 
-.. seealso:: <https://en.wikipedia.org/wiki/Determinant>'''
+.. seealso:: <https://en.wikipedia.org/wiki/Determinant>"""
 
 	def freeze(*argv):
-		'''.. function:: freeze()
+		""".. function:: freeze()
 
 Make this object immutable.
 
 After this the object can be hashed, used in dictionaries & sets.
 
-:return: An instance of this object.'''
+:return: An instance of this object."""
 
 	def identity(*argv):
-		'''.. method:: identity()
+		""".. method:: identity()
 
 Set the matrix to the identity matrix.
 
 .. note:: An object with zero location and rotation, a scale of one,
    will have an identity matrix.
 
-.. seealso:: <https://en.wikipedia.org/wiki/Identity_matrix>'''
+.. seealso:: <https://en.wikipedia.org/wiki/Identity_matrix>"""
 
 	def invert(*argv):
-		'''.. method:: invert(fallback=None)
+		""".. method:: invert(fallback=None)
 
 Set the matrix to its inverse.
 
@@ -441,19 +441,19 @@ Set the matrix to its inverse.
    (instead of raising a :exc:`ValueError` exception).
 :type fallback: :class:`Matrix`
 
-.. seealso:: <https://en.wikipedia.org/wiki/Inverse_matrix>'''
+.. seealso:: <https://en.wikipedia.org/wiki/Inverse_matrix>"""
 
 	def invert_safe(*argv):
-		'''.. method:: invert_safe()
+		""".. method:: invert_safe()
 
 Set the matrix to its inverse, will never error.
 If degenerated (e.g. zero scale on an axis), add some epsilon to its diagonal, to get an invertible one.
 If tweaked matrix is still degenerated, set to the identity matrix instead.
 
-.. seealso:: <https://en.wikipedia.org/wiki/Inverse_matrix>'''
+.. seealso:: <https://en.wikipedia.org/wiki/Inverse_matrix>"""
 
 	def inverted(*argv):
-		'''.. method:: inverted(fallback=None)
+		""".. method:: inverted(fallback=None)
 
 Return an inverted copy of the matrix.
 
@@ -461,70 +461,70 @@ Return an inverted copy of the matrix.
    (instead of raising a :exc:`ValueError`).
 :type fallback: any
 :return: the inverted matrix or fallback when given.
-:rtype: :class:`Matrix`'''
+:rtype: :class:`Matrix`"""
 
 	def inverted_safe(*argv):
-		'''.. method:: inverted_safe()
+		""".. method:: inverted_safe()
 
 Return an inverted copy of the matrix, will never error.
 If degenerated (e.g. zero scale on an axis), add some epsilon to its diagonal, to get an invertible one.
 If tweaked matrix is still degenerated, return the identity matrix instead.
 
 :return: the inverted matrix.
-:rtype: :class:`Matrix`'''
+:rtype: :class:`Matrix`"""
 
 	is_frozen = getset_descriptor
-	'''.. class:: Matrix([rows])
+	""".. class:: Matrix([rows])
 
 This object gives access to Matrices in Blender, supporting square and rectangular
 matrices from 2x2 up to 4x4.
 
 :param rows: Sequence of rows.
    When ommitted, a 4x4 identity matrix is constructed.
-:type rows: 2d number sequence'''
+:type rows: 2d number sequence"""
 
 	is_negative = getset_descriptor
-	'''.. class:: Matrix([rows])
+	""".. class:: Matrix([rows])
 
 This object gives access to Matrices in Blender, supporting square and rectangular
 matrices from 2x2 up to 4x4.
 
 :param rows: Sequence of rows.
    When ommitted, a 4x4 identity matrix is constructed.
-:type rows: 2d number sequence'''
+:type rows: 2d number sequence"""
 
 	is_orthogonal = getset_descriptor
-	'''.. class:: Matrix([rows])
+	""".. class:: Matrix([rows])
 
 This object gives access to Matrices in Blender, supporting square and rectangular
 matrices from 2x2 up to 4x4.
 
 :param rows: Sequence of rows.
    When ommitted, a 4x4 identity matrix is constructed.
-:type rows: 2d number sequence'''
+:type rows: 2d number sequence"""
 
 	is_orthogonal_axis_vectors = getset_descriptor
-	'''.. class:: Matrix([rows])
+	""".. class:: Matrix([rows])
 
 This object gives access to Matrices in Blender, supporting square and rectangular
 matrices from 2x2 up to 4x4.
 
 :param rows: Sequence of rows.
    When ommitted, a 4x4 identity matrix is constructed.
-:type rows: 2d number sequence'''
+:type rows: 2d number sequence"""
 
 	is_wrapped = getset_descriptor
-	'''.. class:: Matrix([rows])
+	""".. class:: Matrix([rows])
 
 This object gives access to Matrices in Blender, supporting square and rectangular
 matrices from 2x2 up to 4x4.
 
 :param rows: Sequence of rows.
    When ommitted, a 4x4 identity matrix is constructed.
-:type rows: 2d number sequence'''
+:type rows: 2d number sequence"""
 
 	def lerp(*argv):
-		'''.. function:: lerp(other, factor)
+		""".. function:: lerp(other, factor)
 
 Returns the interpolation of two matrices.
 
@@ -533,84 +533,84 @@ Returns the interpolation of two matrices.
 :arg factor: The interpolation value in [0.0, 1.0].
 :type factor: float
 :return: The interpolated matrix.
-:rtype: :class:`Matrix`'''
+:rtype: :class:`Matrix`"""
 
 	median_scale = getset_descriptor
-	'''.. class:: Matrix([rows])
+	""".. class:: Matrix([rows])
 
 This object gives access to Matrices in Blender, supporting square and rectangular
 matrices from 2x2 up to 4x4.
 
 :param rows: Sequence of rows.
    When ommitted, a 4x4 identity matrix is constructed.
-:type rows: 2d number sequence'''
+:type rows: 2d number sequence"""
 
 	def normalize(*argv):
-		'''.. method:: normalize()
+		""".. method:: normalize()
 
-Normalize each of the matrix columns.'''
+Normalize each of the matrix columns."""
 
 	def normalized(*argv):
-		'''.. method:: normalized()
+		""".. method:: normalized()
 
 Return a column normalized matrix
 
 :return: a column normalized matrix
-:rtype: :class:`Matrix`'''
+:rtype: :class:`Matrix`"""
 
 	owner = getset_descriptor
-	'''.. class:: Matrix([rows])
+	""".. class:: Matrix([rows])
 
 This object gives access to Matrices in Blender, supporting square and rectangular
 matrices from 2x2 up to 4x4.
 
 :param rows: Sequence of rows.
    When ommitted, a 4x4 identity matrix is constructed.
-:type rows: 2d number sequence'''
+:type rows: 2d number sequence"""
 
 	def resize_4x4(*argv):
-		'''.. method:: resize_4x4()
+		""".. method:: resize_4x4()
 
-Resize the matrix to 4x4.'''
+Resize the matrix to 4x4."""
 
 	def rotate(*argv):
-		'''.. method:: rotate(other)
+		""".. method:: rotate(other)
 
 Rotates the matrix by another mathutils value.
 
 :arg other: rotation component of mathutils value
 :type other: :class:`Euler`, :class:`Quaternion` or :class:`Matrix`
 
-.. note:: If any of the columns are not unit length this may not have desired results.'''
+.. note:: If any of the columns are not unit length this may not have desired results."""
 
 	row = getset_descriptor
-	'''.. class:: Matrix([rows])
+	""".. class:: Matrix([rows])
 
 This object gives access to Matrices in Blender, supporting square and rectangular
 matrices from 2x2 up to 4x4.
 
 :param rows: Sequence of rows.
    When ommitted, a 4x4 identity matrix is constructed.
-:type rows: 2d number sequence'''
+:type rows: 2d number sequence"""
 
 	def to_3x3(*argv):
-		'''.. method:: to_3x3()
+		""".. method:: to_3x3()
 
 Return a 3x3 copy of this matrix.
 
 :return: a new matrix.
-:rtype: :class:`Matrix`'''
+:rtype: :class:`Matrix`"""
 
 	def to_4x4(*argv):
-		'''.. method:: to_4x4()
+		""".. method:: to_4x4()
 
 Return a 4x4 copy of this matrix.
 
 :return: a new matrix.
-:rtype: :class:`Matrix`'''
+:rtype: :class:`Matrix`"""
 
 	def to_euler(*argv):
-		'''.. method:: to_euler(order, euler_compat)
+		""".. method:: to_euler(order, euler_compat)
 
 Return an Euler representation of the rotation matrix
 (3x3 or 4x4 matrix only).
@@ -623,69 +623,69 @@ Return an Euler representation of the rotation matrix
    Useful for converting a series of matrices to animation curves.
 :type euler_compat: :class:`Euler`
 :return: Euler representation of the matrix.
-:rtype: :class:`Euler`'''
+:rtype: :class:`Euler`"""
 
 	def to_quaternion(*argv):
-		'''.. method:: to_quaternion()
+		""".. method:: to_quaternion()
 
 Return a quaternion representation of the rotation matrix.
 
 :return: Quaternion representation of the rotation matrix.
-:rtype: :class:`Quaternion`'''
+:rtype: :class:`Quaternion`"""
 
 	def to_scale(*argv):
-		'''.. method:: to_scale()
+		""".. method:: to_scale()
 
 Return the scale part of a 3x3 or 4x4 matrix.
 
 :return: Return the scale of a matrix.
 :rtype: :class:`Vector`
 
-.. note:: This method does not return negative a scale on any axis because it is not possible to obtain this data from the matrix alone.'''
+.. note:: This method does not return negative a scale on any axis because it is not possible to obtain this data from the matrix alone."""
 
 	def to_translation(*argv):
-		'''.. method:: to_translation()
+		""".. method:: to_translation()
 
 Return the translation part of a 4 row matrix.
 
 :return: Return the translation of a matrix.
-:rtype: :class:`Vector`'''
+:rtype: :class:`Vector`"""
 
 	translation = getset_descriptor
-	'''.. class:: Matrix([rows])
+	""".. class:: Matrix([rows])
 
 This object gives access to Matrices in Blender, supporting square and rectangular
 matrices from 2x2 up to 4x4.
 
 :param rows: Sequence of rows.
    When ommitted, a 4x4 identity matrix is constructed.
-:type rows: 2d number sequence'''
+:type rows: 2d number sequence"""
 
 	def transpose(*argv):
-		'''.. method:: transpose()
+		""".. method:: transpose()
 
 Set the matrix to its transpose.
 
-.. seealso:: <https://en.wikipedia.org/wiki/Transpose>'''
+.. seealso:: <https://en.wikipedia.org/wiki/Transpose>"""
 
 	def transposed(*argv):
-		'''.. method:: transposed()
+		""".. method:: transposed()
 
 Return a new, transposed matrix.
 
 :return: a transposed matrix
-:rtype: :class:`Matrix`'''
+:rtype: :class:`Matrix`"""
 
 	def zero(*argv):
-		'''.. method:: zero()
+		""".. method:: zero()
 
 Set all the matrix values to zero.
 
-:rtype: :class:`Matrix`'''
+:rtype: :class:`Matrix`"""
 
 
 class Quaternion:
-	'''.. class:: Quaternion([seq, [angle]])
+	""".. class:: Quaternion([seq, [angle]])
 
 This object gives access to Quaternions in Blender.
 
@@ -707,10 +707,10 @@ The constructor takes arguments in various forms:
 (*axis, angle*)
     Create a quaternion representing a rotation of *angle* radians over *axis*.
 
-    .. seealso:: :meth:`to_axis_angle`'''
+    .. seealso:: :meth:`to_axis_angle`"""
 
 	angle = getset_descriptor
-	'''.. class:: Quaternion([seq, [angle]])
+	""".. class:: Quaternion([seq, [angle]])
 
 This object gives access to Quaternions in Blender.
 
@@ -732,10 +732,10 @@ The constructor takes arguments in various forms:
 (*axis, angle*)
     Create a quaternion representing a rotation of *angle* radians over *axis*.
 
-    .. seealso:: :meth:`to_axis_angle`'''
+    .. seealso:: :meth:`to_axis_angle`"""
 
 	axis = getset_descriptor
-	'''.. class:: Quaternion([seq, [angle]])
+	""".. class:: Quaternion([seq, [angle]])
 
 This object gives access to Quaternions in Blender.
 
@@ -757,23 +757,23 @@ The constructor takes arguments in various forms:
 (*axis, angle*)
     Create a quaternion representing a rotation of *angle* radians over *axis*.
 
-    .. seealso:: :meth:`to_axis_angle`'''
+    .. seealso:: :meth:`to_axis_angle`"""
 
 	def conjugate(*argv):
-		'''.. function:: conjugate()
+		""".. function:: conjugate()
 
-Set the quaternion to its conjugate (negate x, y, z).'''
+Set the quaternion to its conjugate (negate x, y, z)."""
 
 	def conjugated(*argv):
-		'''.. function:: conjugated()
+		""".. function:: conjugated()
 
 Return a new conjugated quaternion.
 
 :return: a new quaternion.
-:rtype: :class:`Quaternion`'''
+:rtype: :class:`Quaternion`"""
 
 	def copy(*argv):
-		'''.. function:: copy()
+		""".. function:: copy()
 
 Returns a copy of this quaternion.
 
@@ -781,59 +781,59 @@ Returns a copy of this quaternion.
 :rtype: :class:`Quaternion`
 
 .. note:: use this to get a copy of a wrapped quaternion with
-   no reference to the original data.'''
+   no reference to the original data."""
 
 	def cross(*argv):
-		'''.. method:: cross(other)
+		""".. method:: cross(other)
 
 Return the cross product of this quaternion and another.
 
 :arg other: The other quaternion to perform the cross product with.
 :type other: :class:`Quaternion`
 :return: The cross product.
-:rtype: :class:`Quaternion`'''
+:rtype: :class:`Quaternion`"""
 
 	def dot(*argv):
-		'''.. method:: dot(other)
+		""".. method:: dot(other)
 
 Return the dot product of this quaternion and another.
 
 :arg other: The other quaternion to perform the dot product with.
 :type other: :class:`Quaternion`
 :return: The dot product.
-:rtype: :class:`Quaternion`'''
+:rtype: :class:`Quaternion`"""
 
 	def freeze(*argv):
-		'''.. function:: freeze()
+		""".. function:: freeze()
 
 Make this object immutable.
 
 After this the object can be hashed, used in dictionaries & sets.
 
-:return: An instance of this object.'''
+:return: An instance of this object."""
 
 	def identity(*argv):
-		'''.. function:: identity()
+		""".. function:: identity()
 
 Set the quaternion to an identity quaternion.
 
-:rtype: :class:`Quaternion`'''
+:rtype: :class:`Quaternion`"""
 
 	def invert(*argv):
-		'''.. function:: invert()
+		""".. function:: invert()
 
-Set the quaternion to its inverse.'''
+Set the quaternion to its inverse."""
 
 	def inverted(*argv):
-		'''.. function:: inverted()
+		""".. function:: inverted()
 
 Return a new, inverted quaternion.
 
 :return: the inverted value.
-:rtype: :class:`Quaternion`'''
+:rtype: :class:`Quaternion`"""
 
 	is_frozen = getset_descriptor
-	'''.. class:: Quaternion([seq, [angle]])
+	""".. class:: Quaternion([seq, [angle]])
 
 This object gives access to Quaternions in Blender.
 
@@ -855,10 +855,10 @@ The constructor takes arguments in various forms:
 (*axis, angle*)
     Create a quaternion representing a rotation of *angle* radians over *axis*.
 
-    .. seealso:: :meth:`to_axis_angle`'''
+    .. seealso:: :meth:`to_axis_angle`"""
 
 	is_wrapped = getset_descriptor
-	'''.. class:: Quaternion([seq, [angle]])
+	""".. class:: Quaternion([seq, [angle]])
 
 This object gives access to Quaternions in Blender.
 
@@ -880,10 +880,10 @@ The constructor takes arguments in various forms:
 (*axis, angle*)
     Create a quaternion representing a rotation of *angle* radians over *axis*.
 
-    .. seealso:: :meth:`to_axis_angle`'''
+    .. seealso:: :meth:`to_axis_angle`"""
 
 	magnitude = getset_descriptor
-	'''.. class:: Quaternion([seq, [angle]])
+	""".. class:: Quaternion([seq, [angle]])
 
 This object gives access to Quaternions in Blender.
 
@@ -905,30 +905,30 @@ The constructor takes arguments in various forms:
 (*axis, angle*)
     Create a quaternion representing a rotation of *angle* radians over *axis*.
 
-    .. seealso:: :meth:`to_axis_angle`'''
+    .. seealso:: :meth:`to_axis_angle`"""
 
 	def negate(*argv):
-		'''.. function:: negate()
+		""".. function:: negate()
 
 Set the quaternion to its negative.
 
-:rtype: :class:`Quaternion`'''
+:rtype: :class:`Quaternion`"""
 
 	def normalize(*argv):
-		'''.. function:: normalize()
+		""".. function:: normalize()
 
-Normalize the quaternion.'''
+Normalize the quaternion."""
 
 	def normalized(*argv):
-		'''.. function:: normalized()
+		""".. function:: normalized()
 
 Return a new normalized quaternion.
 
 :return: a normalized copy.
-:rtype: :class:`Quaternion`'''
+:rtype: :class:`Quaternion`"""
 
 	owner = getset_descriptor
-	'''.. class:: Quaternion([seq, [angle]])
+	""".. class:: Quaternion([seq, [angle]])
 
 This object gives access to Quaternions in Blender.
 
@@ -950,28 +950,28 @@ The constructor takes arguments in various forms:
 (*axis, angle*)
     Create a quaternion representing a rotation of *angle* radians over *axis*.
 
-    .. seealso:: :meth:`to_axis_angle`'''
+    .. seealso:: :meth:`to_axis_angle`"""
 
 	def rotate(*argv):
-		'''.. method:: rotate(other)
+		""".. method:: rotate(other)
 
 Rotates the quaternion by another mathutils value.
 
 :arg other: rotation component of mathutils value
-:type other: :class:`Euler`, :class:`Quaternion` or :class:`Matrix`'''
+:type other: :class:`Euler`, :class:`Quaternion` or :class:`Matrix`"""
 
 	def rotation_difference(*argv):
-		'''.. function:: rotation_difference(other)
+		""".. function:: rotation_difference(other)
 
 Returns a quaternion representing the rotational difference.
 
 :arg other: second quaternion.
 :type other: :class:`Quaternion`
 :return: the rotational difference between the two quat rotations.
-:rtype: :class:`Quaternion`'''
+:rtype: :class:`Quaternion`"""
 
 	def slerp(*argv):
-		'''.. function:: slerp(other, factor)
+		""".. function:: slerp(other, factor)
 
 Returns the interpolation of two quaternions.
 
@@ -980,18 +980,18 @@ Returns the interpolation of two quaternions.
 :arg factor: The interpolation value in [0.0, 1.0].
 :type factor: float
 :return: The interpolated rotation.
-:rtype: :class:`Quaternion`'''
+:rtype: :class:`Quaternion`"""
 
 	def to_axis_angle(*argv):
-		'''.. method:: to_axis_angle()
+		""".. method:: to_axis_angle()
 
 Return the axis, angle representation of the quaternion.
 
 :return: axis, angle.
-:rtype: (:class:`Vector`, float) pair'''
+:rtype: (:class:`Vector`, float) pair"""
 
 	def to_euler(*argv):
-		'''.. method:: to_euler(order, euler_compat)
+		""".. method:: to_euler(order, euler_compat)
 
 Return Euler representation of the quaternion.
 
@@ -1003,10 +1003,10 @@ Return Euler representation of the quaternion.
    Useful for converting a series of matrices to animation curves.
 :type euler_compat: :class:`Euler`
 :return: Euler representation of the quaternion.
-:rtype: :class:`Euler`'''
+:rtype: :class:`Euler`"""
 
 	def to_exponential_map(*argv):
-		'''.. method:: to_exponential_map()
+		""".. method:: to_exponential_map()
 
 Return the exponential map representation of the quaternion.
 
@@ -1015,18 +1015,18 @@ This representation consist of the rotation axis multiplied by the rotation angl
 :return: exponential map.
 :rtype: :class:`Vector` of size 3
 
-To convert back to a quaternion, pass it to the :class:`Quaternion` constructor.'''
+To convert back to a quaternion, pass it to the :class:`Quaternion` constructor."""
 
 	def to_matrix(*argv):
-		'''.. method:: to_matrix()
+		""".. method:: to_matrix()
 
 Return a matrix representation of the quaternion.
 
 :return: A 3x3 rotation matrix representation of the quaternion.
-:rtype: :class:`Matrix`'''
+:rtype: :class:`Matrix`"""
 
 	w = getset_descriptor
-	'''.. class:: Quaternion([seq, [angle]])
+	""".. class:: Quaternion([seq, [angle]])
 
 This object gives access to Quaternions in Blender.
 
@@ -1048,10 +1048,10 @@ The constructor takes arguments in various forms:
 (*axis, angle*)
     Create a quaternion representing a rotation of *angle* radians over *axis*.
 
-    .. seealso:: :meth:`to_axis_angle`'''
+    .. seealso:: :meth:`to_axis_angle`"""
 
 	x = getset_descriptor
-	'''.. class:: Quaternion([seq, [angle]])
+	""".. class:: Quaternion([seq, [angle]])
 
 This object gives access to Quaternions in Blender.
 
@@ -1073,10 +1073,10 @@ The constructor takes arguments in various forms:
 (*axis, angle*)
     Create a quaternion representing a rotation of *angle* radians over *axis*.
 
-    .. seealso:: :meth:`to_axis_angle`'''
+    .. seealso:: :meth:`to_axis_angle`"""
 
 	y = getset_descriptor
-	'''.. class:: Quaternion([seq, [angle]])
+	""".. class:: Quaternion([seq, [angle]])
 
 This object gives access to Quaternions in Blender.
 
@@ -1098,10 +1098,10 @@ The constructor takes arguments in various forms:
 (*axis, angle*)
     Create a quaternion representing a rotation of *angle* radians over *axis*.
 
-    .. seealso:: :meth:`to_axis_angle`'''
+    .. seealso:: :meth:`to_axis_angle`"""
 
 	z = getset_descriptor
-	'''.. class:: Quaternion([seq, [angle]])
+	""".. class:: Quaternion([seq, [angle]])
 
 This object gives access to Quaternions in Blender.
 
@@ -1123,29 +1123,29 @@ The constructor takes arguments in various forms:
 (*axis, angle*)
     Create a quaternion representing a rotation of *angle* radians over *axis*.
 
-    .. seealso:: :meth:`to_axis_angle`'''
+    .. seealso:: :meth:`to_axis_angle`"""
 
 
 class Vector:
-	'''.. class:: Vector(seq)
+	""".. class:: Vector(seq)
 
 This object gives access to Vectors in Blender.
 
 :param seq: Components of the vector, must be a sequence of at least two
-:type seq: sequence of numbers'''
+:type seq: sequence of numbers"""
 
 	def Fill(*argv):
-		'''.. classmethod:: Fill(size, fill=0.0)
+		""".. classmethod:: Fill(size, fill=0.0)
 
 Create a vector of length size with all values set to fill.
 
 :arg size: The length of the vector to be created.
 :type size: int
 :arg fill: The value used to fill the vector.
-:type fill: float'''
+:type fill: float"""
 
 	def Linspace(*argv):
-		'''.. classmethod:: Linspace(start, stop, size)
+		""".. classmethod:: Linspace(start, stop, size)
 
 Create a vector of the specified size which is filled with linearly spaced values between start and stop values.
 
@@ -1154,10 +1154,10 @@ Create a vector of the specified size which is filled with linearly spaced value
 :arg stop: The end of the range used to fill the vector.
 :type stop: int
 :arg size: The size of the vector to be created.
-:type size: int'''
+:type size: int"""
 
 	def Range(*argv):
-		'''.. classmethod:: Range(start=0, stop, step=1)
+		""".. classmethod:: Range(start=0, stop, step=1)
 
 Create a filled with a range of values.
 
@@ -1166,20 +1166,20 @@ Create a filled with a range of values.
 :arg stop: The end of the range used to fill the vector.
 :type stop: int
 :arg step: The step between successive values in the vector.
-:type step: int'''
+:type step: int"""
 
 	def Repeat(*argv):
-		'''.. classmethod:: Repeat(vector, size)
+		""".. classmethod:: Repeat(vector, size)
 
 Create a vector by repeating the values in vector until the required size is reached.
 
 :arg tuple: The vector to draw values from.
 :type tuple: :class:`mathutils.Vector`
 :arg size: The size of the vector to be created.
-:type size: int'''
+:type size: int"""
 
 	def angle(*argv):
-		'''.. function:: angle(other, fallback=None)
+		""".. function:: angle(other, fallback=None)
 
 Return the angle between two vectors.
 
@@ -1189,10 +1189,10 @@ Return the angle between two vectors.
    (instead of raising a :exc:`ValueError`).
 :type fallback: any
 :return: angle in radians or fallback when given
-:rtype: float'''
+:rtype: float"""
 
 	def angle_signed(*argv):
-		'''.. function:: angle_signed(other, fallback)
+		""".. function:: angle_signed(other, fallback)
 
 Return the signed angle between two 2D vectors (clockwise is positive).
 
@@ -1202,10 +1202,10 @@ Return the signed angle between two 2D vectors (clockwise is positive).
    (instead of raising a :exc:`ValueError`).
 :type fallback: any
 :return: angle in radians or fallback when given
-:rtype: float'''
+:rtype: float"""
 
 	def copy(*argv):
-		'''.. function:: copy()
+		""".. function:: copy()
 
 Returns a copy of this vector.
 
@@ -1213,10 +1213,10 @@ Returns a copy of this vector.
 :rtype: :class:`Vector`
 
 .. note:: use this to get a copy of a wrapped vector with
-   no reference to the original data.'''
+   no reference to the original data."""
 
 	def cross(*argv):
-		'''.. method:: cross(other)
+		""".. method:: cross(other)
 
 Return the cross product of this vector and another.
 
@@ -1225,61 +1225,61 @@ Return the cross product of this vector and another.
 :return: The cross product.
 :rtype: :class:`Vector` or float when 2D vectors are used
 
-.. note:: both vectors must be 2D or 3D'''
+.. note:: both vectors must be 2D or 3D"""
 
 	def dot(*argv):
-		'''.. method:: dot(other)
+		""".. method:: dot(other)
 
 Return the dot product of this vector and another.
 
 :arg other: The other vector to perform the dot product with.
 :type other: :class:`Vector`
 :return: The dot product.
-:rtype: :class:`Vector`'''
+:rtype: :class:`Vector`"""
 
 	def freeze(*argv):
-		'''.. function:: freeze()
+		""".. function:: freeze()
 
 Make this object immutable.
 
 After this the object can be hashed, used in dictionaries & sets.
 
-:return: An instance of this object.'''
+:return: An instance of this object."""
 
 	is_frozen = getset_descriptor
-	'''.. class:: Vector(seq)
+	""".. class:: Vector(seq)
 
 This object gives access to Vectors in Blender.
 
 :param seq: Components of the vector, must be a sequence of at least two
-:type seq: sequence of numbers'''
+:type seq: sequence of numbers"""
 
 	is_wrapped = getset_descriptor
-	'''.. class:: Vector(seq)
+	""".. class:: Vector(seq)
 
 This object gives access to Vectors in Blender.
 
 :param seq: Components of the vector, must be a sequence of at least two
-:type seq: sequence of numbers'''
+:type seq: sequence of numbers"""
 
 	length = getset_descriptor
-	'''.. class:: Vector(seq)
+	""".. class:: Vector(seq)
 
 This object gives access to Vectors in Blender.
 
 :param seq: Components of the vector, must be a sequence of at least two
-:type seq: sequence of numbers'''
+:type seq: sequence of numbers"""
 
 	length_squared = getset_descriptor
-	'''.. class:: Vector(seq)
+	""".. class:: Vector(seq)
 
 This object gives access to Vectors in Blender.
 
 :param seq: Components of the vector, must be a sequence of at least two
-:type seq: sequence of numbers'''
+:type seq: sequence of numbers"""
 
 	def lerp(*argv):
-		'''.. function:: lerp(other, factor)
+		""".. function:: lerp(other, factor)
 
 Returns the interpolation of two vectors.
 
@@ -1288,115 +1288,115 @@ Returns the interpolation of two vectors.
 :arg factor: The interpolation value in [0.0, 1.0].
 :type factor: float
 :return: The interpolated vector.
-:rtype: :class:`Vector`'''
+:rtype: :class:`Vector`"""
 
 	magnitude = getset_descriptor
-	'''.. class:: Vector(seq)
+	""".. class:: Vector(seq)
 
 This object gives access to Vectors in Blender.
 
 :param seq: Components of the vector, must be a sequence of at least two
-:type seq: sequence of numbers'''
+:type seq: sequence of numbers"""
 
 	def negate(*argv):
-		'''.. method:: negate()
+		""".. method:: negate()
 
-Set all values to their negative.'''
+Set all values to their negative."""
 
 	def normalize(*argv):
-		'''.. method:: normalize()
+		""".. method:: normalize()
 
 Normalize the vector, making the length of the vector always 1.0.
 
 .. warning:: Normalizing a vector where all values are zero has no effect.
 
 .. note:: Normalize works for vectors of all sizes,
-   however 4D Vectors w axis is left untouched.'''
+   however 4D Vectors w axis is left untouched."""
 
 	def normalized(*argv):
-		'''.. method:: normalized()
+		""".. method:: normalized()
 
 Return a new, normalized vector.
 
 :return: a normalized copy of the vector
-:rtype: :class:`Vector`'''
+:rtype: :class:`Vector`"""
 
 	def orthogonal(*argv):
-		'''.. method:: orthogonal()
+		""".. method:: orthogonal()
 
 Return a perpendicular vector.
 
 :return: a new vector 90 degrees from this vector.
 :rtype: :class:`Vector`
 
-.. note:: the axis is undefined, only use when any orthogonal vector is acceptable.'''
+.. note:: the axis is undefined, only use when any orthogonal vector is acceptable."""
 
 	owner = getset_descriptor
-	'''.. class:: Vector(seq)
+	""".. class:: Vector(seq)
 
 This object gives access to Vectors in Blender.
 
 :param seq: Components of the vector, must be a sequence of at least two
-:type seq: sequence of numbers'''
+:type seq: sequence of numbers"""
 
 	def project(*argv):
-		'''.. function:: project(other)
+		""".. function:: project(other)
 
 Return the projection of this vector onto the *other*.
 
 :arg other: second vector.
 :type other: :class:`Vector`
 :return: the parallel projection vector
-:rtype: :class:`Vector`'''
+:rtype: :class:`Vector`"""
 
 	def reflect(*argv):
-		'''.. method:: reflect(mirror)
+		""".. method:: reflect(mirror)
 
 Return the reflection vector from the *mirror* argument.
 
 :arg mirror: This vector could be a normal from the reflecting surface.
 :type mirror: :class:`Vector`
 :return: The reflected vector matching the size of this vector.
-:rtype: :class:`Vector`'''
+:rtype: :class:`Vector`"""
 
 	def resize(*argv):
-		'''.. method:: resize(size=3)
+		""".. method:: resize(size=3)
 
-Resize the vector to have size number of elements.'''
+Resize the vector to have size number of elements."""
 
 	def resize_2d(*argv):
-		'''.. method:: resize_2d()
+		""".. method:: resize_2d()
 
-Resize the vector to 2D  (x, y).'''
+Resize the vector to 2D  (x, y)."""
 
 	def resize_3d(*argv):
-		'''.. method:: resize_3d()
+		""".. method:: resize_3d()
 
-Resize the vector to 3D  (x, y, z).'''
+Resize the vector to 3D  (x, y, z)."""
 
 	def resize_4d(*argv):
-		'''.. method:: resize_4d()
+		""".. method:: resize_4d()
 
-Resize the vector to 4D (x, y, z, w).'''
+Resize the vector to 4D (x, y, z, w)."""
 
 	def resized(*argv):
-		'''.. method:: resized(size=3)
+		""".. method:: resized(size=3)
 
 Return a resized copy of the vector with size number of elements.
 
 :return: a new vector
-:rtype: :class:`Vector`'''
+:rtype: :class:`Vector`"""
 
 	def rotate(*argv):
-		'''.. function:: rotate(other)
+		""".. function:: rotate(other)
 
 Rotate the vector by a rotation value.
 
 :arg other: rotation component of mathutils value
-:type other: :class:`Euler`, :class:`Quaternion` or :class:`Matrix`'''
+:type other: :class:`Euler`, :class:`Quaternion` or :class:`Matrix`"""
 
 	def rotation_difference(*argv):
-		'''.. function:: rotation_difference(other)
+		""".. function:: rotation_difference(other)
 
 Returns a quaternion representing the rotational difference between this
 vector and another.
@@ -1406,10 +1406,10 @@ vector and another.
 :return: the rotational difference between the two vectors.
 :rtype: :class:`Quaternion`
 
-.. note:: 2D vectors raise an :exc:`AttributeError`.'''
+.. note:: 2D vectors raise an :exc:`AttributeError`."""
 
 	def slerp(*argv):
-		'''.. function:: slerp(other, factor, fallback=None)
+		""".. function:: slerp(other, factor, fallback=None)
 
 Returns the interpolation of two non-zero vectors (spherical coordinates).
 
@@ -1421,34 +1421,34 @@ Returns the interpolation of two non-zero vectors (spherical coordinates).
    (instead of raising a :exc:`ValueError`).
 :type fallback: any
 :return: The interpolated vector.
-:rtype: :class:`Vector`'''
+:rtype: :class:`Vector`"""
 
 	def to_2d(*argv):
-		'''.. method:: to_2d()
+		""".. method:: to_2d()
 
 Return a 2d copy of the vector.
 
 :return: a new vector
-:rtype: :class:`Vector`'''
+:rtype: :class:`Vector`"""
 
 	def to_3d(*argv):
-		'''.. method:: to_3d()
+		""".. method:: to_3d()
 
 Return a 3d copy of the vector.
 
 :return: a new vector
-:rtype: :class:`Vector`'''
+:rtype: :class:`Vector`"""
 
 	def to_4d(*argv):
-		'''.. method:: to_4d()
+		""".. method:: to_4d()
 
 Return a 4d copy of the vector.
 
 :return: a new vector
-:rtype: :class:`Vector`'''
+:rtype: :class:`Vector`"""
 
 	def to_track_quat(*argv):
-		'''.. method:: to_track_quat(track, up)
+		""".. method:: to_track_quat(track, up)
 
 Return a quaternion rotation from the vector and the track and up axis.
 
@@ -1457,25 +1457,25 @@ Return a quaternion rotation from the vector and the track and up axis.
 :arg up: Up axis in ['X', 'Y', 'Z'].
 :type up: string
 :return: rotation from the vector and the track and up axis.
-:rtype: :class:`Quaternion`'''
+:rtype: :class:`Quaternion`"""
 
 	def to_tuple(*argv):
-		'''.. method:: to_tuple(precision=-1)
+		""".. method:: to_tuple(precision=-1)
 
 Return this vector as a tuple with.
 
 :arg precision: The number to round the value to in [-1, 21].
 :type precision: int
 :return: the values of the vector rounded by *precision*
-:rtype: tuple'''
+:rtype: tuple"""
 
 	w = getset_descriptor
-	'''.. class:: Vector(seq)
+	""".. class:: Vector(seq)
 
 This object gives access to Vectors in Blender.
 
 :param seq: Components of the vector, must be a sequence of at least two
-:type seq: sequence of numbers'''
+:type seq: sequence of numbers"""
 
 	ww = getset_descriptor
 	www = getset_descriptor
@@ -1562,12 +1562,12 @@ This object gives access to Vectors in Blender.
 	wzzy = getset_descriptor
 	wzzz = getset_descriptor
 	x = getset_descriptor
-	'''.. class:: Vector(seq)
+	""".. class:: Vector(seq)
 
 This object gives access to Vectors in Blender.
 
 :param seq: Components of the vector, must be a sequence of at least two
-:type seq: sequence of numbers'''
+:type seq: sequence of numbers"""
 
 	xw = getset_descriptor
 	xww = getset_descriptor
@@ -1654,12 +1654,12 @@ This object gives access to Vectors in Blender.
 	xzzy = getset_descriptor
 	xzzz = getset_descriptor
 	y = getset_descriptor
-	'''.. class:: Vector(seq)
+	""".. class:: Vector(seq)
 
 This object gives access to Vectors in Blender.
 
 :param seq: Components of the vector, must be a sequence of at least two
-:type seq: sequence of numbers'''
+:type seq: sequence of numbers"""
 
 	yw = getset_descriptor
 	yww = getset_descriptor
@@ -1746,17 +1746,17 @@ This object gives access to Vectors in Blender.
 	yzzy = getset_descriptor
 	yzzz = getset_descriptor
 	z = getset_descriptor
-	'''.. class:: Vector(seq)
+	""".. class:: Vector(seq)
 
 This object gives access to Vectors in Blender.
 
 :param seq: Components of the vector, must be a sequence of at least two
-:type seq: sequence of numbers'''
+:type seq: sequence of numbers"""
 
 	def zero(*argv):
-		'''.. method:: zero()
+		""".. method:: zero()
 
-Set all values to zero.'''
+Set all values to zero."""
 
 	zw = getset_descriptor
 	zww = getset_descriptor

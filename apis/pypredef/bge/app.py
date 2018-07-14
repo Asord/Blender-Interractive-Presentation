@@ -1,4 +1,6 @@
-'''This module contains application values that remain unchanged during runtime.'''
+"""
+This module contains application values that remain unchanged during runtime.
+"""
 
 has_joystick = bool
 has_physics = bool

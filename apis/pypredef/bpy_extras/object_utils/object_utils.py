@@ -11,7 +11,7 @@ class AddObjectHelper:
 
 
 def BoolProperty(*argv):
-	'''.. function:: BoolProperty(name="", description="", default=False, options={'ANIMATABLE'}, subtype='NONE', update=None, get=None, set=None)
+	""".. function:: BoolProperty(name="", description="", default=False, options={'ANIMATABLE'}, subtype='NONE', update=None, get=None, set=None)
 
 Returns a new boolean property definition.
 
@@ -32,10 +32,10 @@ Returns a new boolean property definition.
 :type get: function
 :arg set: Function to be called when this value is 'written',
    This function must take 2 values (self, value) and return None.
-:type set: function'''
+:type set: function"""
 
 def BoolVectorProperty(*argv):
-	'''.. function:: BoolVectorProperty(name="", description="", default=(False, False, False), options={'ANIMATABLE'}, subtype='NONE', size=3, update=None, get=None, set=None)
+	""".. function:: BoolVectorProperty(name="", description="", default=(False, False, False), options={'ANIMATABLE'}, subtype='NONE', size=3, update=None, get=None, set=None)
 
 Returns a new vector boolean property definition.
 
@@ -60,10 +60,10 @@ Returns a new vector boolean property definition.
 :type get: function
 :arg set: Function to be called when this value is 'written',
    This function must take 2 values (self, value) and return None.
-:type set: function'''
+:type set: function"""
 
 def FloatVectorProperty(*argv):
-	'''.. function:: FloatVectorProperty(name="", description="", default=(0.0, 0.0, 0.0), min=sys.float_info.min, max=sys.float_info.max, soft_min=sys.float_info.min, soft_max=sys.float_info.max, step=3, precision=2, options={'ANIMATABLE'}, subtype='NONE', unit='NONE', size=3, update=None, get=None, set=None)
+	""".. function:: FloatVectorProperty(name="", description="", default=(0.0, 0.0, 0.0), min=sys.float_info.min, max=sys.float_info.max, soft_min=sys.float_info.min, soft_max=sys.float_info.max, step=3, precision=2, options={'ANIMATABLE'}, subtype='NONE', unit='NONE', size=3, update=None, get=None, set=None)
 
 Returns a new vector float property definition.
 
@@ -102,28 +102,28 @@ Returns a new vector float property definition.
 :type get: function
 :arg set: Function to be called when this value is 'written',
    This function must take 2 values (self, value) and return None.
-:type set: function'''
+:type set: function"""
 
 def add_object_align_init(*argv):
-	'''Return a matrix using the operator settings and view context.
+	"""Return a matrix using the operator settings and view context.
 
 :arg context: The context to use.
 :type context: :class:`bpy.types.Context`
 :arg operator: The operator, checked for location and rotation properties.
 :type operator: :class:`bpy.types.Operator`
 :return: the matrix from the context and settings.
-:rtype: :class:`mathutils.Matrix`'''
+:rtype: :class:`mathutils.Matrix`"""
 
 import bpy
 def object_add_grid_scale(*argv):
-	'''Return scale which should be applied on object
-data to align it to grid scale'''
+	"""Return scale which should be applied on object
+data to align it to grid scale"""
 
 def object_add_grid_scale_apply_operator(*argv):
-	'''Scale an operators distance values by the grid size.'''
+	"""Scale an operators distance values by the grid size."""
 
 def object_data_add(*argv):
-	'''Add an object using the view context and preference to to initialize the
+	"""Add an object using the view context and preference to to initialize the
 location, rotation and layer.
 
 :arg context: The context to use.
@@ -135,14 +135,14 @@ location, rotation and layer.
 :arg name: Optional name
 :type name: string
 :return: the newly created object in the scene.
-:rtype: :class:`bpy.types.ObjectBase`'''
+:rtype: :class:`bpy.types.ObjectBase`"""
 
 def object_image_guess(*argv):
-	'''Return a single image used by the object,
-first checking the texture-faces, then the material.'''
+	"""Return a single image used by the object,
+first checking the texture-faces, then the material."""
 
 def world_to_camera_view(*argv):
-	'''Returns the camera space coords for a 3d point.
+	"""Returns the camera space coords for a 3d point.
 (also known as: normalized device coordinates - NDC).
 
 Where (0, 0) is the bottom left and (1, 1)
@@ -161,6 +161,6 @@ as well as perspective/ortho projections.
 :type coord: :class:`mathutils.Vector`
 :return: a vector where X and Y map to the view plane and
    Z is the depth on the view axis.
-:rtype: :class:`mathutils.Vector`'''
+:rtype: :class:`mathutils.Vector`"""
 
 

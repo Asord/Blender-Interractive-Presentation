@@ -1,30 +1,30 @@
-'''BMesh mesh manipulations (bmesh)
+"""BMesh mesh manipulations (bmesh)
    This module provides access to blenders bmesh data structures.
    .. include:: include__bmesh.rst
    
-'''
-
+"""
+from .types import *
 
 def from_edit_mesh(mesh):
-   '''Return a BMesh from this mesh, currently the mesh must already be in editmode.
+   """Return a BMesh from this mesh, currently the mesh must already be in editmode.
       
       Arguments:
       @mesh (bpy.types.Mesh): The editmode mesh.
 
-      @returns (bmesh.types.BMesh): the BMesh associated with this mesh.
-   '''
+      @returns (types.BMesh): the BMesh associated with this mesh.
+   """
 
-   return bmesh.types.BMesh
+   return types.BMesh
 
 def new():
-   '''
-      @returns (bmesh.types.BMesh): Return a new, empty BMesh.
-   '''
+   """
+      @returns (types.BMesh): Return a new, empty BMesh.
+   """
 
-   return bmesh.types.BMesh
+   return types.BMesh
 
 def update_edit_mesh(mesh, tessface=True, destructive=True):
-   '''Update the mesh after changes to the BMesh in editmode, 
+   """Update the mesh after changes to the BMesh in editmode, 
       optionally recalculating n-gon tessellation.
       
       Arguments:
@@ -32,7 +32,7 @@ def update_edit_mesh(mesh, tessface=True, destructive=True):
       @tessface (boolean): Option to recalculate n-gon tessellation.
       @destructive (boolean): Use when geometry has been added or removed.
 
-   '''
+   """
 
    pass
 
