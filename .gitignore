@@ -1,7 +1,6 @@
 .idea/
 blender/
 build/
-save/
 source/
 
 *.pyc
