@@ -2,4 +2,11 @@ The aim of the internship in Faculty of Mathematics and Natural Sciences, Cardin
 - Displaying 3D objects and texts
 - Creating custom animations and slide transitions ect...
 
+For starting the exemple project: start scripts/__start.py (Pyton 3.5+ required)
+Then in Text editor (window with Python code) do Alt+R (reload) and Alt+P to activate the menu.
+
+Once all elements are linked to the project, and all slides are configured, go to:
+Properties Window > Render Tab > Standalone Player > Start button
+
+
 For more informations, please contact us at killian.perche@etu.uca.fr or valentin.riu@etu.uca.fr
