@@ -2,6 +2,10 @@
 Script that run the presentation
 To be activated once
 """
+# Append the project directory to Blender modules path
+from sys import path
+path.append(".")
+
 
 from bge import logic, events
 from Models.Singloton import singleton
