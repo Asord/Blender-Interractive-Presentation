@@ -1,12 +1,17 @@
-"""
+# Append the project directory to Blender modules path
+from sys import path
+path.append(".")
 
-"""
+# Import the XMLparser
 from Managers.XMLParser import init_XMLParser, path
 
 init_XMLParser(path("texts.xml"), "en-US", ["button", "label", "prop", "desc", "popup"])
 
+# Import the bpy functions needed and all interface elements
 from bpy import utils, context
 from Interface import *
+
+# Import the Slides Manager
 from Managers.SlidesManager import SlidesManager
 
 classes = (
